@@ -32,7 +32,7 @@ class clicker extends Component{
         ],
         cChar:{
                 name:'Ghoul',
-                level: '',
+                level: 'Noob',
                 url: g,
                 clicks: '0',
                 id: '1'
@@ -43,6 +43,30 @@ class clicker extends Component{
             Characters: this.state.Characters.map(c => {
                 if (c.id === id) {
                     c.clicks ++;
+                    if (c.clicks <= 10) {
+                        c.level = 'Noob'
+                    }
+                    else if (c.clicks <= 30) {
+                        c.level = 'Beginner'
+                    }
+                    else if (c.clicks <= 60) {
+                        c.level = 'Amatuer'
+                    }
+                    else if (c.clicks <= 100) {
+                        c.level = 'Adventurer'
+                    }
+                    else if (c.clicks <= 150) {
+                        c.level = 'Thumping Rabbit'
+                    }
+                    else if (c.clicks <= 200) {
+                        c.level = 'Pro'
+                    }
+                    else if (c.clicks <= 300) {
+                        c.level = 'Tapping Ninja'
+                    }
+                    else {
+                        c.level = 'Godlike'
+                    }
                 }
                 return c;
             })
