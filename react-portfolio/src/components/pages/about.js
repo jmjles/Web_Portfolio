@@ -8,7 +8,7 @@ function About(){
                 A Little Bit About Me
             </h1>
             <hr/>
-            <img id="portrait" src={ Portrait }/>
+            <img id="portrait" src={ Portrait } alt="A portrait of Jesus M."/>
             <p>
                 When I was a kid, I always loved building models and taking apart electronics.
             I started learning about all the hardware of computers when I was in middle school.<br/><br/><br/>

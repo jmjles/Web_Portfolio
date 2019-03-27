@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ghoulpic from '../../assets/pics/ghoul.png'
-import {Link} from 'react-router-dom';
 
 class Clicker extends Component{
     state = {
@@ -35,27 +33,33 @@ class Clicker extends Component{
                         <p className="display-4 text-center">{cChar.clicks}</p>
                         <table>
                             <thead>
-                                <h2 class="text-center">Levels</h2>
+                            <tr>
+                                <th className="text-center">
+                                    Levels
+                                </th>
+                            </tr>
                             </thead>
-                            {htitle.map((title) => (
-                                <tr key={title}>
-                                    <td>
-                                        {title}
-                                    </td>
-                                </tr>
-                            ))
-                            }
+                            <tbody>
+                                {htitle.map((title) => (
+                                    <tr key={title}>
+                                        <td>
+                                            {title}
+                                        </td>
+                                    </tr>
+                                ))
+                                }
+                            </tbody>
                         </table>
                     </div>
         <div className="col" >
-            <img id="gpicmain" src={cChar.url} onClick={clicked.bind(this, p.cChar.id)}/>
+            <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, p.cChar.id)}/>
         </div>
-        <div class="col-3">
+        <div className="col-3">
           <h2>Characters:</h2>
           { p.characters.map((p) => (
-            <div>
-                <p class="text-center" onClick={setChar.bind(this, p.id)}>{p.name}</p>
-                <img id="gpic" src={p.url} onClick={setChar.bind(this, p.id)}/>
+            <div key={p.id}>
+                <p className="text-center" onClick={setChar.bind(this, p.id)}>{p.name}</p>
+                <img id="gpic" src={p.url} alt={p.alt} onClick={setChar.bind(this, p.id)}/>
             </div>
           ))}
         </div>

@@ -3,31 +3,33 @@ import g from '../../assets/pics/ghoul.png'
 import gh from '../../assets/pics/ghost.png'
 import p from '../../assets/pics/pumpkin.png'
 import Clicker from '../apps/Clicker';
-import {Link} from 'react-router-dom';
 
 class clicker extends Component{
     state = {
         Characters: [   
             {
                 name:'Ghoul',
-                level: '',
+                level: 'Noob',
                 url: g,
                 clicks: '0',
-                id: '1'
+                id: '1',
+                alt:'Ghoul Character Pic'
             },
             {
                 name:'Ghost',
-                level: '',
+                level: 'Noob',
                 url: gh,
                 clicks: 0,
-                id:'2'
+                id:'2',
+                alt:'Ghost Character Pic'
             },
             {
                 name:'Pumpkin',
-                level: '',
+                level: 'Noob',
                 url: p,
                 clicks: '0',
-                id:'3'
+                id:'3',
+                alt:'Pumpkin Character Pic'
             },
         ],
         cChar:{
@@ -35,7 +37,8 @@ class clicker extends Component{
                 level: 'Noob',
                 url: g,
                 clicks: '0',
-                id: '1'
+                id: '1',
+                alt:'Ghoul Character Pic'
         }
     }
     clicked = (id) =>{
@@ -74,16 +77,17 @@ class clicker extends Component{
         this.setChar(id);
     };
     setChar = (id) => {
-        this.state.Characters.map(characters => {
-            if (characters.id === id) {
+        this.state.Characters.map(c => {
+            if (c.id === id) {
                 this.setState({cChar: {
-                    name: characters.name,
-                    url: characters.url,
-                    level: characters.level,
-                    clicks: characters.clicks,
-                    id: characters.id
+                    name: c.name,
+                    url: c.url,
+                    level: c.level,
+                    clicks: c.clicks,
+                    id: c.id,
+                    alt: c.alt
                 }})
-            }
+            } return c;
         })
     };
     render(){

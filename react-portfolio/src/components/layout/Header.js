@@ -12,7 +12,7 @@ function Header(){
         <Router>
             <header className="container">
                 <nav className="navbar nav-tab">
-                    <p className="navbar-brand">Jesus Morales | <br/><lead className="lead">Fullstack Web Dev</lead></p>
+                    <p className="navbar-brand">Jesus Morales | <br/><span className="lead">Fullstack Web Dev</span></p>
                     <Link to="/" className="nav-link nav-item">Home</Link>
                     <Link to="/about" className="nav-link nav-item">About</Link>
                     <Link to="/projects" className="nav-link nav-item">Projects</Link>
