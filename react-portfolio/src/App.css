@@ -1,1 +1,30 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+
+*{
+  color: white;
+}
+
+#vid{
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -999;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#gpic {
+  width: 100px;
+  height: 150px;
+}
+#gpicmain {
+  width: 300px;
+  height: 450px;
+}
+#portrait{
+  border-radius: 50px;
+  height: 300px;
+  width: 200px;
+  float: left;
+  padding: 10px;
+}
