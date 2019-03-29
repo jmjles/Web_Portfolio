@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const path = require('path');
 const cors = require('cors');
 const app = express();
 
@@ -11,7 +12,10 @@ app.use(cors());
 const port = process.env.PORT || 5000;
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(__dirname + '/public/'));
+    app.use(express.static(path.join(__dirname, '../react-portfolio/build')));
+}
+else{
+    app.use(express.static(path.join(__dirname,'../react-portfolio/build')))
 }
 // Launch Server
 app.listen(port, () => {
