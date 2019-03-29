@@ -23,6 +23,7 @@ class Clicker extends Component{
         let clicked = p.clicked;
         let setChar = p.setChar;
         let cChar = p.cChar;
+        
         return(
             <article className="container, Projects">
                 <h1 className="display-1">Clicker Game</h1>
