@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div className="App container-fluid" id="main">
         <Header/>
+        <p>This is src build</p>
         <video autoPlay id="vid" loop muted>
             <source src={stars} type="video/mp4"/>
         </video>

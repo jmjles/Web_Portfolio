@@ -17,5 +17,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "ws": "3.3.2"
   }
 }
