@@ -6,13 +6,13 @@ class Projects extends Component{
         projects: [
             { name: 'Location Lookup', Description : 'Get The latest news, weather and map of a location with a simple search.', link: '/projects/location'},
             { name: 'Clicker Game', Description : 'Click on the character to lvl up!', link: '/projects/clicker'},
-            { name: 'MEVN Stack', Description : 'You are using it :)', link: '/'}
+            { name: 'MERN Stack', Description : 'You are using it :)', link: '/'}
         ]
     }
 
     render(){
         return(
-            <article className="container, Projects">
+            <article className="container Projects" id="section">
                 <div className="row">
                     {this.state.projects.map((project) => (
                         <div className="col-sm" key ={project.name}>

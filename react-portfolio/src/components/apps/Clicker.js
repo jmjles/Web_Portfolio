@@ -1,16 +1,36 @@
 import React, { Component } from 'react';
-
+import anime from '../../../node_modules/animejs/lib/anime.es'
 class Clicker extends Component{
     state = {
         htitle: [
-            'Noob: 5',
-            'Beginner: 10',
-            'Amatuer: 30',
-            'Adventurer: 60',
-            'Thumping Rabbit: 100',
-            'Pro: 150',
-            'Tapping Ninja: 200',
-            'GodLike: 300',
+            {
+                t:'Beginner:',
+                c:'30'
+            },
+            {
+                t:'Amatuer:',
+                c:'10'
+            },
+            {
+                t:'Adventurer:',
+                c:'60'
+            },
+            {
+                t:'Thumping Rabbit:',
+                c:'100'
+            },
+            {
+                t:'Pro:',
+                c:'150'
+            },
+            {
+                t:'Tapping Ninja:',
+                c:'200'
+            },
+            {
+                t:'GodLike:',
+                c:'300'
+            },
         ],
     }
     setState()  {
@@ -25,37 +45,31 @@ class Clicker extends Component{
         let cChar = p.cChar;
         
         return(
-            <article className="container, Projects">
-                <h1 className="display-1">Clicker Game</h1>
+            <article className="container-fluid">
+            <span><button onClick={ani} id ="i" className="infoBtn btn-secondary btn float-right">?</button></span>
+                <h1 className="display-1 text-center">Clicker Game</h1>
+                <div className="gi text-center">
+                    <h1 className="text-center tTitle">
+                        Levels
+                    </h1>
+                    {htitle.map((e) => (
+                        <div key={e.t} className="row">
+                        <p className="col text-right"> {e.t} </p>
+                        <span className="col">{e.c}</span>
+                        </div>
+                    ))
+                }
+                </div>
                 <div className="row">
-                    <div id="gameinf" className="col-2 container-fluid">
+                    <div id="gameinf" className="col">
                         <p className="display-2 text-center">{cChar.name}</p>
                         <p className="display-3 text-center">{cChar.level}</p>
                         <p className="display-4 text-center">{cChar.clicks}</p>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th className="text-center">
-                                    Levels
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {htitle.map((title) => (
-                                    <tr key={title}>
-                                        <td>
-                                            {title}
-                                        </td>
-                                    </tr>
-                                ))
-                                }
-                            </tbody>
-                        </table>
                     </div>
         <div className="col" >
             <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, p.cChar.id)}/>
         </div>
-        <div className="col-3">
+        <div className="col">
           <h2>Characters:</h2>
           { p.characters.map((p) => (
             <div key={p.id}>
@@ -70,5 +84,28 @@ class Clicker extends Component{
     
     }
 }
-
+let i = 0;
+function ani(){
+    if(i === 0){
+        anime({
+            targets:'.gi',
+            width:[0,300],
+            duration:1000
+        });
+        i++;
+        document.getElementById('i').innerHTML= 'X';
+    }
+    else{
+        anime({
+            targets:'.gi',
+            width:[300,0],
+            easing:'linear',
+            duration:300
+        });
+        i--;
+        document.getElementById('i').innerHTML= '?';
+    }
+    console.log('clicked');
+    
+}
 export default Clicker;

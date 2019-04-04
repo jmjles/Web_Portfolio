@@ -97,5 +97,4 @@ class clicker extends Component{
     }
     
 }
-
 export default clicker;

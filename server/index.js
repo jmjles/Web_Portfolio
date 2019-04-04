@@ -15,7 +15,7 @@ if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, '../react-portfolio/build')));
 }
 else{
-    app.use(express.static(path.join(__dirname,'../react-portfolio/build')))
+    app.use(express.static(path.join(__dirname,'../react-portfolio/src')))
 }
 // Launch Server
 app.listen(port, () => {
