@@ -12,12 +12,10 @@ app.use(cors());
 const port = process.env.PORT || 5000;
 
 if(process.env.NODE_ENV === 'production'){
-    //app.use(express.static(path.join(__dirname, '../react-portfolio/build')));
-    app.use(express.static(path.join('./mlsroofing', '../react-portfolio/mlsroofing')));
+    app.use(express.static(path.join(__dirname, '../react-portfolio/build')));
 }
 else{
-    //app.use(express.static(path.join(__dirname,'../react-portfolio/src')));
-    app.use(express.static(path.join('./mlsroofing/', '../react-portfolio/mlsroofing')));
+    app.use(express.static(path.join(__dirname,'../react-portfolio/src')));
 }
 // Launch Server
 app.listen(port, () => {
