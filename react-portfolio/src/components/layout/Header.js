@@ -66,16 +66,16 @@ function ani() {
     if (i === 0){
         anime({
             targets:'.socials',
-            height:[0,75],
+            height:[0,50],
             easing: 'linear',
-            duration: 500
+            duration: 300
         });
-        anime({
+        /*anime({
             targets:'.social',
             height:[0,50],
             easing: 'linear',
             duration: 500
-        });
+        });*/
         i++;
         console.log("i===0 result: "+ i);
         return(
@@ -84,16 +84,16 @@ function ani() {
     } else{
         anime({
             targets:'.socials',
-            height: [75, 0],
-            duration: 1000,
+            height: [50, 0],
+            duration: 200,
             easing: 'linear'
         });
-        anime({
+        /*anime({
             targets:'.social',
             height:[50,0],
             easing: 'linear',
             duration: 1000
-        });
+        });*/
         i--;
         return(
             i
