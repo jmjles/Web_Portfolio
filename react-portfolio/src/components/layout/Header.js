@@ -16,14 +16,14 @@ import '../../App.css';
 function Header(){
     return(
         <Router>
-            <header className="container-fluid text-center">
-                <nav className="container nav nav-tabs">
-                    <p className="navbar-brand">Jesus Morales |<span className="lead"> Fullstack Web Dev</span></p>
+            <header className="text-center">
+                <nav className="nav nav-tabs">
+                    <p className="navbar-brand" id="desc">Jesus Morales <span className="lead" id="desc">| Fullstack Web Dev</span></p>
                     <Link to="/" className="nav-link nav-item">Home</Link>
                     <Link to="/projects" className="nav-link nav-item">Projects</Link>
                     <p className="nav-link nav-item" onClick={ani}>Socials</p>
                 </nav>
-                <div className="socials container">
+                <div className="socials">
                     <ul>
                         <li>
                             <a href="https://www.linkedin.com/in/jesus-morales/" target="_blank" rel="noopener noreferrer">
@@ -70,12 +70,6 @@ function ani() {
             easing: 'linear',
             duration: 300
         });
-        /*anime({
-            targets:'.social',
-            height:[0,50],
-            easing: 'linear',
-            duration: 500
-        });*/
         i++;
         console.log("i===0 result: "+ i);
         return(
@@ -88,12 +82,6 @@ function ani() {
             duration: 200,
             easing: 'linear'
         });
-        /*anime({
-            targets:'.social',
-            height:[50,0],
-            easing: 'linear',
-            duration: 1000
-        });*/
         i--;
         return(
             i

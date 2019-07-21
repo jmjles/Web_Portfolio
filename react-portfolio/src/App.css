@@ -1,10 +1,68 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-
 *{
   color: white;
   padding: 0px;
   margin: 0px;
+  overflow-x: hidden;
 }
+header{
+  background-color: black;
+  margin-bottom: 50px;
+}
+article{
+  background-color: rgba(0,0,0,0.75);
+}
+hr{
+  border-color: white;
+}
+h1{
+  text-align: center;
+}
+p {
+  text-align: justify;
+}
+#portrait{
+  border-radius: 50px;
+  padding: 10px;
+}
+#charselect {
+  z-index: 10;
+  background-color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+.socials{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 500px){
+  article {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+
+  #portrait{
+    width: 100%;
+  }
+  #btnSH, #desc, embed {
+    display: none;
+  }
+
+  .project {
+    margin-bottom: 50px;
+  }
+}
+
 .tTitle{
   font-size: 70px;
 }
@@ -24,28 +82,6 @@
   z-index: 5;
   overflow-x: hidden;
 }
-html{
-  padding: 0;
-  margin: 0;
-}
-header{
-  background-color: black;
-}
-
-#section{
-  margin-top: 100px;
-}
-article{
-  background-color: rgba(0,0,0,0.75);
-  position: relative;
-}
-.socials{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  height: 0px;
-  overflow: hidden;
-}
 .socials ul li{
   text-decoration: none;
   display: inline;
@@ -56,10 +92,6 @@ article{
   height: 50px;
   width: 50px;
 }
-hr{
-  border-color: white;
-}
-
 #vid{
   min-width: 100%;
   min-height: 100%;
@@ -79,12 +111,4 @@ hr{
   height: 450px;
   margin-right: 25%;
   margin-left: 1px;
-}
-
-#portrait{
-  border-radius: 50px;
-  height: 300px;
-  width: 200px;
-  float: left;
-  padding: 10px;
 }

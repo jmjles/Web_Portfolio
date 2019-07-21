@@ -6,13 +6,13 @@ import stars from './assets/etc/stars.mp4';
 class App extends Component {
   render() {
     return (
-      <div className="App container-fluid" id="main">
-      <article>
+      <div className="App" id="main">
         <Header/>
-        <video autoPlay id="vid" loop muted>
-            <source src={stars} type="video/mp4"/>
-        </video>
-      </article>
+        <article>
+          <video autoPlay id="vid" loop muted>
+              <source src={stars} type="video/mp4"/>
+          </video>
+        </article>
       </div>
     );
   }

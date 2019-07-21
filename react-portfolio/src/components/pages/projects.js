@@ -12,15 +12,16 @@ class Projects extends Component{
 
     render(){
         return(
-            <article className="container Projects" id="section">
+            <article>
                 <div className="row">
                     {this.state.projects.map((project) => (
                         <div className="col-sm" key ={project.name}>
-                            <div>
+                            <div className="project">
                                 <h2 className="text-center"> { project.name }</h2>
                                 <p>{ project.Description}</p>
                                 <br/>
                                 <Link to={ project.link } className="btn-secondary btn">Try Me</Link>
+                                <hr/>
                             </div>
                         </div>
                     ))

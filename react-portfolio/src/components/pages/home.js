@@ -5,22 +5,23 @@ import {Link} from 'react-router-dom';
 
 function Home(){
     return(
-        <article className="container" id="section">
         <section>
-            <h1 className="display-3">
-                Working for a Better Tomorrow
-            </h1>
-            <hr/>
-            <p>
-                I have always dreamt of being a Developer.<br/>
-                Creating things that came up in my mind was always a thrill to me and will always will be!<br/> 
-                Thank you for your time.
-            </p>
+            <article>
+                <h1>
+                    Welcome
+                </h1>
+                <hr/>
+                <p>
+                    I have always dreamed of being a Developer.<br/>
+                    Creating things that came up in my mind was always a thrill to me and will always will be!<br/> 
+                    Please enjoy exploring my website.<br/>
+                    Thank you for your time and consideration.
+                </p>
             <br/>
-        </section>
             <Link className="btn btn-primary btn-lg" to="/projects">Projects</Link>
+            </article>
             <About/>
-      </article>
+      </section>
     )
 }
 

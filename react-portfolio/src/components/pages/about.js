@@ -4,8 +4,8 @@ import Portrait from '../../assets/pics/portrait.jpg'
 import anime from '../../../node_modules/animejs/lib/anime.es'
 function About(){
     return(
-        <section className="container" id="section">
-            <h1 className="display-1">
+        <article>
+            <h1>
                 A Little Bit About Me
             </h1>
             <hr/>
@@ -22,17 +22,18 @@ function About(){
             <br/>
             <br/>
             <br/>
-            <h2 className="display-2">
+            <h2>
                 My Resume
             </h2>
             <hr/>
-            <button onClick={ani} className="btn-lg btn-primary" id="btnR">Show</button>
+            <button onClick={ani} className="btn-lg btn-primary" id="btnSH">Show</button>
+            <a href={Resume} download="Jesus-Morales-Resume" className="btn-lg btn-primary">Download</a>
             <br/>
             <br/>
             <object className="pdf"data={Resume} type="application/pdf" width="100%" height="0">
             <embed src={Resume} type="application/pdf"/>
             </object>
-        </section>
+        </article>
     )
 }
 let i = 0;
@@ -46,7 +47,7 @@ function ani() {
             easing: 'linear'
         });
         i++;
-        document.getElementById('btnR').innerHTML='Hide';
+        document.getElementById('btnSH').innerHTML='Hide';
         return(
         i
         )
@@ -58,7 +59,7 @@ function ani() {
             easing: 'linear'
         });
         i--;
-        document.getElementById('btnR').innerHTML='Show';
+        document.getElementById('btnSH').innerHTML='Show';
         return(
             i
         )

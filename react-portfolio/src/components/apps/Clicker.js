@@ -45,9 +45,11 @@ class Clicker extends Component{
         let cChar = p.cChar;
         
         return(
-            <article className="container-fluid">
-            <span><button onClick={ani} id ="i" className="infoBtn btn-secondary btn float-right">?</button></span>
-                <h1 className="display-1 text-center">Clicker Game</h1>
+            <article>
+                <span>
+                    <button onClick={ani} id ="i" className="infoBtn btn-secondary btn float-right">?</button>
+                </span>
+                <h1 className="text-center">Clicker Game</h1>
                 <div className="gi text-center">
                     <h1 className="text-center tTitle">
                         Levels
@@ -58,28 +60,28 @@ class Clicker extends Component{
                         <span className="col">{e.c}</span>
                         </div>
                     ))
-                }
+                    }
                 </div>
-                <div className="row">
-                    <div id="gameinf" className="col">
-                        <p className="display-2 text-center">{cChar.name}</p>
-                        <p className="display-3 text-center">{cChar.level}</p>
-                        <p className="display-4 text-center">{cChar.clicks}</p>
+                    <div>
+                        <figure>
+                            <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, p.cChar.id)}/>
+                            <figcaption>
+                                <p className="display-2 text-center">{cChar.name}</p>
+                            </figcaption>
+                        </figure>
                     </div>
-        <div className="col" >
-            <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, p.cChar.id)}/>
-        </div>
-        <div className="col">
-          <h2>Characters:</h2>
-          { p.characters.map((p) => (
-            <div key={p.id}>
-                <p className="text-center" onClick={setChar.bind(this, p.id)}>{p.name}</p>
-                <img id="gpic" src={p.url} alt={p.alt} onClick={setChar.bind(this, p.id)}/>
-            </div>
-          ))}
-        </div>
-      </div>
-        </article>
+                <div id="charselect">
+                    <h2>Characters:</h2>
+                    { p.characters.map((p) => (
+                        <div key={p.id}>
+                            <p className="text-center" onClick={(event) => {setChar.bind(this, p.id); cChange();}}>{p.name}</p>
+                            <img id="gpic" src={p.url} alt={p.alt} onClick={() => {cChange();setChar.bind(this, p.id);}}/>
+                        </div>
+                    ))}
+                    <button onClick={cChange} className="btn btn-primary btn-lg">Back</button>
+                </div>
+                <button onClick={cChange} className="btn btn-primary btn-lg">Change Character</button>
+            </article>
         );
     
     }
@@ -90,7 +92,7 @@ function ani(){
         anime({
             targets:'.gi',
             width:[0,300],
-            duration:1000
+            duration:500
         });
         i++;
         document.getElementById('i').innerHTML= 'X';
@@ -98,14 +100,32 @@ function ani(){
     else{
         anime({
             targets:'.gi',
-            width:[300,0],
-            easing:'linear',
+            width:[100,0],
             duration:300
         });
         i--;
         document.getElementById('i').innerHTML= '?';
     }
-    console.log('clicked');
-    
+}
+let x = 0;
+function cChange() {
+    if(x === 0){
+        anime({
+            targets:'#charselect',
+            width:[0,'100%'],
+            duration:500
+        });
+        x++;
+        document.getElementById('i').innerHTML= 'X';
+    }
+    else{
+        anime({
+            targets:'#charselect',
+            width:['100%',0],
+            duration:300
+        });
+        x--;
+        document.getElementById('i').innerHTML= '?';
+    }
 }
 export default Clicker;
