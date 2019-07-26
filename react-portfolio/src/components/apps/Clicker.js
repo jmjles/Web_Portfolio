@@ -35,7 +35,10 @@ class Clicker extends Component{
     }
     setState()  {
     };
-
+    constructor(props){
+        super(props)
+        //this.setcChar = this.setcChar.bind(this)
+    }
     render(){
         let s = this.state;
         let p = this.props;
@@ -64,9 +67,10 @@ class Clicker extends Component{
                 </div>
                     <div>
                         <figure>
-                            <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, p.cChar.id)}/>
+                            <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, cChar.id)}/>
                             <figcaption>
                                 <p className="display-2 text-center">{cChar.name}</p>
+                                <p className="display-3">{cChar.clicks}</p>
                             </figcaption>
                         </figure>
                     </div>
@@ -74,8 +78,8 @@ class Clicker extends Component{
                     <h2>Characters:</h2>
                     { p.characters.map((p) => (
                         <div key={p.id}>
-                            <p className="text-center" onClick={(event) => {setChar.bind(this, p.id); cChange();}}>{p.name}</p>
-                            <img id="gpic" src={p.url} alt={p.alt} onClick={() => {cChange();setChar.bind(this, p.id);}}/>
+                            <p className="text-center" onClick={setChar.bind(this, p.id)}>{p.name}</p>
+                            <img id="gpic" src={p.url} alt={p.alt} onClick={setChar.bind(this, p.id)}/>
                         </div>
                     ))}
                     <button onClick={cChange} className="btn btn-primary btn-lg">Back</button>

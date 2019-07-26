@@ -24,6 +24,7 @@ p {
 #portrait{
   border-radius: 50px;
   padding: 10px;
+  width: 25%;
 }
 #charselect {
   z-index: 10;
