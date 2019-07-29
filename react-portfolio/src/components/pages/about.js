@@ -22,17 +22,19 @@ function About(){
             <br/>
             <br/>
             <br/>
-            <h2>
-                My Resume
-            </h2>
-            <hr/>
-            <button onClick={ani} className="btn-lg btn-primary" id="btnSH">Show</button>
-            <a href={Resume} download="Jesus-Morales-Resume" className="btn-lg btn-primary">Download</a>
-            <br/>
-            <br/>
-            <object className="pdf"data={Resume} type="application/pdf" width="100%" height="0">
-            <embed src={Resume} type="application/pdf"/>
-            </object>
+            <article>
+                <h1>
+                    My Resume
+                </h1>
+                <hr/>
+                <button onClick={ani} className="btn-lg btn-primary" id="btnSH">Show</button>
+                <a href={Resume} download="Jesus-Morales-Resume" className="btn-lg btn-primary" id="download">Download</a>
+                <br/>
+                <br/>
+                <object className="pdf"data={Resume} type="application/pdf" width="100%" height="0">
+                <embed src={Resume} type="application/pdf"/>
+                </object>
+            </article>
         </article>
     )
 }
