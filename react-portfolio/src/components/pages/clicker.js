@@ -89,6 +89,8 @@ class clicker extends Component{
                 }})
             } return c;
         })
+        console.log("set char called");
+        
     };
     render(){
         return(
