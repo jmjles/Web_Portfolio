@@ -19,10 +19,7 @@ function About(){
             I came across Udacity as I was getting frustrated at the thought that the college I was attending didn't have any programming classes.
             I've decided to drop college and proceed my dreams of becoming a Full-Stack Developer!
             </p>
-            <br/>
-            <br/>
-            <br/>
-            <article>
+            <article id="resumeSection">
                 <h1>
                     My Resume
                 </h1>
@@ -45,7 +42,7 @@ function ani() {
         anime({
             targets:'.pdf',
             height: [0, 1200],
-            duration: 3000,
+            duration: 1000,
             easing: 'linear'
         });
         i++;
@@ -57,7 +54,7 @@ function ani() {
         anime({
             targets:'.pdf',
             height: [1200, 0],
-            duration: 3000,
+            duration: 1000,
             easing: 'linear'
         });
         i--;

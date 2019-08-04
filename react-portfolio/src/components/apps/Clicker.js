@@ -48,10 +48,11 @@ class Clicker extends Component{
         let cChar = p.cChar;
         
         return(
-            <article>
-                <span>
-                    <button onClick={ani} id ="i" className="infoBtn btn-secondary btn float-right">?</button>
-                </span>
+            <article className="app">
+                <div>
+                    <button onClick={ani} id="i" className="infoBtn btn-secondary btn float-right">?</button>
+                    <button onClick={cChange} id="changeBtn" className="btn btn-primary btn-lg">Change Character</button>
+                </div>
                 <h1 className="text-center">Clicker Game</h1>
                 <div className="gi text-center">
                     <h1 className="text-center tTitle">
@@ -69,22 +70,28 @@ class Clicker extends Component{
                         <figure>
                             <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, cChar.id)}/>
                             <figcaption>
-                                <p className="display-2 text-center">{cChar.name}</p>
-                                <p className="display-3">{cChar.clicks}</p>
+                                <p className="display-2 text-center" id="cCharname">{cChar.name} - {cChar.level}</p>
+                                <p className="display-3" id="cCharclicks">{cChar.clicks}</p>
                             </figcaption>
                         </figure>
                     </div>
                 <div id="charselect">
-                    <h2>Characters:</h2>
+                    <h2>Character Selection</h2>
+                    <div className="row" id="Characters">
                     { p.characters.map((p) => (
-                        <div key={p.id}>
-                            <p className="text-center" onClick={setChar.bind(this, p.id)}>{p.name}</p>
-                            <img id="gpic" src={p.url} alt={p.alt} onClick={setChar.bind(this, p.id)}/>
-                        </div>
+                        <figure key={p.id} className="Character">
+                            <figcaption className="text-center characterName" onClick={setChar.bind(this, p.id)}>
+                                {p.name}<br/>
+                                Current Level: {p.level}
+                            </figcaption>
+                            <img id="characterPic" src={p.url} alt={p.alt} onClick={setChar.bind(this, p.id)}/>
+                        </figure>
                     ))}
+                    </div>
                     <button onClick={cChange} className="btn btn-primary btn-lg">Back</button>
                 </div>
-                <button onClick={cChange} className="btn btn-primary btn-lg">Change Character</button>
+                <div id="changeBtn">
+                </div>
             </article>
         );
     
@@ -120,7 +127,6 @@ function cChange() {
             duration:500
         });
         x++;
-        document.getElementById('i').innerHTML= 'X';
     }
     else{
         anime({
@@ -129,7 +135,6 @@ function cChange() {
             duration:300
         });
         x--;
-        document.getElementById('i').innerHTML= '?';
     }
 }
 export default Clicker;

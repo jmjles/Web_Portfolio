@@ -6,7 +6,8 @@ class Projects extends Component{
         projects: [
             { name: 'Location Lookup', Description : 'Get The latest news, weather and map of a location with a simple search.', link: '/projects/location'},
             { name: 'Clicker Game', Description : 'Click on the character to lvl up!', link: '/projects/clicker'},
-            { name: 'MERN Stack', Description : 'You are using it :)', link: '/'}
+            { name: 'MERN Stack', Description : 'You are using it :)', link: '/'},
+            { name: 'MLS Roofing Site', Description: 'Basic website for a Roofing company. Will be integrating this site to my portfolio soon.', link:'#'}
         ]
     }
 
@@ -21,7 +22,6 @@ class Projects extends Component{
                                 <p>{ project.Description}</p>
                                 <br/>
                                 <Link to={ project.link } className="btn-secondary btn">Try Me</Link>
-                                <hr/>
                             </div>
                         </div>
                     ))
