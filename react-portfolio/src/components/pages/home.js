@@ -24,5 +24,4 @@ function Home(){
       </section>
     )
 }
-alert("Currently working on styling the site and fixing projects. Sorry for the inconvenience.")
 export default Home;
