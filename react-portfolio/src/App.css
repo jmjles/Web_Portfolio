@@ -1,32 +1,190 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-*{
+* {
   color: white;
   padding: 0px;
   margin: 0px;
   overflow-x: hidden;
-}
-header{
-  background-color: black;
-  margin-bottom: 50px;
-}
-article{
-  background-color: rgba(0,0,0,0.75);
-}
-hr{
-  border-color: white;
-}
-h1{
   text-align: center;
 }
+
+nav {
+  position: relative;
+}
+
+header {
+  background-color: black;
+  margin-bottom: 30px;
+}
+
+article {
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: 0px 10px 20px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+article > * {
+  padding: 0px 20px;
+  text-align: center;
+}
+
+hr {
+  border-color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
 p {
   text-align: justify;
 }
-#portrait{
-  border-radius: 50px;
-  padding: 10px;
-  width: 25%;
+
+/* Class Selectors */
+.socials {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
 }
+
+.socials ul li {
+  text-decoration: none;
+  display: inline;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.project {
+  margin-bottom: 50px;
+}
+
+.tTitle {
+  font-size: 70px;
+}
+
+.gBack {
+  padding: 5px 10px;
+  background-color: darkgray;
+  border: white solid 1px;
+  border-radius: 15px;
+}
+
+.gi {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 30px 0px 0px;
+  width: 0px;
+  background-color: gray;
+  z-index: 5;
+  overflow-x: hidden;
+}
+
+.gi table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+}
+
+.social {
+  height: 50px;
+  width: 50px;
+}
+
+/* Id Selectors */
+#fs {
+  width: 100%;
+  height: 85vh;
+  padding: 0px;
+  margin: 0px;
+  margin-top: -30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#gameArea {
+  height: 100%;
+}
+
+#gameArea figure {
+  height: 75%;
+  overflow: hidden;
+}
+
+#main {
+  overflow-y: hidden;
+}
+
+#btnCenter {
+  width: 100%;
+  text-align: center;
+}
+
+#portrait {
+  width: 100%;
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+
+#btnSH, #desc, embed {
+  display: none;
+}
+
+#downloadR {
+  display: block;
+  text-align: center;
+}
+
+#vid {
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -999;
+  position: fixed;
+  padding: 0px;
+  left: 0;
+  top: 0;
+}
+
+#gpic {
+  width: 100px;
+  height: 100%;
+  padding-bottom: 30px;
+  position: relative;
+  text-align: center;
+}
+
+#gpicmain {
+  width: 75%;
+  height: 70%;
+  margin: 0px auto;
+}
+
+#gbChar {
+  margin-top: 10px;
+}
+
+#charDiv {
+  height: 25%;
+  border-bottom: 1px lightgrey solid;
+  overflow: hidden;
+}
+
+#charDiv p {
+  margin: 0px;
+}
+
 #charselect {
+  padding: 0px;
   z-index: 10;
   background-color: gray;
   position: absolute;
@@ -36,80 +194,61 @@ p {
   height: 100%;
   overflow: hidden;
 }
-.socials{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  height: 0px;
-  overflow: hidden;
+
+#charselect h2 {
+  margin-top: 20px;
 }
 
-@media only screen and (max-width: 500px){
-  article {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    padding: 5px;
+/* Tablet Layout */
+@media only screen and (min-width: 500px) {
+  #portrait {
+    width: 50%;
+    border-radius: 50px;
+    margin-bottom: 30px;
   }
+  .project {
+    height: 100%;
+    margin-bottom: 0px;
+  }
+  .project p {
+    text-align: center;
+  }
+}
 
-  #portrait{
-    width: 100%;
+/* Desktop Layout */
+@media only screen and (min-width: 800px) {
+  nav div {
+    position: absolute;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
   }
-  #btnSH, #desc, embed {
+  #desc {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 0px;
+  }
+  .nav-link {
+    display: inline;
+  }
+  #downloadR {
     display: none;
   }
-
-  .project {
-    margin-bottom: 50px;
+  #desc, embed {
+    display: block;
+  }
+  #btnSH {
+    display: inline;
+  }
+  .pdf {
+    width: 80%;
+    margin: 0px auto;
+    text-align: center;
   }
 }
-
-.tTitle{
-  font-size: 70px;
-}
-.gi table {
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:300px;
-}
-.gi{
-  position: fixed;
-  height: 100%;
-  left:0;
-  top:0;
-  padding-top: 100px;
-  width: 0px;
-  background-color: gray;
-  z-index: 5;
-  overflow-x: hidden;
-}
-.socials ul li{
-  text-decoration: none;
-  display: inline;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.social{
-  height: 50px;
-  width: 50px;
-}
-#vid{
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -999;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-
-#gpic {
-  width: 100px;
-  height: 150px;
-}
-
-#gpicmain {
-  width: 300px;
-  height: 450px;
-  margin-right: 25%;
-  margin-left: 1px;
-}
+/*# sourceMappingURL=App.css.map */

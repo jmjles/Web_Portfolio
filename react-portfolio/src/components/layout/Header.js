@@ -4,13 +4,14 @@ import Home from '../pages/home';
 import Projects from '../pages/projects';
 import Clicker from '../pages/clicker';
 import Location from '../pages/location';
+
 import linkedin from '../../assets/pics/linkedin-ico.png';
 import github from '../../assets/pics/github-ico.png';
 import udacity from '../../assets/pics/udacity-ico.png';
 import phone from '../../assets/pics/phone.png';
 import email from '../../assets/pics/email.png';
-import anime from '../../../node_modules/animejs/lib/anime.es';
 
+import ani from '../animeGallery'
 import '../../App.css';
 
 function Header(){
@@ -18,11 +19,13 @@ function Header(){
         <Router>
             <header className="text-center">
                 <nav className="nav nav-tabs">
-                    <p className="navbar-brand" id="desc">Jesus Morales <span className="lead" id="desc">| Fullstack Web Dev</span></p>
-                    <Link to="/" className="nav-link nav-item">Home</Link>
-                    <Link to="/projects" className="nav-link nav-item">Projects</Link>
-                    <p className="nav-link nav-item" onClick={ani}>Socials</p>
-                </nav>
+                    <p className="navbar-brand" id="desc">Jesus Morales <i>| Fullstack Web Dev</i></p>
+                    <div>
+                        <Link to="/" className="nav-link nav-item">Home</Link>
+                        <Link to="/projects" className="nav-link nav-item">Projects</Link>
+                        <p className="nav-link nav-item" onClick={(e,reverse)=>{let x= document.getElementsByClassName('socials')[0].clientHeight;if(x > 1){reverse= true};ani.socialAni(reverse)}}>Socials</p>
+                    </div>
+                    </nav>
                 <div className="socials">
                     <ul>
                         <li>
@@ -59,33 +62,5 @@ function Header(){
             <Route exact path="/projects/location" component={Location}/>
         </Router>
     )
-}
-let i = 0;
-function ani() {
-    
-    if (i === 0){
-        anime({
-            targets:'.socials',
-            height:[0,50],
-            easing: 'linear',
-            duration: 300
-        });
-        i++;
-        console.log("i===0 result: "+ i);
-        return(
-        i
-        )
-    } else{
-        anime({
-            targets:'.socials',
-            height: [50, 0],
-            duration: 200,
-            easing: 'linear'
-        });
-        i--;
-        return(
-            i
-        )
-    }
 }
 export default Header;

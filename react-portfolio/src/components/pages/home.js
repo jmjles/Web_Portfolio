@@ -1,6 +1,5 @@
 import React from 'react';
 import About from './about';
-import Contact from '../layout/Contact'
 import {Link} from 'react-router-dom';
 
 function Home(){
@@ -18,7 +17,9 @@ function Home(){
                     Thank you for your time and consideration.
                 </p>
             <br/>
-            <Link className="btn btn-primary btn-lg" to="/projects">Projects</Link>
+            <div id="btnCenter">
+                <Link className="btn btn-primary btn-lg" to="/projects">Projects</Link>
+            </div>
             </article>
             <About/>
       </section>

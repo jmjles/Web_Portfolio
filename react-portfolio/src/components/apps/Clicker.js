@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import anime from '../../../node_modules/animejs/lib/anime.es'
+import ani from '../animeGallery'
 class Clicker extends Component{
     state = {
         htitle: [
@@ -33,11 +33,8 @@ class Clicker extends Component{
             },
         ],
     }
-    setState()  {
-    };
     constructor(props){
         super(props)
-        //this.setcChar = this.setcChar.bind(this)
     }
     render(){
         let s = this.state;
@@ -48,12 +45,13 @@ class Clicker extends Component{
         let cChar = p.cChar;
         
         return(
-            <article>
-                <span>
-                    <button onClick={ani} id ="i" className="infoBtn btn-secondary btn float-right">?</button>
-                </span>
-                <h1 className="text-center">Clicker Game</h1>
+            <article id ="fs">
+                <div>
+                    <button onClick={(i,reverse)=>{let txt = i.target.innerHTML; if(txt === '?') reverse = false;else reverse=true; ani.gameInfoAni(reverse)}} id ="i" className="infoBtn btn-secondary btn float-right">?</button>
+                    <h1 className="text-center">Clicker Game</h1>
+                </div>
                 <div className="gi text-center">
+                    <a onClick={(reverse)=>ani.gameInfoAni(reverse)} className="gBack">Back</a>
                     <h1 className="text-center tTitle">
                         Levels
                     </h1>
@@ -65,71 +63,30 @@ class Clicker extends Component{
                     ))
                     }
                 </div>
-                    <div>
+                    <div id ="gameArea">
                         <figure>
                             <img id="gpicmain" src={cChar.url} alt={cChar.alt} onClick={clicked.bind(this, cChar.id)}/>
                             <figcaption>
-                                <p className="display-2 text-center">{cChar.name}</p>
-                                <p className="display-3">{cChar.clicks}</p>
+                                <h2 className="text-center">{cChar.name}</h2>
+                                <h3>{cChar.clicks}</h3>
+                                <h4>{cChar.level}</h4>
                             </figcaption>
                         </figure>
+                        <button onClick={(reverse)=>{ani.charSelect(reverse = false)}} className="btn btn-primary btn-lg">Change Character</button>
                     </div>
                 <div id="charselect">
                     <h2>Characters:</h2>
                     { p.characters.map((p) => (
-                        <div key={p.id}>
-                            <p className="text-center" onClick={setChar.bind(this, p.id)}>{p.name}</p>
-                            <img id="gpic" src={p.url} alt={p.alt} onClick={setChar.bind(this, p.id)}/>
+                        <div id="charDiv" key={p.id}>
+                            <p className="text-center" onClick={(reverse)=>{setChar.bind(this, p.id)(); ani.charSelect(reverse = true)}}>{p.name}</p>
+                            <img id="gpic" src={p.url} alt={p.alt} onClick={(reverse)=>{setChar.bind(this, p.id)(); ani.charSelect(reverse = true)}}/>
                         </div>
                     ))}
-                    <button onClick={cChange} className="btn btn-primary btn-lg">Back</button>
+                    <button onClick={(reverse)=>{ani.charSelect(reverse = true)}} className="gBack" id="gbChar">Back</button>
                 </div>
-                <button onClick={cChange} className="btn btn-primary btn-lg">Change Character</button>
             </article>
         );
     
-    }
-}
-let i = 0;
-function ani(){
-    if(i === 0){
-        anime({
-            targets:'.gi',
-            width:[0,300],
-            duration:500
-        });
-        i++;
-        document.getElementById('i').innerHTML= 'X';
-    }
-    else{
-        anime({
-            targets:'.gi',
-            width:[100,0],
-            duration:300
-        });
-        i--;
-        document.getElementById('i').innerHTML= '?';
-    }
-}
-let x = 0;
-function cChange() {
-    if(x === 0){
-        anime({
-            targets:'#charselect',
-            width:[0,'100%'],
-            duration:500
-        });
-        x++;
-        document.getElementById('i').innerHTML= 'X';
-    }
-    else{
-        anime({
-            targets:'#charselect',
-            width:['100%',0],
-            duration:300
-        });
-        x--;
-        document.getElementById('i').innerHTML= '?';
     }
 }
 export default Clicker;
