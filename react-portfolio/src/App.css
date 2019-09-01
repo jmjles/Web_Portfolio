@@ -1,5 +1,25 @@
+/* 
+  Bootstrap CDN
+*/
+
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+<<<<<<< HEAD
 * {
+=======
+
+
+/*
+  General Style
+*/
+.App{
+  margin:0px;
+  padding:0px;
+}
+.App article{
+  margin-bottom: 0px;
+}
+*{
+>>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
   color: white;
   padding: 0px;
   margin: 0px;
@@ -46,9 +66,39 @@ h2 {
 p {
   text-align: justify;
 }
+<<<<<<< HEAD
 
 /* Class Selectors */
 .socials {
+=======
+#portrait{
+  border-radius: 50px;
+  padding: 10px;
+  width: 25%;
+}
+#charselect {
+  z-index: 10;
+  background-color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+figure{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+#gpicmain {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+.socials{
+>>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -56,12 +106,195 @@ p {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 .socials ul li {
   text-decoration: none;
   display: inline;
   margin-left: 5px;
   margin-right: 5px;
 }
+=======
+/*
+  Desktop Style
+*/
+
+@media only screen and (min-width:800px){
+  #characterPic{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+  #resumeSection{
+    margin-top: 100px;
+  }
+  #i{
+    margin-right: 100px;
+  }
+  #Characters{
+    height: 75%;
+  }
+  #characterPic{
+    height: 80%;
+    width: 90%;
+    display: block;
+  }
+  .Character{
+    height: 90%;
+    width: 33%;
+  }
+  .characterName{
+    font-size: 35px;
+  }
+
+  #charselect h2{
+    font-size: 55px;
+  }
+  #charselect{
+    text-align: center;
+  }
+  #changeBtn{
+    margin-left: 100px;
+  }
+  #download{
+    display: none;
+  }
+  #gpicmain{
+    width: 250px;
+    height: 400px;
+  }
+  #portrait{
+    width: 300px;
+    height: 500px;
+    float: left;
+  }
+  .app{
+    width: 96%;
+    height: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 0px;
+  }
+  article article{
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  h1{
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .project{
+    margin-bottom: 0px;
+    height: 250px;
+    border-bottom: solid white 1px;
+  }
+  p{
+    font-size: 20px;
+  }
+  article{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px; 
+  }
+  article p {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+}
+/*
+  Tablet Style
+*/
+@media only screen and (min-width: 500px), only screen and (max-width:800px){
+  #gpicmain{
+    width: 250px;
+    height: 400px;
+  }
+  article p {
+    text-align: center;
+  }
+
+  #Characters{
+    height: 75%;
+  }
+  #characterPic{
+    height: 80%;
+    width: 90%;
+    display: block;
+  }
+  .Character{
+    height: 90%;
+    width: 33%;
+  }
+  .characterName{
+    font-size: 35px;
+  }
+
+  #charselect h2{
+    font-size: 55px;
+  }
+  #charselect{
+    text-align: center;
+  }
+}
+
+/*
+  Phone Style
+*/
+@media only screen and (max-width: 500px){
+
+  #cCharname{
+    font-size:35px;
+  }
+
+  #cCharclicks{
+    font-size: 25px;
+    color: red;
+  }
+  #Characters{
+    height: 80%;
+  }
+  #characterPic{
+    height: 60%;
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .Character{
+    height: 30%;
+    width: 100%;
+  }
+  .characterName{
+    font-size: 25px;
+  }
+
+  #charselect h2{
+    font-size: 35px;
+  }
+  #charselect{
+    text-align: center;
+  }
+  article {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+
+  #portrait{
+    width: 100%;
+  }
+  #gpicman{
+    height: 200px;
+    width: 100px;
+  }
+  #btnSH, #desc, embed {
+    display: none;
+  }
+>>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
 
 .project {
   margin-bottom: 50px;
@@ -153,6 +386,7 @@ p {
   padding: 0px;
   left: 0;
   top: 0;
+<<<<<<< HEAD
 }
 
 #gpic {
@@ -252,3 +486,6 @@ p {
   }
 }
 /*# sourceMappingURL=App.css.map */
+=======
+}
+>>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d

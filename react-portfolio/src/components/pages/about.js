@@ -23,6 +23,7 @@ function About(){
                 I came across Udacity as I was getting frustrated at the thought that the college I was attending didn't have any programming classes.
                 I've decided to drop college and proceed my dreams of becoming a Full-Stack Developer!
             </p>
+<<<<<<< HEAD
             <h2>
                 My Resume
             </h2>
@@ -37,4 +38,51 @@ function About(){
         </article>
     )
 }
+=======
+            <article id="resumeSection">
+                <h1>
+                    My Resume
+                </h1>
+                <hr/>
+                <button onClick={ani} className="btn-lg btn-primary" id="btnSH">Show</button>
+                <a href={Resume} download="Jesus-Morales-Resume" className="btn-lg btn-primary" id="download">Download</a>
+                <br/>
+                <br/>
+                <object className="pdf"data={Resume} type="application/pdf" width="100%" height="0">
+                <embed src={Resume} type="application/pdf"/>
+                </object>
+            </article>
+        </article>
+    )
+}
+let i = 0;
+function ani() {
+    
+    if (i === 0){
+        anime({
+            targets:'.pdf',
+            height: [0, 1200],
+            duration: 1000,
+            easing: 'linear'
+        });
+        i++;
+        document.getElementById('btnSH').innerHTML='Hide';
+        return(
+        i
+        )
+    } else{
+        anime({
+            targets:'.pdf',
+            height: [1200, 0],
+            duration: 1000,
+            easing: 'linear'
+        });
+        i--;
+        document.getElementById('btnSH').innerHTML='Show';
+        return(
+            i
+        )
+    }
+}
+>>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
 export default About;
