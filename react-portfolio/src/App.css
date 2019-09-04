@@ -285,6 +285,10 @@ header {
   margin-bottom: 30px;
 }
 
+p {
+  text-align: center;
+}
+
 article {
   background-color: rgba(0, 0, 0, 0.75);
   margin: 0px 10px 20px;
@@ -295,7 +299,6 @@ article {
 
 article > * {
   padding: 0px 20px;
-  text-align: center;
 }
 
 hr {
@@ -310,10 +313,6 @@ h1 {
 h2 {
   font-size: 32px;
   text-align: center;
-}
-
-p {
-  text-align: justify;
 }
 
 /* Id Selectors */
