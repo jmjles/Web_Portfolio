@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Home(){
     return(
-        <section>
+        <section id="homePage">
             <article>
                 <h1>
                     Welcome

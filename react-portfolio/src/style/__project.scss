@@ -1,0 +1,53 @@
+.project {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid white 1px;
+    *{
+      text-align: center;
+    }
+}
+
+.projects{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+  /* Tablet Layout */
+@include Tablet(){
+    .project{
+      height: 100%;
+      width: 100%;
+      p {
+        text-align: center;
+      }
+    }
+    .projects{
+      @include container();
+    }
+}
+
+/* Desktop Layout */
+@include Desktop(){
+    .project{
+        padding-bottom: 0px;
+        margin-bottom: 20px;
+        border-bottom: 0px;
+        flex: 1 0 25%;
+        height: 40vh;
+        p{
+            margin-bottom: 0px;
+        }
+    }
+    #projTop{
+      height: 60%;
+    }
+    #projBot{
+      height: 40%;
+    }
+    .projects{
+      flex-flow: row wrap;
+      border-bottom:1px solid white;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+}

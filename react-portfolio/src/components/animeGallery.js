@@ -13,9 +13,9 @@ let pdfAni = (reverse) => {
         document.getElementById('btnSH').innerHTML='Show';
     }
     anime({
-        targets:'.pdf',
+        targets:'#pdf',
         height,
-        duration: 3000,
+        duration: 1000,
         easing: 'linear'
         });
         console.log(height)

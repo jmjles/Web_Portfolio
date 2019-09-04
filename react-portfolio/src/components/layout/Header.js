@@ -23,7 +23,7 @@ function Header(){
                     <div>
                         <Link to="/" className="nav-link nav-item">Home</Link>
                         <Link to="/projects" className="nav-link nav-item">Projects</Link>
-                        <p className="nav-link nav-item" onClick={(e,reverse)=>{let x= document.getElementsByClassName('socials')[0].clientHeight;if(x > 1){reverse= true};ani.socialAni(reverse)}}>Socials</p>
+                        <p className="nav-link nav-item" id="Socailbtn" onClick={(e,reverse)=>{let x= document.getElementsByClassName('socials')[0].clientHeight;if(x > 1){reverse= true};ani.socialAni(reverse)}}>Socials</p>
                     </div>
                     </nav>
                 <div className="socials">

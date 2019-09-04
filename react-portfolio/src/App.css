@@ -1,34 +1,283 @@
-/* 
-  Bootstrap CDN
-*/
-
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
-<<<<<<< HEAD
+nav {
+  position: relative;
+  overflow: hidden;
+}
+
+#Socialbtn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+nav div {
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.socials {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+}
+
+.socials ul li {
+  text-decoration: none;
+  display: inline;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.social {
+  height: 44px;
+}
+
+@media only screen and (min-width: 800px) {
+  nav div {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+  #desc {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 0px;
+  }
+  .nav-link {
+    display: inline;
+  }
+}
+
+#gpic {
+  width: 100px;
+  height: 60%;
+}
+
+#gpicmain {
+  width: 75%;
+  height: 70%;
+  margin: 0px auto;
+}
+
+#gbChar {
+  width: 50%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#Characters {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+#charDiv {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px lightgrey solid;
+  overflow: hidden;
+}
+
+#charDiv h1 {
+  font-size: 28px;
+}
+
+#charDiv p {
+  margin: 0px;
+  font-size: 22px;
+  text-align: center;
+  color: lightblue;
+}
+
+#charselect {
+  padding: 0px;
+  z-index: 10;
+  background-color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#charselect h2 {
+  margin-top: 20px;
+}
+
+#gameArea {
+  height: 100%;
+}
+
+#gameArea figure {
+  height: 75%;
+  overflow: hidden;
+}
+
+.gBack {
+  padding: 5px 10px;
+  background-color: darkgray;
+  border: white solid 1px;
+  border-radius: 15px;
+}
+
+.tTitle {
+  font-size: 70px;
+}
+
+.gi {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 30px 0px 0px;
+  width: 0px;
+  background-color: gray;
+  z-index: 5;
+  overflow-x: hidden;
+}
+
+.gi table {
+  margin-top: 30px;
+}
+
+.gi table tr #Ltitle {
+  text-align: right;
+}
+
+.gi table tr td {
+  padding: 0 20px 0px 20px;
+}
+
+@media only screen and (min-width: 500px) {
+  .gi table {
+    margin: 0 auto;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #gameArea figure {
+    margin: 0 auto;
+    width: 50%;
+  }
+  #Characters {
+    height: 100vh;
+  }
+  #gbChar {
+    margin-top: 10px;
+  }
+  #charDiv {
+    height: 25%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px lightgrey solid;
+    overflow: hidden;
+  }
+  #charDiv h1 {
+    font-size: 28px;
+  }
+  #charDiv p {
+    margin: 0px;
+    font-size: 22px;
+    text-align: center;
+    color: lightblue;
+  }
+  #gpic {
+    width: 100px;
+    height: 60%;
+  }
+}
+
+.project {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid white 1px;
+}
+
+.project * {
+  text-align: center;
+}
+
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+/* Tablet Layout */
+@media only screen and (min-width: 500px) {
+  .project {
+    height: 100%;
+    width: 100%;
+  }
+  .project p {
+    text-align: center;
+  }
+  .projects {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop Layout */
+@media only screen and (min-width: 800px) {
+  .project {
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    border-bottom: 0px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 25%;
+            flex: 1 0 25%;
+    height: 40vh;
+  }
+  .project p {
+    margin-bottom: 0px;
+  }
+  #projTop {
+    height: 60%;
+  }
+  #projBot {
+    height: 40%;
+  }
+  .projects {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 * {
-=======
-
-
-/*
-  General Style
-*/
-.App{
-  margin:0px;
-  padding:0px;
-}
-.App article{
-  margin-bottom: 0px;
-}
-*{
->>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
   color: white;
   padding: 0px;
   margin: 0px;
   overflow-x: hidden;
   text-align: center;
-}
-
-nav {
-  position: relative;
 }
 
 header {
@@ -66,275 +315,16 @@ h2 {
 p {
   text-align: justify;
 }
-<<<<<<< HEAD
-
-/* Class Selectors */
-.socials {
-=======
-#portrait{
-  border-radius: 50px;
-  padding: 10px;
-  width: 25%;
-}
-#charselect {
-  z-index: 10;
-  background-color: gray;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0px;
-  height: 100%;
-  overflow: hidden;
-}
-figure{
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-}
-#gpicmain {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-}
-.socials{
->>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  height: 0px;
-  overflow: hidden;
-}
-
-<<<<<<< HEAD
-.socials ul li {
-  text-decoration: none;
-  display: inline;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-=======
-/*
-  Desktop Style
-*/
-
-@media only screen and (min-width:800px){
-  #characterPic{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-
-  }
-  #resumeSection{
-    margin-top: 100px;
-  }
-  #i{
-    margin-right: 100px;
-  }
-  #Characters{
-    height: 75%;
-  }
-  #characterPic{
-    height: 80%;
-    width: 90%;
-    display: block;
-  }
-  .Character{
-    height: 90%;
-    width: 33%;
-  }
-  .characterName{
-    font-size: 35px;
-  }
-
-  #charselect h2{
-    font-size: 55px;
-  }
-  #charselect{
-    text-align: center;
-  }
-  #changeBtn{
-    margin-left: 100px;
-  }
-  #download{
-    display: none;
-  }
-  #gpicmain{
-    width: 250px;
-    height: 400px;
-  }
-  #portrait{
-    width: 300px;
-    height: 500px;
-    float: left;
-  }
-  .app{
-    width: 96%;
-    height: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-bottom: 0px;
-  }
-  article article{
-    margin-top: 50px;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  h1{
-    font-size: 60px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .project{
-    margin-bottom: 0px;
-    height: 250px;
-    border-bottom: solid white 1px;
-  }
-  p{
-    font-size: 20px;
-  }
-  article{
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 50px; 
-  }
-  article p {
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-}
-/*
-  Tablet Style
-*/
-@media only screen and (min-width: 500px), only screen and (max-width:800px){
-  #gpicmain{
-    width: 250px;
-    height: 400px;
-  }
-  article p {
-    text-align: center;
-  }
-
-  #Characters{
-    height: 75%;
-  }
-  #characterPic{
-    height: 80%;
-    width: 90%;
-    display: block;
-  }
-  .Character{
-    height: 90%;
-    width: 33%;
-  }
-  .characterName{
-    font-size: 35px;
-  }
-
-  #charselect h2{
-    font-size: 55px;
-  }
-  #charselect{
-    text-align: center;
-  }
-}
-
-/*
-  Phone Style
-*/
-@media only screen and (max-width: 500px){
-
-  #cCharname{
-    font-size:35px;
-  }
-
-  #cCharclicks{
-    font-size: 25px;
-    color: red;
-  }
-  #Characters{
-    height: 80%;
-  }
-  #characterPic{
-    height: 60%;
-    width: 40%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .Character{
-    height: 30%;
-    width: 100%;
-  }
-  .characterName{
-    font-size: 25px;
-  }
-
-  #charselect h2{
-    font-size: 35px;
-  }
-  #charselect{
-    text-align: center;
-  }
-  article {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    padding: 5px;
-  }
-
-  #portrait{
-    width: 100%;
-  }
-  #gpicman{
-    height: 200px;
-    width: 100px;
-  }
-  #btnSH, #desc, embed {
-    display: none;
-  }
->>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d
-
-.project {
-  margin-bottom: 50px;
-}
-
-.tTitle {
-  font-size: 70px;
-}
-
-.gBack {
-  padding: 5px 10px;
-  background-color: darkgray;
-  border: white solid 1px;
-  border-radius: 15px;
-}
-
-.gi {
-  position: fixed;
-  height: 100%;
-  left: 0;
-  top: 0;
-  padding: 30px 0px 0px;
-  width: 0px;
-  background-color: gray;
-  z-index: 5;
-  overflow-x: hidden;
-}
-
-.gi table {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 300px;
-}
-
-.social {
-  height: 50px;
-  width: 50px;
-}
 
 /* Id Selectors */
+#Good {
+  color: green;
+}
+
+#Bad {
+  color: red;
+}
+
 #fs {
   width: 100%;
   height: 85vh;
@@ -342,15 +332,6 @@ figure{
   margin: 0px;
   margin-top: -30px;
   text-align: center;
-  overflow: hidden;
-}
-
-#gameArea {
-  height: 100%;
-}
-
-#gameArea figure {
-  height: 75%;
   overflow: hidden;
 }
 
@@ -386,51 +367,6 @@ figure{
   padding: 0px;
   left: 0;
   top: 0;
-<<<<<<< HEAD
-}
-
-#gpic {
-  width: 100px;
-  height: 100%;
-  padding-bottom: 30px;
-  position: relative;
-  text-align: center;
-}
-
-#gpicmain {
-  width: 75%;
-  height: 70%;
-  margin: 0px auto;
-}
-
-#gbChar {
-  margin-top: 10px;
-}
-
-#charDiv {
-  height: 25%;
-  border-bottom: 1px lightgrey solid;
-  overflow: hidden;
-}
-
-#charDiv p {
-  margin: 0px;
-}
-
-#charselect {
-  padding: 0px;
-  z-index: 10;
-  background-color: gray;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0px;
-  height: 100%;
-  overflow: hidden;
-}
-
-#charselect h2 {
-  margin-top: 20px;
 }
 
 /* Tablet Layout */
@@ -440,36 +376,13 @@ figure{
     border-radius: 50px;
     margin-bottom: 30px;
   }
-  .project {
-    height: 100%;
-    margin-bottom: 0px;
-  }
-  .project p {
-    text-align: center;
+  #downloadR {
+    display: inline;
   }
 }
 
 /* Desktop Layout */
 @media only screen and (min-width: 800px) {
-  nav div {
-    position: absolute;
-    -ms-flex-item-align: baseline;
-        align-self: baseline;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    left: 50%;
-    -webkit-transform: translate(-50%);
-            transform: translate(-50%);
-  }
-  #desc {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    margin-bottom: 0px;
-  }
-  .nav-link {
-    display: inline;
-  }
   #downloadR {
     display: none;
   }
@@ -479,13 +392,17 @@ figure{
   #btnSH {
     display: inline;
   }
-  .pdf {
+  #pdf {
     width: 80%;
     margin: 0px auto;
     text-align: center;
   }
+  #portrait {
+    display: none;
+  }
+  #homePage {
+    width: 75%;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=App.css.map */
-=======
-}
->>>>>>> a476551c75dd7c8f88d2518ee798d8d70837592d

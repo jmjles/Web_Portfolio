@@ -4,23 +4,28 @@ import {Link} from 'react-router-dom';
 class Projects extends Component{
     state = {
         projects: [
-            { name: 'Location Lookup', Description : 'Get The latest news, weather and map of a location with a simple search.', link: '/projects/location'},
-            { name: 'Clicker Game', Description : 'Click on the character to lvl up!', link: '/projects/clicker'},
-            { name: 'MERN Stack', Description : 'You are using it :)', link: '/'},
-            { name: 'MLS Roofing Site', Description: 'Basic website for a Roofing company. Will be integrating this site to my portfolio soon.', link:'#'}
+            { name: 'Location Lookup', Description : 'Get The latest news, weather and map of a location with a simple search.', status:'Under Construction', link: '/projects/location', id:'Bad'},
+            { name: 'Clicker Game', Description : 'Click on the character to lvl up!', status:'Complete', link: '/projects/clicker', id:'Good'},
+            { name: 'MERN Stack', Description : 'You are using it :)', status:'Under Construction', link: '/', id:'Bad'},
+            { name: 'WireFrame To HTML', Description: 'Examples of me converting wireframes to html', status:'Under Construction', link:'#', id:'Bad'}
         ]
     }
 
     render(){
         return(
             <article>
-                <div className="row">
+                <h1>
+                    My Projects
+                </h1>
+                <div className="projects">
                     {this.state.projects.map((project) => (
-                        <div className="col-sm" key ={project.name}>
-                            <div className="project">
+                        <div className="project" key ={project.name}>
+                            <div id="projTop">
                                 <h2 className="text-center"> { project.name }</h2>
                                 <p>{ project.Description}</p>
-                                <br/>
+                            </div>
+                            <div id="projBot">
+                                <p>Project Status<br/> <b id={project.id}>{project.status}</b></p>
                                 <Link to={ project.link } className="btn-secondary btn">Try Me</Link>
                             </div>
                         </div>
@@ -32,5 +37,4 @@ class Projects extends Component{
     }
     
 }
-
 export default Projects;
