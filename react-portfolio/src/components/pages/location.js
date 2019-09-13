@@ -30,7 +30,7 @@ class Location extends Component{
     let map;
     let gkey;
     if(process.env.NODE_ENV==='production'){
-      gkey = k.config.google;
+      gkey = k.google;
     }else{
       gkey = localk.google;
     }
@@ -69,10 +69,10 @@ class Location extends Component{
       let wkey;
 
       if(process.env.NODE_ENV==='production'){
-        gkey = k.config.google;
-        tkey = k.config.time;
-        nkey = k.config.news;
-        wkey = k.config.weather;
+        gkey = k.google;
+        tkey = k.time;
+        nkey = k.news;
+        wkey = k.weather;
       }else{
         gkey = localk.google;
         tkey = localk.time;
