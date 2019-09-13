@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import GoogleMapsLoader from 'google-maps';
-import k from '../config/keys&urls'
-import Locate from '../apps/Location'
+import u from '../config/url';
+import k from '../config/keys';
+import localk from '../config/localkeys.js';
+import Locate from '../apps/Location';
+
+
+
 let $ = require('jquery');
 let axios = require('axios');
 
@@ -26,7 +31,12 @@ class Location extends Component{
   }
   componentDidMount(){
     let map;
-    let gkey = k.google.key;
+    let gkey;
+    if(process.env.NODE_ENV==='production'){
+      gkey = k.google;
+    }else{
+      gkey = localk.google;
+    }
     // Google Maps
     GoogleMapsLoader.KEY= gkey
     GoogleMapsLoader.VERSION='3.39'
@@ -55,17 +65,28 @@ class Location extends Component{
       let ftime;
   
       //keys and urls
-      let gkey = k.google.key;
-      let gurl = k.google.url;
-  
-      let tkey = k.time.key;
-      let turl = k.time.url;
-  
-      let nkey = k.news.key;
-      let nurl = k.news.url;
-  
-      let wkey = k.weather.key;
-      let wurl = k.weather.url;
+
+      let gkey;
+      let tkey;
+      let nkey;
+      let wkey;
+
+      if(process.env.NODE_ENV==='production'){
+        gkey = k.google;
+        tkey = k.time.key;
+        nkey = k.news.key;
+        wkey = k.weather.key;
+      }else{
+        gkey = localk.google;
+        tkey = localk.time;
+        nkey = localk.news;
+        wkey = localk.weather;
+      }
+
+      let gurl = u.google;
+      let turl = u.time;
+      let nurl = u.news;
+      let wurl = u.weather;
 
       //clear news
       this.setState({news:[{title:'',description:'',url:'',img:''}]});
