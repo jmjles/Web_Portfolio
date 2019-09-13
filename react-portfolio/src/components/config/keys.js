@@ -1,8 +1,8 @@
 const aws = require('aws-sdk');
 let keys = new aws.S3 ({
-    google:process.env.S3_KEY,
-    time:process.env.S3_KEY,
-    news:process.env.S3_KEY,
-    weather:process.env.S3_KEY
+    google:process.env.google,
+    time:process.env.time,
+    news:process.env.news,
+    weather:process.env.weather
 });
 export default keys;

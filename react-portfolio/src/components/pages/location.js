@@ -4,9 +4,6 @@ import u from '../config/url';
 import k from '../config/keys';
 import localk from '../config/localkeys.js';
 import Locate from '../apps/Location';
-
-
-
 let $ = require('jquery');
 let axios = require('axios');
 
@@ -71,11 +68,11 @@ class Location extends Component{
       let nkey;
       let wkey;
 
-      if(process.env.NODE_ENV==='production'){
+      if(aws.process.env.NODE_ENV==='production'){
         gkey = k.google;
-        tkey = k.time.key;
-        nkey = k.news.key;
-        wkey = k.weather.key;
+        tkey = k.time;
+        nkey = k.news;
+        wkey = k.weather;
       }else{
         gkey = localk.google;
         tkey = localk.time;
