@@ -80,7 +80,7 @@ class Location extends Component{
         wkey = localk.weather;
       }
       console.log(process.env.NODE_ENV);
-      console.log(gkey);
+      console.log(process.env);
       let gurl = u.google;
       let turl = u.time;
       let nurl = u.news;
