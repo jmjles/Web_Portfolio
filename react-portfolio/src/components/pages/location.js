@@ -34,8 +34,6 @@ class Location extends Component{
     }else{
       gkey = localk.google;
     }
-    //testing
-    console.log(gkey,tkey,nkey,wkey)
     // Google Maps
     GoogleMapsLoader.KEY= gkey
     GoogleMapsLoader.VERSION='3.39'
@@ -81,6 +79,7 @@ class Location extends Component{
         nkey = localk.news;
         wkey = localk.weather;
       }
+      console.log(gkey,tkey,nkey,wkey)
       let gurl = u.google;
       let turl = u.time;
       let nurl = u.news;
