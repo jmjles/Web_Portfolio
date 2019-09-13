@@ -68,7 +68,7 @@ class Location extends Component{
       let nkey;
       let wkey;
 
-      if(aws.process.env.NODE_ENV==='production'){
+      if(process.env.NODE_ENV==='production'){
         gkey = k.google;
         tkey = k.time;
         nkey = k.news;
