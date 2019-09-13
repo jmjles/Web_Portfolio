@@ -18,10 +18,12 @@
     flex-flow: column wrap;
 }
 #charDiv{
-    flex:0 0 25%;
+    flex:1 0 23%;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px lightgrey solid;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     h1{
     font-size: 28px;
@@ -45,9 +47,17 @@
     overflow: hidden;
 
     h2{
-        margin-top: 20px;
+        padding: 10px 0px;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
     }
 }
+
+#gbChar{
+    margin-bottom: 20px;
+    width: 100px;
+}
+
 #gameArea{
     height: 100%;
 
@@ -95,10 +105,11 @@
             transform: translateX(-20%);
         }
     }
-    #gbChar{
-    }
 }
 @include Desktop(){
+    #gpicmain{
+        width: 50%;
+    }
     #gameArea{
         figure{
             margin: 0 auto;
@@ -107,12 +118,22 @@
     }
     #Characters{
         height: 100vh;
+        flex-flow: row wrap;
+        h2{
+            width: 100vw;
+            height: 60px;
+        }
     }
     #gbChar {
         margin-top: 10px;
+        height: 60px;
+    }
+    #gpic{
+        width: 200px;
     }
     #charDiv{
-        height: 25%;
+        flex: 0 0 33%;
+        height: 75%;
         margin-bottom: 20px;
         padding-bottom: 10px;
         border-bottom: 1px lightgrey solid;

@@ -7,6 +7,7 @@
 @import './style/_nav';
 @import './style/__clicker';
 @import './style//_project';
+@import './style/_location';
 
 *{
   color: white;
@@ -18,6 +19,14 @@
 header{
   background-color: black;
   margin-bottom: 30px;
+}
+#map{
+  height: 70vh;
+  overflow: visible;
+
+  div{
+    overflow: visible;
+  }
 }
 article{
   background-color: map-get($colors, darkUnderlay);

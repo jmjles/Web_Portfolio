@@ -74,8 +74,8 @@ class Clicker extends Component{
                         <button onClick={(reverse)=>{ani.charSelect(reverse = false)}} className="btn btn-primary btn-lg">Change Character</button>
                     </div>
                 <div id="charselect">
-                    <h2>Character Selection</h2>
                     <div id="Characters">
+                    <h2 className="two">Character Selection</h2>
                     { p.characters.map((p) => (
                         <div id="charDiv" key={p.id}>
                             <h1 className="text-center" onClick={(reverse)=>{setChar.bind(this, p.id)(); ani.charSelect(reverse = true)}}>{p.name}</h1>
@@ -83,7 +83,7 @@ class Clicker extends Component{
                             <p>{p.level}</p>
                         </div>
                     ))}
-                    <a onClick={(reverse)=>{ani.charSelect(reverse = true)}} className="gBack" id="gbChar">Back</a>
+                    <button onClick={(reverse)=>{ani.charSelect(reverse = true)}} className="gBack" id="gbChar">Back</button>
                 </div>
                 </div>
             </article>

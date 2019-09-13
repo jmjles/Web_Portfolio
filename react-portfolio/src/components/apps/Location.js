@@ -1,154 +1,48 @@
-/*import GoogleMapsLoader from 'google-maps';
-let $ = require('jquery');
-let axios = require('axios');
+import React, { Component } from 'react';
 
-// Global Variables
-let map;
-let arealat;
-let arealing;
-let turl;
-let tkey;
-let thetime;
-let wkey;
-let wurl;
-let ftime;
-
-// Google Maps
-GoogleMapsLoader.load(function(google) {
-
-  let options = {
-
-    center: new google.maps.LatLng(48,95),
-    scrollwheel: false,
-    zoom: 4
-
-  }
-
-  map = new google.maps.Map(document.getElementById('map'), options);
-
-  let area = $('PSearch').val();
-  console.log(area);
-
-  let searchBox = new google.maps.places.SearchBox(area);
-
-  let autocomplete = new google.maps.places.Autocomplete(area);
-
-});
-
-// Gets Area lat long from input
-function geocode() {
-  let area = $( "#PSearch" ).val();
-  let gkey = 'AIzaSyCg7FRYuZIlQ0Fn7nllBjtcM1YZPxQcFUU';
-
-  axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
-    params:{
-      address:area,
-      key:gkey
+class location extends Component{
+    render(){
+        let p = this.props;
+        return(
+            <article className="Location, container">
+            <h1>
+                Location Lookup
+            </h1>
+            <div>
+                <input type="text" placeholder="Enter A Place" id="PSearch" size="30px;"/>
+                <button id="Search" onClick={p.click}>
+                Search
+                </button>
+                <br/>
+                <h1 id="place"></h1>
+                <div id="ltime">
+                Local Time: {p.time}
+                </div>
+            </div>
+              <div id="mw">
+                <div id="weather">
+                  <h2>{p.weather.name}</h2>
+                  <h3>{p.weather.weather}</h3>
+                  <p>{p.weather.temp}&#176;</p>
+                </div>
+                <div id="map"></div>
+            </div>
+            <div id="newsarea">
+              {p.news.map((i) => (
+                <div key={i.title} id="article">
+                  <h1 id="aTitle">{i.title}</h1>
+                  <p id="source">{i.source}<span id="aDate">{i.published}</span></p>
+                  <img src={i.img} id="aImg" alt={i.title}></img>
+                  <p id="aDesc">{i.snippet}</p>
+                  <a href={i.url}>Learn More</a>
+                </div>
+              ))
+              }
+            </div>
+        </article>
+        );
     }
-  })
-  .then(function(response){
-
-    arealat = response.data.results[0].geometry.location.lat;
-    arealing = response.data.results[0].geometry.location.lng;
-
-    GoogleMapsLoader.load(function (google){
-        map.setCenter(new google.maps.LatLng(arealat,arealing));
-        map.setZoom(12);
-
-    });
-    axios.get(turl,{
-      params:{
-        key:tkey,
-        format:"json",
-        by:"position",
-        lat:arealat,
-        lng:arealing
-      }
-    })
-    .then(function(response){
-      thetime = response.data.formatted;
-      ftime = thetime.substring(10,19);
-      $("#localtime").text(ftime);
-    })
-    .catch(function(error){
-      console.log(error);
-    })
-  //Get Weather
-  axios.get(wurl,{
-    params:{
-      q: area,
-      appid: wkey,
-      units:"imperial"
-    }
-  })
-  .then(function(response){
-    var warea = $("#weather");
-    var winfo = response.data;
-    warea.html('<h2>'+winfo.name+' Weather'+'</h2>'+'<h3>'+winfo.weather[0].main+'</h3>'+
-    '<table id="temp">'+'<tr>'+'<td>'+"Current Temp:"+'</td>'+'<td>'+parseInt(winfo.main.temp)+'&#8457'+'</td>'+'</tr>'+
-    '<tr>'+'<td>'+"Wind Speed:"+'</td>'+'<td>'+parseInt(winfo.wind.speed)+'m/s'+'</td>'+'</tr>'+
-    '</table>');
-  })
-  .catch(function(error) {
-    console.log(error);
-  })
-})
+    
 }
-  var Locate = function() {
-    // Search Value
-    var area = $( "#PSearch" ).val();
-    $( "#place" ).text(area);
 
-    // NY API Variables
-    var nykey = "2952870462684dddb171a8612421ed0d";
-    var nyurl = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="+area+"&limit=5&api-key="+nykey;
-
-    // timezonedb Variables
-    tkey = "1ZLA5MG2G78R";
-    turl = "http://api.timezonedb.com/v2.1/get-time-zone";
-
-    // Weather key
-    wkey = "d74895cbc352ffdb395938590bc15b01";
-    wurl = "http://api.openweathermap.org/data/2.5/weather";
-    // Resets Fields
-    $("#theeinfoarea").html("");
-    $("#localtime").text("");
-
-    // Calls Geocode function
-    geocode();
-    // NY Request
-    $.ajax({
-      url: nyurl,
-      method: 'GET',
-    })
-    .done(function(result){
-      $("#theeinfoarea").html('<h1>Local News</h1>');
-      var articles = result.response.docs;
-      if (articles.length == 0) {
-        $("#theeinfoarea").append('<h2>'+'No News Found'+'</h2>');
-      }
-      else {
-        for (var i = 0; i < articles.length && i < 5; i++) {
-          var article = articles[i];
-          $("#theeinfoarea").append('<h2>'+'<a target="_blank" href="'+article.web_url+'">'+ article.headline.main +'</a>'+'</h2>'+'<p>' + article.snippet + '</p>');
-        }
-      }
-    })
-    .fail(function(err) {
-      throw err;
-    });
-  }
-
-    // If hit Enter, Do:
-    $( "#PSearch" ).keypress(function(e) {
-      if(e.keyCode===13) {
-        Locate();
-      }
-    });
-
-    // If Search button clicked, Do;
-    $( "#Search" ).on("click",function() {
-      Locate();
-  });
-export default (geocode, Locate)
-*/
+export default location;
