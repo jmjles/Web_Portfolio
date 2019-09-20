@@ -4,6 +4,7 @@ import Home from '../pages/home';
 import Projects from '../pages/projects';
 import Clicker from '../pages/clicker';
 import Location from '../pages/location';
+import wireframes from '../pages/wireframemenu';
 
 import linkedin from '../../assets/pics/linkedin-ico.png';
 import github from '../../assets/pics/github-ico.png';
@@ -60,6 +61,7 @@ function Header(){
             <Route exact path="/projects" component={Projects}/>
             <Route exact path="/projects/clicker" component={Clicker}/>
             <Route exact path="/projects/location" component={Location}/>
+            <Route exact path="/projects/wireframes" component={wireframes}/>
         </Router>
     )
 }
