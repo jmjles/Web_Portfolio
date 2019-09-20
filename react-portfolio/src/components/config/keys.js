@@ -1,4 +1,5 @@
 const aws = require('aws-sdk')
+require('dotenv').config()
 const keys = ()=>{
     const google=   process.env.GOOGLE;
     const time=     process.env.TIME;
