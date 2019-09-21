@@ -24,13 +24,19 @@ class Location extends Component{
         img:'',
         source:'',
         published:''}
-      ]
+      ],
+    keys:{}
   }
+
   componentDidMount(){
+    fetch('/api')
+    .then(res => res.json())
+    .then(k => this.setState({keys:k}), console.log(k))
+    console.log(this.state.keys)
     let map;
     let gkey;
     if(process.env.NODE_ENV==='production'){
-      gkey = k().google;
+      gkey = this.state.keys.google;
     }else{
       gkey = localk.google;
     }
