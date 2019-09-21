@@ -75,19 +75,16 @@ class Location extends Component{
       let wkey;
 
       if(process.env.NODE_ENV==='production'){
-        gkey = process.env.GOOGLE;
-        tkey = process.env.TIME;
-        nkey = process.env.NEWS;
-        wkey = process.env.WEATHER;
+        gkey = this.state.keys.google;
+        tkey = this.state.keys.time;
+        nkey = this.state.keys.news;
+        wkey = this.state.keys.weather;
       }else{
         gkey = localk.google;
         tkey = localk.time;
         nkey = localk.news;
         wkey = localk.weather;
       }
-      console.log(process)
-      console.log(process.config)
-      console.log(process.env)
       console.log(gkey);
       console.log(tkey);
       console.log(nkey);
