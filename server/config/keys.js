@@ -8,5 +8,6 @@ Route.get('/', (req,res) => {
         news:     process.env.NEWS,
         weather:  process.env.WEATHER
     }
+    res.json(k)
 })
 module.exports = Route;
