@@ -62,14 +62,14 @@ let charSelect = (reverse) => {
 let socialAni= (reverse) => {
     if (!reverse){
         anime({
-            targets:'.socials',
+            targets:'.Socials',
             height:[0,50],
             easing: 'linear',
             duration: 300
         });
     } else{
         anime({
-            targets:'.socials',
+            targets:'.Socials',
             height: [50, 0],
             duration: 200,
             easing: 'linear'
