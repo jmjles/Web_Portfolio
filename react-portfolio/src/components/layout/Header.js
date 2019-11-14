@@ -16,7 +16,7 @@ import phone from "../../assets/pics/phone.png";
 import email from "../../assets/pics/email.png";
 
 //* Components
-import ani from "../animeGallery";
+import {socialAni} from "../animeGallery";
 import {
   Paper,
   Grid,
@@ -26,22 +26,18 @@ import {
 } from "@material-ui/core";
 
 function Header() {
-  const animate = ({reverse}) => {
-      
+  const animate = ({ reverse }) => {
     let x = document.querySelector(".Socials").clientHeight;
-    console.log(x)
-    if (x > 1) {
-      reverse = true;
-      console.log(reverse)
-    }
-    ani.socialAni(reverse);
+    x > 1 ? (reverse = true) : (reverse = false);
+
+    socialAni(reverse);
   };
   return (
     <Router>
       <header>
-        <Paper>
+        <Paper elevation={2}>
           <nav>
-            <Container lg="true">
+            <Container maxWidth='lg'>
               <Grid container justify="space-evenly" alignItems="center">
                 <Grid item>
                   <Font variant="body1">
@@ -60,16 +56,14 @@ function Header() {
                 </Grid>
                 <Grid item>
                   <Button variant="contained" onClick={animate}>
-                    <Font variant="button">
-                      Socials
-                    </Font>
+                    <Font variant="button">Socials</Font>
                   </Button>
                 </Grid>
               </Grid>
             </Container>
           </nav>
-          <Container className="Socials">
-            <Grid container justify='center' spacing={3}>
+          <Container className="Socials" maxWidth='sm'>
+            <Grid container justify="center" spacing={3}>
               <Grid item>
                 <a
                   href="https://www.linkedin.com/in/jesus-morales/"

@@ -76,4 +76,4 @@ let socialAni= (reverse) => {
         });
     }
 }
-export default{pdfAni,gameInfoAni,charSelect,socialAni}
+export {pdfAni,gameInfoAni,charSelect,socialAni}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Resume from '../../assets/etc/Resume.pdf'
 import Portrait from '../../assets/pics/portrait.jpg'
-import ani from '../animeGallery'
+import {pdfAni} from '../animeGallery'
 function About(){
     return(
         <article>
@@ -27,7 +27,7 @@ function About(){
                 My Resume
             </h2>
             <hr/>
-            <a onClick={(e,reverse)=>{let text = e.target.innerHTML;if(text === 'Show') reverse=true;else reverse=false;ani.pdfAni(reverse);}} className="btn-lg btn-primary" id="btnSH" href='#pdf'>Show</a>
+            <a onClick={(e,reverse)=>{let text = e.target.innerHTML;if(text === 'Show') reverse=true;else reverse=false;pdfAni(reverse);}} className="btn-lg btn-primary" id="btnSH" href='#pdf'>Show</a>
             <a href={Resume} download="Jesus-Morales-Resume" className="btn-lg btn-primary" id="downloadR">Download</a>
             <br/>
             <br/>

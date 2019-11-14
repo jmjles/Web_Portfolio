@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ani from '../animeGallery'
+import {charSelect,gameInfoAni} from '../animeGallery'
 class Clicker extends Component{
     state = {
         htitle: [
@@ -44,11 +44,11 @@ class Clicker extends Component{
         return(
             <article id ="fs">
                 <div>
-                    <button onClick={(i,reverse)=>{let txt = i.target.innerHTML; if(txt === '?') reverse = false;else reverse=true; ani.gameInfoAni(reverse)}} id ="i" className="infoBtn btn-secondary btn float-right">?</button>
+                    <button onClick={(i,reverse)=>{let txt = i.target.innerHTML; if(txt === '?') reverse = false;else reverse=true; gameInfoAni(reverse)}} id ="i" className="infoBtn btn-secondary btn float-right">?</button>
                     <h1 className="text-center">Clicker Game</h1>
                 </div>
                 <div className="gi text-center">
-                    <a onClick={(reverse)=>ani.gameInfoAni(reverse)} className="gBack">Back</a>
+                    <a onClick={(reverse)=>gameInfoAni(reverse)} className="gBack">Back</a>
                     <h1 className="text-center tTitle">
                         Levels
                     </h1>
@@ -71,19 +71,19 @@ class Clicker extends Component{
                                 <h4>{cChar.level}</h4>
                             </figcaption>
                         </figure>
-                        <button onClick={(reverse)=>{ani.charSelect(reverse = false)}} className="btn btn-primary btn-lg">Change Character</button>
+                        <button onClick={(reverse)=>{charSelect(reverse = false)}} className="btn btn-primary btn-lg">Change Character</button>
                     </div>
                 <div id="charselect">
                     <div id="Characters">
                     <h2 className="two">Character Selection</h2>
                     { p.characters.map((p) => (
                         <div id="charDiv" key={p.id}>
-                            <h1 className="text-center" onClick={(reverse)=>{setChar.bind(this, p.id)(); ani.charSelect(reverse = true)}}>{p.name}</h1>
-                            <img id="gpic" src={p.url} alt={p.alt} onClick={(reverse)=>{setChar.bind(this, p.id)(); ani.charSelect(reverse = true)}}/>
+                            <h1 className="text-center" onClick={(reverse)=>{setChar.bind(this, p.id)(); charSelect(reverse = true)}}>{p.name}</h1>
+                            <img id="gpic" src={p.url} alt={p.alt} onClick={(reverse)=>{setChar.bind(this, p.id)(); charSelect(reverse = true)}}/>
                             <p>{p.level}</p>
                         </div>
                     ))}
-                    <button onClick={(reverse)=>{ani.charSelect(reverse = true)}} className="gBack" id="gbChar">Back</button>
+                    <button onClick={(reverse)=>{charSelect(reverse = true)}} className="gBack" id="gbChar">Back</button>
                 </div>
                 </div>
             </article>
