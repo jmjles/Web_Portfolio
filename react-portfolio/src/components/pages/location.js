@@ -33,7 +33,7 @@ class Location extends Component {
     (async () => {
       let gkey;
       if (process.env.NODE_ENV === "production") {
-        const res = await axios.get("/api");
+        const res = await axios.get("jesusmj.com/api");
         this.setState({ keys: res });
         gkey = this.state.keys.google;
       } else {
