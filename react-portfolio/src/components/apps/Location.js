@@ -1,44 +1,57 @@
 import React, { Component } from 'react';
+import {Container,Typography as Font,Button, Input, Card, Grid} from '@material-ui/core';
 
 class location extends Component{
     render(){
         let p = this.props;
         return(
-            <article className="Location, container">
-            <h1>
-                Location Lookup
-            </h1>
-            <div>
-                <input type="text" placeholder="Enter A Place" id="PSearch" size="30px;"/>
-                <button id="Search" onClick={p.click}>
-                Search
-                </button>
+            <article>
+              <Container>
+                <Font variant='h1'>
+                  Location Lookup
+                </Font>
+                <Input placeholder='Enter A Place' id="PSearch"/>
+                <Button id="Search" onClick={p.click}>
+                  <Font variant='button'>
+                    Search
+                  </Font>
+                </Button>
                 <br/>
-                <h1 id="place"></h1>
-                <div id="ltime">
-                Local Time: {p.time}
-                </div>
-            </div>
+                <Font variant='h1' id="place"></Font>
+                <Font variant='caption'>Local Time: {p.time}</Font>
               <div id="mw">
                 <div id="weather">
-                  <h2>{p.weather.name}</h2>
-                  <h3>{p.weather.weather}</h3>
-                  <p>{p.weather.temp}&#176;</p>
+                  <Font variant='h2'>{p.weather.name}</Font>
+                  <Font variant='caption'>{p.weather.weather}</Font>
+                  <Font variant='body1'>{p.weather.temp}&#176;</Font>
                 </div>
                 <div id="map"></div>
             </div>
-            <div id="newsarea">
+            <Grid container spacing={5} justify='space-around'>
               {p.news.map((i) => (
-                <div key={i.title} id="article">
-                  <h1 id="aTitle">{i.title}</h1>
-                  <p id="source">{i.source}<span id="aDate">{i.published}</span></p>
+                <Grid item xs={12} >
+                <Card  id="article" elevation={2} align='center' key={i.title}>
+                  <Font variant='h3'>
+                    {i.title}
+                  </Font>
+                  <Font variant='body1' align='left'>
+                    {i.source} | {i.published}
+                  </Font>
                   <img src={i.img} id="aImg" alt={i.title}></img>
-                  <p id="aDesc">{i.snippet}</p>
-                  <a href={i.url}>Learn More</a>
-                </div>
+                  <Font variant='body1' align='left'>
+                    {i.snippet}
+                  </Font>
+                  <Button variant='contained' href={i.url} target='blank'>
+                    <Font variant='button'>
+                      Learn More
+                    </Font>
+                  </Button>
+                </Card>
+                </Grid>
               ))
               }
-            </div>
+            </Grid>
+            </Container>
         </article>
         );
     }
