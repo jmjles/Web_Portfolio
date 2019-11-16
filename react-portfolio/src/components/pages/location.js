@@ -72,6 +72,7 @@ class Location extends Component {
     let nkey;
     let wkey;
 
+    console.table(this.state.keys);
     if (process.env.NODE_ENV === "production") {
       gkey = this.state.keys.google;
       tkey = this.state.keys.time;
