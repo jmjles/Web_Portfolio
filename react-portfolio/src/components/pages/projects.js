@@ -6,7 +6,9 @@ import {
   Grid,
   Card,
   Container,
-  Button
+  Button,
+  Paper,
+  styled
 } from "@material-ui/core";
 class Projects extends Component {
   state = {
@@ -52,44 +54,72 @@ class Projects extends Component {
   componentDidMount() {
     getStatus(this.state.projects, this);
   }
+
   render() {
+    const statusColor = ({ id }) => {
+      return id === "Good" ? { color: "green" } : { color: "red" };
+    };
+    const ProjectCard = styled(Card)({
+      height: "350px",
+      position: "relative",
+      "& div": {
+        padding: ".5rem",
+        "& h3": {
+          marginBottom: "1rem"
+        },
+        "& .bottomCard": {
+          position: "absolute",
+          bottom: 0,
+          left: "50%",
+          width: "100%",
+          transform: "translate(-50%)",
+          "& a": {
+            marginLeft: "1rem"
+          }
+        }
+      }
+    });
     return (
-      <article>
-        <Container maxWidth="lg" align="center">
-          <Font variant="h1">My Projects</Font>
-          <Grid container spacing={5} justify="space-around">
-            {this.state.projects.map(project => (
-              <Grid key={project.name} item xs={12} md={4}>
-                <Card elevation={10}>
-                  <Font variant="h2">{project.name}</Font>
+      <Container maxWidth="lg" align="center" component="article">
+        <Font variant="h1" style={{ marginBottom: "2rem" }}>
+          My Projects
+        </Font>
+        <Grid container spacing={5} justify="space-around">
+          {this.state.projects.map(project => (
+            <Grid key={project.name} item xs={12} md={4}>
+              <ProjectCard elevation={10}>
+                <Paper elevation={0}>
+                  <Font variant="h3">{project.name}</Font>
                   <Font variant="body1" align="left">
                     {project.Description}
                   </Font>
-                  <Font>
-                    Project Status
-                    <br />
-                    <b id={project.id}>{project.status}</b>
-                  </Font>
-                  <Button
-                    variant="contained"
-                    href={project.code}
-                    target="blank"
-                  >
-                    <Font variant="button">Code</Font>
-                  </Button>
-                  <Button
-                    variant="contained"
-                    component={Link}
-                    to={project.link}
-                  >
-                    Try Me
-                  </Button>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </article>
+                  <div className="bottomCard">
+                    <Font>
+                      Project Status
+                      <br />
+                      <Font style={statusColor(project)}>{project.status}</Font>
+                    </Font>
+                    <Button
+                      variant="contained"
+                      href={project.code}
+                      target="blank"
+                    >
+                      <Font variant="button">Code</Font>
+                    </Button>
+                    <Button
+                      variant="contained"
+                      component={Link}
+                      to={project.link}
+                    >
+                      <Font variant="button">Try Me</Font>
+                    </Button>
+                  </div>
+                </Paper>
+              </ProjectCard>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     );
   }
 }
