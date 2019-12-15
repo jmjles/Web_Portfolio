@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import GoogleMapsLoader from "google-maps";
-import u from "../config/url";
-import localk from "../config/localkeys.js";
+import apiURL from "../config/url";
 import Locate from "../apps/Location";
 const $ = require("jquery");
 const axios = require("axios");
@@ -9,122 +8,79 @@ const axios = require("axios");
 class Location extends Component {
   state = {
     time: "",
-    weather: {
-      name: "",
-      weather: "",
-      temp: "",
-      wind: ""
-    },
-    news: [
-      {
-        title: "",
-        description: "",
-        url: "",
-        img: "",
-        source: "",
-        published: ""
-      }
-    ],
-    keys: {}
+    weather: "",
+    news: [],
+    keys: {},
+    map: {}
   };
 
-  componentDidMount() {
-    let map;
-    (async () => {
-      let gkey;
-      if (process.env.NODE_ENV === "production") {
-        const res = await axios.get("http://jesusmj.com/api");
-        this.setState({ keys: res });
-        gkey = this.state.keys.google;
-      } else {
-        gkey = localk.google;
-      }
-      //* Google Maps
-      GoogleMapsLoader.KEY = gkey;
-      GoogleMapsLoader.VERSION = "3.39";
-      GoogleMapsLoader.load(function(google) {
-        let options = {
-          center: { lat: 48, lng: 49 },
-          scrollwheel: false,
-          zoom: 5
-        };
+  async componentDidMount() {
+    const res = await axios.get("/api");
+    this.setState({ keys: res.data });
+    let gkey = this.state.keys.google;
 
-        map = new google.maps.Map(document.getElementById("map"), options);
+    //* Google Maps
+    GoogleMapsLoader.KEY = gkey;
+    GoogleMapsLoader.VERSION = "3.39";
+    await GoogleMapsLoader.load(google => {
+      let options = {
+        center: { lat: 48, lng: 49 },
+        scrollwheel: false,
+        zoom: 5
+      };
+
+      this.setState({
+        map: new google.maps.Map(document.getElementById("map"), options)
       });
-    })();
-    return map;
+    });
   }
 
   locate = async () => {
     let area = $("#PSearch").val();
-
     // Global Variables
-    let map = this.componentDidMount();
-    let arealat;
-    let arealing;
+    let map = this.state.map;
     let thetime;
     let ftime;
 
     //keys and urls
-
-    let gkey;
-    let tkey;
-    let nkey;
-    let wkey;
-
     console.table(this.state.keys);
-    if (process.env.NODE_ENV === "production") {
-      gkey = this.state.keys.google;
-      tkey = this.state.keys.time;
-      nkey = this.state.keys.news;
-      wkey = this.state.keys.weather;
-    } else {
-      gkey = localk.google;
-      tkey = localk.time;
-      nkey = localk.news;
-      wkey = localk.weather;
-    }
-
-    let gurl = u.google;
-    let turl = u.time;
-    let nurl = u.news;
-    let wurl = u.weather;
+    const googleKey = this.state.keys.google;
+    const timeKey = this.state.keys.time;
+    const newsKey = this.state.keys.news;
+    const weatherKey = this.state.keys.weather;
     //clear news
-    this.setState({ news: [{ title: "", description: "", url: "", img: "" }] });
+    this.setState({ news: [] });
 
     //* Google Api
 
-    let res = await axios.get(gurl, {
+    let res = await axios.get(apiURL.google, {
       params: {
         address: area,
-        key: gkey
+        key: googleKey
       }
     });
     let data = res.data;
-    let zoom;
     let name;
     name = data.results[0].address_components[0].long_name;
-    arealat = data.results[0].geometry.location.lat;
-    arealing = data.results[0].geometry.location.lng;
+    const arealat = data.results[0].geometry.location.lat;
+    const arealing = data.results[0].geometry.location.lng;
 
-    if (data.results[0].types[0] === "locality") {
-      zoom = 10;
-    } else {
-      zoom = 5;
-    }
+    let zoom;
+    data.results[0].types[0] === "locality" ? (zoom = 10) : (zoom = 5);
+
     GoogleMapsLoader.load(function(google) {
       map.setCenter(new google.maps.LatLng(arealat, arealing));
       map.setZoom(zoom);
     });
 
     //* Time Api
-    res = await axios.get(turl, {
+    res = await axios.get(apiURL.time, {
       params: {
         format: "json",
         by: "position",
         lat: arealat,
         lng: arealing,
-        key: tkey
+        key: timeKey
       }
     });
     data = res.data;
@@ -133,40 +89,37 @@ class Location extends Component {
     this.setState({ time: ftime });
 
     //* Weather Api
-    res = await axios.get(wurl, {
+    res = await axios.get(apiURL.weather, {
       params: {
         q: name,
         units: "imperial",
-        appid: wkey
+        appid: weatherKey
       }
     });
     data = res.data;
-    let info = data;
-    name = info.name;
-    let weather = info.weather[0].main;
-    let temp = info.main.temp;
-    let wind = info.wind.speed;
-    this.setState(() => ({ weather: { name, weather, temp, wind } }));
+    name = data.name;
 
-    $("#PSearch").val("");
+    let weather = data.weather[0].main;
+    let temp = Math.ceil(data.main.temp);
+    let wind = data.wind.speed;
+    this.setState(() => ({ weather: { name, weather, temp, wind } }));
     //* News Api
-    res = await axios.get(nurl, {
+    res = await axios.get(apiURL.news, {
       params: {
         q: name,
-        apiKey: nkey,
+        apiKey: newsKey,
         pageSize: 6
       }
     });
     let articles = res.data.articles;
     if (articles.length < 0) {
-      let news = "No News Found";
+      alert("No News Found");
     } else {
-      for (let i = 0; i < articles.length; i++) {
-        let article = articles[i];
-        let date = article.publishedAt.split("T");
-        this.setState(p => ({
+      articles.map(article => {
+        const date = article.publishedAt.split("T");
+        this.setState(prevState => ({
           news: [
-            ...p.news,
+            ...prevState.news,
             {
               title: article.title,
               url: article.url,
@@ -177,7 +130,7 @@ class Location extends Component {
             }
           ]
         }));
-      }
+      });
     }
   };
   render() {

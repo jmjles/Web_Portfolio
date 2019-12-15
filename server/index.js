@@ -14,16 +14,9 @@ const keyRoute = require('./config/keys')
 const port = process.env.PORT || 5000;
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname, '../react-portfolio/build')));
-    app.use('/api',keyRoute)
+    app.use(express.static(path.join(__dirname, '../react-portfolio/build')));   
 }
-else{
-    app.use(express.static(path.join(__dirname,'../react-portfolio/build')));
-    app.use('/api',(req,res)=>{
-        res.send('High')
-    })
-
-}
+app.use("/api", keyRoute);
 // Launch Server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

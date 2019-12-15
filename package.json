@@ -7,7 +7,7 @@
     "heroku-postbuild": "cd react-portfolio && npm install --only=dev && npm install && npm run build",
     "server": "node server/index.js",
     "start": "node server/index.js",
-    "dev": "nodemon server/index.js",
+    "dev": "concurrently \"nodemon server/index.js\" \"cd react-portfolio && npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,6 +19,7 @@
     "nodemon": "^1.18.10"
   },
   "devDependencies": {
+    "concurrently": "^5.0.1",
     "ws": "3.3.2"
   }
 }
