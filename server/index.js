@@ -15,6 +15,7 @@ const port = process.env.PORT || 5000;
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, '../react-portfolio/build')));   
+    app.get('/*',((req,res)=> res.redirect('/')))
 }
 app.use("/api", keyRoute);
 // Launch Server
