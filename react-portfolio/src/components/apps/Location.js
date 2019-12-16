@@ -5,7 +5,9 @@ import {
   Button,
   Input,
   Card,
-  Grid
+  Grid,
+  styled,
+  Paper
 } from "@material-ui/core";
 
 export default Location = props => {
@@ -16,37 +18,61 @@ export default Location = props => {
       <Font variant="body1">{props.weather.temp}&#176;</Font>
     </div>
   );
-  console.log(props.weather)
+  const CardNews = styled(Card)({
+    "& div": {
+      padding: "2rem",
+      "& h3": {
+        marginBottom: "2rem"
+      },
+      "& img": {
+        width: "100%",
+        height: "50vh",
+        marginBottom: "2rem"
+      }
+    }
+  });
   return (
     <Container component="article">
-      <Font variant="h1" align='center'>Location Lookup</Font>
-      <Input placeholder="Enter A Place" id="PSearch" />
-      <Button id="Search" onClick={props.click}>
-        <Font variant="button">Search</Font>
-      </Button>
+      <Font variant="h1" align="center">
+        Location Lookup
+      </Font>
+      <form
+        onSubmit={here => {
+          here.preventDefault();
+          props.click();
+        }}
+        style={{ textAlign: "center" }}
+      >
+        <Input placeholder="Enter A Place" id="PSearch" />
+        <Button id="Search" type="submit" variant="outlined" color="primary">
+          <Font variant="button">Search</Font>
+        </Button>
+      </form>
       <br />
       <Font variant="h1" id="place"></Font>
       <Font variant="caption">Local Time: {props.time}</Font>
       <div id="mw">
-        {props.weather ? weather() : ''}
-        <div id="map" style={{height:'600px'}}></div>
+        {props.weather ? weather() : ""}
+        <div id="map" style={{ height: "600px" }}></div>
       </div>
       <Grid container spacing={5} justify="space-around">
         {props.news.map(i => (
           <Grid item xs={12}>
-            <Card id="article" elevation={5} align="center" key={i.title}>
-              <Font variant="h3">{i.title}</Font>
-              <Font variant="body1" align="left">
-                {i.source} | {i.published}
-              </Font>
-              <img src={i.img} id="aImg" alt={i.title}></img>
-              <Font variant="body1" align="left">
-                {i.snippet}
-              </Font>
-              <Button variant="contained" href={i.url} target="blank">
-                <Font variant="button">Learn More</Font>
-              </Button>
-            </Card>
+            <CardNews id="article" elevation={5} align="center" key={i.title}>
+              <Paper>
+                <Font variant="h3">{i.title}</Font>
+                <Font variant="body1" align="left">
+                  {i.source} | {i.published}
+                </Font>
+                <img src={i.img} id="aImg" alt={i.title}></img>
+                <Font variant="body1" align="left">
+                  {i.snippet}
+                </Font>
+                <Button variant="contained" href={i.url} target="blank">
+                  <Font variant="button">Learn More</Font>
+                </Button>
+              </Paper>
+            </CardNews>
           </Grid>
         ))}
       </Grid>

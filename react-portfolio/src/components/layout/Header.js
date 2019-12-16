@@ -53,7 +53,7 @@ function Header() {
           <Grid container justify="space-evenly" alignItems="center">
             <Grid item>
               <Font variant="body1">
-                Jesus Morales <i>| Fullstack Web Dev</i>
+                Jesus Morales <i id="desktopOnly">| Fullstack Web Dev</i>
               </Font>
             </Grid>
             <Grid item>

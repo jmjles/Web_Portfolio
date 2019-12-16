@@ -17,7 +17,7 @@ class Projects extends Component {
         name: "Location Lookup",
         Description:
           "Get The latest news, weather and map of a location with a simple search.",
-        status: "Under Construction",
+        status: "Complete",
         link: "/projects/location",
         code:
           "https://github.com/jmjles/React_Portfolio/blob/master/react-portfolio/src/components/pages/location.js",

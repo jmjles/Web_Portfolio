@@ -1,17 +1,17 @@
-let getStatus = function(ar,t){
-    console.log(ar)
-    for(let i = 0; i< ar.length;i++){
-        let projects = ar;
-        let project= projects[i];
+import { array } from "prop-types";
+
+let getStatus = function(array,state){
+    for(let i = 0; i< array.length;i++){
+        let project = array[i];
         if(project.status==='Under Construction'){
-            let x = projects.slice();
+            let x = array.slice();
             x[i].id='Bad'
-            t.setState({projects:x})
+            state.setState({projects:x})
         }
         else{
-            let x = projects.slice();
+            let x = array.slice();
             x[i].id='Good'
-            t.setState({projects:x})
+            state.setState({projects:x})
         }
     }
 }

@@ -21,18 +21,19 @@ let pdfAni = (reverse) => {
         console.log(height)
 }
 
-let gameInfoAni = (reverse) => {
+let gameInfoAni = () => {
     let width = window.innerWidth;
+    const reverse = document.getElementById('gameInfo').clientWidth > 0 ? true : false
     if(!reverse){
         anime({
-            targets:'.gi',
+            targets:'#gameInfo',
             width:[0,width],
             duration:500,
         });
     }
     else{
         anime({
-            targets:'.gi',
+            targets:'#gameInfo',
             width:[width,0],
             duration:300,
             easing: 'linear'

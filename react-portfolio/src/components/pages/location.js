@@ -24,7 +24,7 @@ class Location extends Component {
     GoogleMapsLoader.VERSION = "3.39";
     await GoogleMapsLoader.load(google => {
       let options = {
-        center: { lat: 48, lng: 49 },
+        center: { lat: 40, lng: -100 },
         scrollwheel: false,
         zoom: 5
       };
@@ -132,6 +132,7 @@ class Location extends Component {
         }));
       });
     }
+    $("#PSearch").val('')
   };
   render() {
     // Gets Area lat long from input
