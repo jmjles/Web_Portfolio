@@ -10,7 +10,7 @@ import {
   Paper
 } from "@material-ui/core";
 
-export default Location = props => {
+const Location = props => {
   const weather = () => (
     <div id="weather">
       <Font variant="h2">{props.weather.name}</Font>
@@ -79,3 +79,5 @@ export default Location = props => {
     </Container>
   );
 };
+
+export default Location

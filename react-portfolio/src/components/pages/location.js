@@ -117,7 +117,7 @@ class Location extends Component {
     } else {
       articles.map(article => {
         const date = article.publishedAt.split("T");
-        this.setState(prevState => ({
+        return this.setState(prevState => ({
           news: [
             ...prevState.news,
             {

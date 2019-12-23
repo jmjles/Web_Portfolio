@@ -1,5 +1,3 @@
-import { array } from "prop-types";
-
 let getStatus = function(array,state){
     for(let i = 0; i< array.length;i++){
         let project = array[i];
