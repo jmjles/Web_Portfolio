@@ -42,26 +42,24 @@ let gameInfoAni = () => {
 }
 let charSelect = (reverse) => {
     let width = window.innerWidth;
-    if(!reverse){
+    if(reverse === false){
         anime({
-            targets:'#charselect',
+            targets:'#characterSelect',
             width:[0,width],
             duration:500
         });
-        document.getElementById('i').innerHTML= 'X';
     }
     else{
         anime({
-            targets:'#charselect',
+            targets:'#characterSelect',
             width:[width,0],
             duration:300,
             easing: 'linear'
         });
-        document.getElementById('i').innerHTML= '?';
     }
 }
 let socialAni= (reverse) => {
-    if (!reverse){
+    if (reverse === false){
         anime({
             targets:'.Socials',
             height:[0,50],
