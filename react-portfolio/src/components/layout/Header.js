@@ -35,7 +35,7 @@ function Header() {
   return (
     <Router>
       <Paper elevation={2} className="HeaderRoot" component="header">
-        <Container maxWidth="xl" component="nav">
+        <Container maxWidth="xl" component="nav" >
           <Grid container justify="space-evenly" alignItems="center">
             <Grid item>
               <img src={Logo} alt="J M Logo" id="Logo" />

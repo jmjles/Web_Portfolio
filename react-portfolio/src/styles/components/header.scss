@@ -1,5 +1,8 @@
 .HeaderRoot {
   background-color: #e5f6fd;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
   nav {
     div {
       padding: 0.2rem 0;

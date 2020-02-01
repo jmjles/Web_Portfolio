@@ -3,7 +3,7 @@ import Portrait from "../../assets/pics/portrait.jpg";
 import { Container, Typography as Font } from "@material-ui/core";
 function About() {
   return (
-    <Container component="article">
+    <Container component="article" className="AboutRoot">
       <Font variant="h1" align="center">
         A Little Bit About Me
       </Font>

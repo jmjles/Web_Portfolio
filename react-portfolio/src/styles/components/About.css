@@ -1,0 +1,9 @@
+.AboutRoot img {
+  border: 3px sold red;
+}
+
+.AboutRoot #portrait {
+  width: 200px;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=About.css.map */

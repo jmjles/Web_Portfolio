@@ -59,41 +59,21 @@ class Projects extends Component {
     const statusColor = ({ id }) => {
       return id === "Good" ? { color: "green" } : { color: "red" };
     };
-    const ProjectCard = styled(Card)({
-      height: "350px",
-      position: "relative",
-      "& div": {
-        padding: ".5rem",
-        "& h3": {
-          marginBottom: "1rem"
-        },
-        "& .bottomCard": {
-          position: "absolute",
-          bottom: 0,
-          left: "50%",
-          width: "100%",
-          transform: "translate(-50%)",
-          "& a": {
-            marginLeft: "1rem"
-          }
-        }
-      }
-    });
     return (
-      <Container maxWidth="lg" align="center" component="article">
-        <Font variant="h1" style={{ marginBottom: "2rem" }}>
+      <Container maxWidth="lg" align="center" component="article" className='ProjectsRoot'>
+        <Font variant="h1">
           My Projects
         </Font>
         <Grid container spacing={5} justify="space-around">
           {this.state.projects.map(project => (
             <Grid key={project.name} item xs={12} md={4}>
-              <ProjectCard elevation={10}>
+              <Card elevation={10} className='ProjectCard'>
                 <Paper elevation={0}>
                   <Font variant="h3">{project.name}</Font>
                   <Font variant="body1" align="left">
                     {project.Description}
                   </Font>
-                  <div className="bottomCard">
+                  <div className="BottomCard">
                     <Font>
                       Project Status
                       <br />
@@ -117,7 +97,7 @@ class Projects extends Component {
                     </Button>
                   </div>
                 </Paper>
-              </ProjectCard>
+              </Card>
             </Grid>
           ))}
         </Grid>
