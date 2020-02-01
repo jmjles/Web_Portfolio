@@ -103,6 +103,7 @@ class Projects extends Component {
                       variant="contained"
                       href={project.code}
                       target="blank"
+                      color='primary'
                     >
                       <Font variant="button">Code</Font>
                     </Button>
@@ -110,6 +111,7 @@ class Projects extends Component {
                       variant="contained"
                       component={Link}
                       to={project.link}
+                      color='secondary'
                     >
                       <Font variant="button">Try Me</Font>
                     </Button>

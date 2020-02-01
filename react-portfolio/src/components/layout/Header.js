@@ -14,7 +14,9 @@ import github from "../../assets/pics/github-ico.png";
 import udacity from "../../assets/pics/udacity-ico.png";
 import phone from "../../assets/pics/phone.png";
 import email from "../../assets/pics/email.png";
-
+import Resume from "../../assets/etc/Resume.pdf";
+import Get from "@material-ui/icons/GetApp";
+import Logo from "../../assets/pics/logo.png";
 //* Components
 import { socialAni } from "../animeGallery";
 import {
@@ -23,51 +25,55 @@ import {
   Typography as Font,
   Button,
   Container,
-  makeStyles
 } from "@material-ui/core";
-
-
-const useStyles = makeStyles({
-  headerRoot:{
-    '& nav':{
-      '& div':{
-        paddingTop:'.2rem',
-        paddingBottom:'.2rem'
-      }
-    }
-  }
-})
 function Header() {
-  const classes = useStyles()
-
   const animate = ({ reverse }) => {
     let x = document.querySelector(".Socials").clientHeight;
     x > 1 ? (reverse = true) : (reverse = false);
-
     socialAni(reverse);
   };
   return (
     <Router>
-      <Paper elevation={2} className={classes.headerRoot} component="header">
-        <Container maxWidth="lg" component="nav">
+      <Paper elevation={2} className="HeaderRoot" component="header">
+        <Container maxWidth="xl" component="nav">
           <Grid container justify="space-evenly" alignItems="center">
             <Grid item>
-              <Font variant="body1">
-                Jesus Morales <i id="desktopOnly">| Fullstack Web Dev</i>
-              </Font>
+              <img src={Logo} alt="J M Logo" id="Logo" />
             </Grid>
             <Grid item>
-              <Button variant="contained" component={Link} to="/">
+              <Button
+                variant="contained"
+                component={Link}
+                color="primary"
+                to="/"
+              >
                 <Font variant="button">Home</Font>
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" component={Link} to="/projects">
+              <Button
+                variant="contained"
+                component={Link}
+                color="primary"
+                to="/projects"
+              >
                 <Font variant="button">Projects</Font>
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" onClick={animate}>
+              <Button
+                variant="contained"
+                color="primary"
+                component="a"
+                href={Resume}
+                target="_blank"
+              >
+                <Font variant="button">Resume</Font>
+                <Get />
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" onClick={animate} color="secondary">
                 <Font variant="button">Socials</Font>
               </Button>
             </Grid>

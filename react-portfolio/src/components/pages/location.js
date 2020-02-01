@@ -43,7 +43,6 @@ class Location extends Component {
     let ftime;
 
     //keys and urls
-    console.table(this.state.keys);
     const googleKey = this.state.keys.google;
     const timeKey = this.state.keys.time;
     const newsKey = this.state.keys.news;
@@ -135,13 +134,13 @@ class Location extends Component {
     $("#PSearch").val('')
   };
   render() {
-    // Gets Area lat long from input
+    const {time,weather,news} = this.state
     return (
       <Locate
         click={this.locate}
-        time={this.state.time}
-        weather={this.state.weather}
-        news={this.state.news}
+        time={time}
+        weather={weather}
+        news={news}
       />
     );
   }

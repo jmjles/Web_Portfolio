@@ -18,6 +18,7 @@ const Location = props => {
       <Font variant="body1">{props.weather.temp}&#176;</Font>
     </div>
   );
+
   const CardNews = styled(Card)({
     "& div": {
       padding: "2rem",
@@ -31,6 +32,7 @@ const Location = props => {
       }
     }
   });
+  
   return (
     <Container component="article">
       <Font variant="h1" align="center">
