@@ -1,9 +1,15 @@
 .AboutRoot{
-    img{
-border: 3px sold red;
+    height: 100vh;
+    padding: 5% 0;
+    hr{
+        margin-bottom: 2rem;
     }
     #portrait{
-        width: 200px;
-        border-radius: 20px;
+        width: 30%;
+        border-radius: 500px;
+        border: 3px solid black;
+        float: left;
+        opacity: 90%;
+        margin: 0 2rem
     }
 }
