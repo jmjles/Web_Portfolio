@@ -1,8 +1,21 @@
 .HeaderRoot {
-  background-color: #e5f6fd;
+  background-color: #414c51;
   position: fixed;
   width: 100%;
   z-index: 99;
+}
+
+.HeaderRoot nav #logo-container {
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+}
+
+.HeaderRoot nav #nav-items {
+  width: 85%;
+  display: inline-block;
+  padding-top: 15.5px;
+  vertical-align: top;
 }
 
 .HeaderRoot nav div {

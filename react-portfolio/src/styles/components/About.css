@@ -1,6 +1,7 @@
 .AboutRoot {
   height: 100vh;
   padding: 5% 0;
+  background-color: #DCE7E0;
 }
 
 .AboutRoot hr {
@@ -14,5 +15,9 @@
   float: left;
   opacity: 90%;
   margin: 0 2rem;
+}
+
+.AboutRoot #about-paper {
+  background-color: red;
 }
 /*# sourceMappingURL=About.css.map */
