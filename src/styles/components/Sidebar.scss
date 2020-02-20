@@ -1,0 +1,15 @@
+.SidebarRoot{ 
+    height: calc(100vh - 60.43px);
+    width: 30%;
+    position: fixed;
+    right: 0px;
+    top: 60.43px;
+    z-index:99;
+    background-color:black;
+    color:white;
+    text-align: center;
+    div , a {
+        border-bottom: white 2px solid;
+        padding: 5px 0
+    }
+ }

@@ -26,6 +26,11 @@
         width: 100%;
       }
     }
+    @media (max-width:650px) {
+      .DesktopOnly {
+        display: none;
+      }
+    }
   }
   .Socials {
     overflow: hidden;

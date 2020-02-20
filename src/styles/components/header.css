@@ -31,6 +31,12 @@
   }
 }
 
+@media (max-width: 650px) {
+  .HeaderRoot nav .DesktopOnly {
+    display: none;
+  }
+}
+
 .HeaderRoot .Socials {
   overflow: hidden;
   height: 0px;
