@@ -142,13 +142,14 @@
   right: 0px;
   top: 60.43px;
   z-index: 99;
-  background-color: black;
+  background-color: #414c51;
   color: white;
   text-align: center;
   overflow: hidden;
 }
 
-.SidebarRoot div, .SidebarRoot a {
+.SidebarRoot div div,
+.SidebarRoot div a {
   border-bottom: white 2px solid;
   padding: 5px 0;
 }

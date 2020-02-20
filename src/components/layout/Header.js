@@ -70,12 +70,16 @@ function Header() {
                 </Button>
               </Grid>
               <Grid item className="DesktopOnly">
-                <Button variant="contained" onClick={socialAni} color="secondary">
+                <Button
+                  variant="contained"
+                  onClick={socialAni}
+                  color="secondary"
+                >
                   <Font variant="button">Socials</Font>
                 </Button>
               </Grid>
               <Grid item>
-                <Menu onClick={sidebarAni}/>
+                <Menu onClick={sidebarAni} />
               </Grid>
             </Grid>
           </div>
@@ -87,6 +91,7 @@ function Header() {
                 href="https://www.linkedin.com/in/jesus-morales/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={socialAni}
               >
                 <img src={linkedin} alt="LinkedIn" />
               </a>
@@ -96,6 +101,7 @@ function Header() {
                 href="https://confirm.udacity.com/QTXW5D2Q"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={socialAni}
               >
                 <img src={udacity} alt="Udacity" />
               </a>
@@ -105,17 +111,18 @@ function Header() {
                 href="https://github.com/jmjles"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={socialAni}
               >
                 <img src={github} alt="Github" />
               </a>
             </Grid>
             <Grid item>
-              <a href="tel:+8058259190">
+              <a href="tel:+8058259190" onClick={socialAni}>
                 <img src={phone} alt="Phone" />
               </a>
             </Grid>
             <Grid item>
-              <a href="mail:jmjles@gmail.com">
+              <a href="mail:jmjles@gmail.com" onClick={socialAni}>
                 <img src={email} alt="Email" />
               </a>
             </Grid>

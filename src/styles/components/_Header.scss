@@ -1,5 +1,7 @@
+@import '../Variables';
+
 .HeaderRoot {
-  background-color: #414c51;
+  background-color: $navColor;
   position: fixed;
   width: 100%;
   z-index: 99;
