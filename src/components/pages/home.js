@@ -34,7 +34,7 @@ function Home() {
           <Paper>
             <Font variant="h2" component='h1' align='left'>Welcome</Font>
             <Font variant='subtitle1' align='right'>
-              to my tiny corner of the world wide web.
+              to my tiny corner in the world wide web.
             </Font>
             <hr/>
             <Font variant="body1" align="left">

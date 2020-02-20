@@ -1,14 +1,15 @@
+@import '../Variables';
 .AboutRoot {
   height: 100vh;
   padding-top: 10%;
-  background-color: #dce7e0;
-
+  background-color: $paperColor;
+  color:$heavyBlue;
   #about-paper {
     hr {
       margin-bottom: 2rem;
-      border-color: #252628;
+      border-color: $primaryColor;
     }
-    background-color: #b7cbca;
+    background-color: $defaultBGC;
     padding: 1.5rem 2rem;
     height: 100%;
     #portrait {

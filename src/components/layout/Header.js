@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 
 //* Assets
@@ -11,7 +11,7 @@ import Resume from "../../assets/etc/Resume.pdf";
 import Get from "@material-ui/icons/GetApp";
 import Logo from "../../assets/pics/logo.png";
 import Menu from "@material-ui/icons/Menu";
-
+import OpenMenu from '@material-ui/icons/MenuOpen'
 //* Components
 import { socialAni, sidebarAni } from "../animeGallery";
 import SideBar from '../SideBar'
@@ -23,6 +23,7 @@ import {
   Container
 } from "@material-ui/core";
 function Header() {
+  const [toggle,setToggle] = useState(false)
   return (
     <>
       <Paper
@@ -79,7 +80,21 @@ function Header() {
                 </Button>
               </Grid>
               <Grid item>
-                <Menu onClick={sidebarAni} />
+                {!toggle ? (
+                  <Menu
+                    onClick={() => {
+                      sidebarAni();
+                      setToggle(true);
+                    }}
+                  />
+                ) : (
+                  <OpenMenu
+                    onClick={() => {
+                      sidebarAni();
+                      setToggle(false);
+                    }}
+                  />
+                )}
               </Grid>
             </Grid>
           </div>

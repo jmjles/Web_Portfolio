@@ -1,3 +1,4 @@
+@import '../Variables';
 .HomeRoot {
   height: 100vh;
   padding-top: 10%;
@@ -20,7 +21,7 @@
     height: 100vh;
 
     #path {
-      fill: #DCE7E0;
+      fill: $paperColor;
       stroke: black;
       stroke-width: 2;
     }

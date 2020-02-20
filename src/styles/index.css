@@ -70,7 +70,7 @@
 }
 
 #lines #path {
-  fill: #DCE7E0;
+  fill: #dce7e0;
   stroke: black;
   stroke-width: 2;
 }
@@ -114,10 +114,11 @@
   height: 100vh;
   padding-top: 10%;
   background-color: #dce7e0;
+  color: #181c20;
 }
 
 .AboutRoot #about-paper {
-  background-color: #b7cbca;
+  background-color: #B7CBCA;
   padding: 1.5rem 2rem;
   height: 100%;
 }
