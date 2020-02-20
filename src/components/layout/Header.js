@@ -13,7 +13,7 @@ import Logo from "../../assets/pics/logo.png";
 import Menu from "@material-ui/icons/Menu";
 
 //* Components
-import { socialAni } from "../animeGallery";
+import { socialAni, sidebarAni } from "../animeGallery";
 import SideBar from '../SideBar'
 import {
   Paper,
@@ -23,11 +23,6 @@ import {
   Container
 } from "@material-ui/core";
 function Header() {
-  const animate = ({ reverse }) => {
-    let x = document.querySelector(".Socials").clientHeight;
-    x > 1 ? (reverse = true) : (reverse = false);
-    socialAni(reverse);
-  };
   return (
     <>
       <Paper
@@ -75,12 +70,12 @@ function Header() {
                 </Button>
               </Grid>
               <Grid item className="DesktopOnly">
-                <Button variant="contained" onClick={animate} color="secondary">
+                <Button variant="contained" onClick={socialAni} color="secondary">
                   <Font variant="button">Socials</Font>
                 </Button>
               </Grid>
               <Grid item>
-                <Menu />
+                <Menu onClick={sidebarAni}/>
               </Grid>
             </Grid>
           </div>
