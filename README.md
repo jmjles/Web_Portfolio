@@ -2,4 +2,4 @@
 ---
 
 ## About 
-Created using front-end technologies such as React, Anime.js and Material-ui
+Created using front-end technologies such as React, Anime.js and Material-ui.
