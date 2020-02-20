@@ -1,9 +1,5 @@
 import React from "react";
-import { Route, Link, Switch } from "react-router-dom";
-
-//* Pages
-import Home from "../pages/home";
-import Projects from "../pages/projects";
+import { Link } from "react-router-dom";
 
 //* Assets
 import linkedin from "../../assets/pics/linkedin-ico.png";
@@ -31,106 +27,97 @@ function Header() {
     socialAni(reverse);
   };
   return (
-    <>
-      <Paper elevation={2} className="HeaderRoot" component="header">
-        <Container maxWidth="xl" component="nav">
-          <div style={{ width: "15%", display: "inline-block",textAlign:'center' }} id='logo-container'>
-            <img src={Logo} alt="J M Logo" id="Logo" />
-          </div>
-          <div id='nav-items'>
-            <Grid container justify="space-evenly" alignItems="center">
-              <Grid item>
-                <Button
-                  variant="contained"
-                  component={Link}
-                  color="primary"
-                  to="/"
-                >
-                  <Font variant="button">Home</Font>
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="contained"
-                  component={Link}
-                  color="primary"
-                  to="/projects"
-                >
-                  <Font variant="button">Projects</Font>
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  component="a"
-                  href={Resume}
-                  target="_blank"
-                >
-                  <Font variant="button">Resume</Font>
-                  <Get />
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" onClick={animate} color="secondary">
-                  <Font variant="button">Socials</Font>
-                </Button>
-              </Grid>
-            </Grid>
-          </div>
-        </Container>
-        <Container className="Socials" maxWidth="sm">
-          <Grid container justify="center" spacing={3}>
+    <Paper elevation={2} className="HeaderRoot" component="header" square={true}>
+      <Container maxWidth="xl" component="nav">
+        <div
+          id="logo-container"
+        >
+          <img src={Logo} alt="J M Logo" id="Logo" />
+        </div>
+        <div id="nav-items">
+          <Grid container justify="space-evenly" alignItems="center">
             <Grid item>
-              <a
-                href="https://www.linkedin.com/in/jesus-morales/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                variant="contained"
+                component={Link}
+                color="primary"
+                to="/"
               >
-                <img src={linkedin} alt="LinkedIn" />
-              </a>
+                <Font variant="button">Home</Font>
+              </Button>
             </Grid>
             <Grid item>
-              <a
-                href="https://confirm.udacity.com/QTXW5D2Q"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                variant="contained"
+                component={Link}
+                color="primary"
+                to="/projects"
               >
-                <img src={udacity} alt="Udacity" />
-              </a>
+                <Font variant="button">Projects</Font>
+              </Button>
             </Grid>
             <Grid item>
-              <a
-                href="https://github.com/jmjles"
+              <Button
+                variant="contained"
+                color="primary"
+                component="a"
+                href={Resume}
                 target="_blank"
-                rel="noopener noreferrer"
               >
-                <img src={github} alt="Github" />
-              </a>
+                <Font variant="button">Resume</Font>
+                <Get />
+              </Button>
             </Grid>
             <Grid item>
-              <a href="tel:+8058259190">
-                <img src={phone} alt="Phone" />
-              </a>
-            </Grid>
-            <Grid item>
-              <a href="mail:jmjles@gmail.com">
-                <img src={email} alt="Email" />
-              </a>
+              <Button variant="contained" onClick={animate} color="secondary">
+                <Font variant="button">Socials</Font>
+              </Button>
             </Grid>
           </Grid>
-        </Container>
-      </Paper>
-
-      <Switch>
-        <Route path="/projects">
-          <Projects />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </>
+        </div>
+      </Container>
+      <Container className="Socials" maxWidth="sm">
+        <Grid container justify="center" spacing={3}>
+          <Grid item>
+            <a
+              href="https://www.linkedin.com/in/jesus-morales/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} alt="LinkedIn" />
+            </a>
+          </Grid>
+          <Grid item>
+            <a
+              href="https://confirm.udacity.com/QTXW5D2Q"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={udacity} alt="Udacity" />
+            </a>
+          </Grid>
+          <Grid item>
+            <a
+              href="https://github.com/jmjles"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={github} alt="Github" />
+            </a>
+          </Grid>
+          <Grid item>
+            <a href="tel:+8058259190">
+              <img src={phone} alt="Phone" />
+            </a>
+          </Grid>
+          <Grid item>
+            <a href="mail:jmjles@gmail.com">
+              <img src={email} alt="Email" />
+            </a>
+          </Grid>
+        </Grid>
+      </Container>
+    </Paper>
   );
 }
 export default Header;

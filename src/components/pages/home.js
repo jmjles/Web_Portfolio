@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import About from "./about";
 import { Link } from "react-router-dom";
 import {
@@ -9,17 +9,41 @@ import {
   Paper
 } from "@material-ui/core";
 import anime from "animejs/lib/anime";
-import {Waypoint} from 'react-waypoint'
 function Home() {
-  useEffect(()=>{
-    console.log('called')
-          anime({
-            targets: "path",
-            strokeDashoffset: [anime.setDashoffset, 0],
-            easing: "easeInOutSine",
-            duration: 2000,
-          });
-  },[])
+  useEffect(() => {
+    let init = false;
+    const delay = () => {
+      if (init) {
+        return 1000 * 0;
+      } else {
+        init = true;
+        return 1000 * 2;
+      }
+    };
+    anime({
+      targets: "#lines #path",
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeInOutSine",
+      delay: anime.stagger(1000 * 1),
+      duration: 2000
+    });
+    anime({
+      targets: "#lines #path",
+      strokeWidth: [2, 5],
+      easing: "easeInOutSine",
+      delay,
+      loop: true,
+      direction: "alternate"
+    });
+    anime({
+      targets: "#lines #path",
+      stroke: ["#000", "#598288"],
+      easing: "easeInOutSine",
+      delay,
+      loop: true,
+      direction: "alternate"
+    });
+  }, []);
   return (
     <>
       <Container
@@ -30,16 +54,14 @@ function Home() {
       >
         <Card elevation={5}>
           <Paper>
-            <Font variant="h1">Welcome</Font>
+            <Font variant="h2" component='h1' align='left'>Welcome</Font>
+            <Font variant='subtitle1' align='right'>
+              to my tiny corner of the world wide web.
+            </Font>
+            <hr/>
             <Font variant="body1" align="left">
-              I have always dreamed of being a Developer.
-              <br />
-              Creating things that came up in my mind was always a thrill to me
-              and will always will be!
-              <br />
-              Please enjoy exploring my website.
-              <br />
-              Thank you for your time and consideration.
+              My name is Jesus Morales, and I'm a Full Stack Web Developer.<br/>
+              Availabilty for relocation is always up for descussion. I'm Currently based on Los Angeles, Ca.<br/>
             </Font>
             <br />
             <Button
@@ -66,7 +88,6 @@ function Home() {
         />
       </svg>
       <About />
-      <Waypoint onEnter={() => console.log("hi")} />
     </>
   );
 }
