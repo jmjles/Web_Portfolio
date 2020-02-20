@@ -3,6 +3,10 @@
   padding-top: 10%;
 }
 
+.HomeRoot h6 {
+  font-weight: bold;
+}
+
 .HomeRoot div div {
   padding: 1.5rem 2rem;
 }

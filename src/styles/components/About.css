@@ -1,23 +1,25 @@
 .AboutRoot {
   height: 100vh;
-  padding: 5% 0;
-  background-color: #DCE7E0;
+  padding-top: 10%;
+  background-color: #dce7e0;
 }
 
-.AboutRoot hr {
+.AboutRoot #about-paper {
+  background-color: #b7cbca;
+  padding: 1.5rem 2rem;
+  height: 100%;
+}
+
+.AboutRoot #about-paper hr {
   margin-bottom: 2rem;
+  border-color: #252628;
 }
 
-.AboutRoot #portrait {
+.AboutRoot #about-paper #portrait {
   width: 30%;
-  border-radius: 500px;
   border: 3px solid black;
   float: left;
   opacity: 90%;
   margin: 0 2rem;
-}
-
-.AboutRoot #about-paper {
-  background-color: red;
 }
 /*# sourceMappingURL=About.css.map */
