@@ -8,7 +8,7 @@ import {
   Card,
   Paper
 } from "@material-ui/core";
-import anime from "animejs/lib/anime";
+import {homeAni} from '../animeGallery'
 function Home() {
   useEffect(() => {
     let init = false;
@@ -20,29 +20,7 @@ function Home() {
         return 1000 * 2;
       }
     };
-    anime({
-      targets: "#lines #path",
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "easeInOutSine",
-      delay: anime.stagger(1000 * 1),
-      duration: 2000
-    });
-    anime({
-      targets: "#lines #path",
-      strokeWidth: [2, 5],
-      easing: "easeInOutSine",
-      delay,
-      loop: true,
-      direction: "alternate"
-    });
-    anime({
-      targets: "#lines #path",
-      stroke: ["#000", "#598288"],
-      easing: "easeInOutSine",
-      delay,
-      loop: true,
-      direction: "alternate"
-    });
+    homeAni(delay)
   }, []);
   return (
     <>

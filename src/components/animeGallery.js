@@ -16,4 +16,32 @@ const socialAni = reverse => {
     });
   }
 };
-export { socialAni };
+
+const homeAni = (delay) => {
+      anime({
+        targets: "#lines #path",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        delay: 1000,
+        duration: 2000
+      });
+      anime({
+        targets: "#lines #path",
+        strokeWidth: [2, 5],
+        easing: "linear",
+        delay,
+        duration:1000,
+        loop: true,
+        direction: "alternate"
+      });
+      anime({
+        targets: "#lines #path",
+        stroke: ["#000", "#598288"],
+        easing: "linear",
+        delay,
+        duration: 1000,
+        loop: true,
+        direction: "alternate"
+      });
+}
+export { socialAni, homeAni };
