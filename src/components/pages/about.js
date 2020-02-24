@@ -48,10 +48,10 @@ function About() {
             <img src={HTML5} alt="Html5 Logo" />
           </Grid>
           <Grid item>
-            <img src={CSS3} alt="Html5 Logo" />
+            <img src={CSS3} alt="CSS3 Logo" />
           </Grid>
           <Grid item>
-            <img src={JS} alt="Html5 Logo" />
+            <img src={JS} alt="Javascipt Logo" />
           </Grid>
           <Grid item>
             <img src={MONGODB} alt="Mongodb Logo" />
