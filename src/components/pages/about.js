@@ -40,9 +40,10 @@ function About() {
         </Paper>
       </Container>
       <Paper className="MyStack" square>
-        <Font variant="h5" align="center">
+        <Font variant="h4" align="center">
           My Stack
         </Font>
+        <br/>
         <Grid container justify='space-evenly' alignItems='center'>
           <Grid item>
             <img src={HTML5} alt="Html5 Logo" />
