@@ -5,10 +5,17 @@
   z-index: 99;
 }
 
+.HeaderRoot nav .DesktopOnly {
+  display: none;
+}
+
 .HeaderRoot nav #logo-container {
-  width: 15%;
   display: inline-block;
-  text-align: center;
+  vertical-align: bottom;
+}
+
+.HeaderRoot nav #logo-container img {
+  width: 42px;
 }
 
 .HeaderRoot nav #nav-items {
@@ -18,22 +25,41 @@
   vertical-align: top;
 }
 
+.HeaderRoot nav #nav-items div {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.HeaderRoot nav svg {
+  stroke: white;
+  fill: white;
+}
+
 .HeaderRoot nav div {
   padding: 0.2rem 0;
 }
 
-@media (max-width: 700px) {
-  .HeaderRoot nav #logo-container {
+@media (min-width: 700px) {
+  .HeaderRoot nav .DesktopOnly {
+    display: block;
+  }
+  .HeaderRoot nav svg {
     display: none;
+  }
+  .HeaderRoot nav #logo-container {
+    width: 15%;
+  }
+  .HeaderRoot nav #logo-container img {
+    width: 64px;
   }
   .HeaderRoot nav #nav-items {
-    width: 100%;
+    width: 85%;
   }
-}
-
-@media (max-width: 650px) {
-  .HeaderRoot nav .DesktopOnly {
-    display: none;
+  .HeaderRoot nav #nav-items div {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -49,7 +75,7 @@
 
 .HomeRoot {
   height: 100vh;
-  padding-top: 10%;
+  padding-top: calc(60.43px + 50px);
 }
 
 .HomeRoot h6 {
@@ -57,7 +83,13 @@
 }
 
 .HomeRoot div div {
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .HomeRoot {
+    padding-top: calc(75.37px + 100px);
+  }
 }
 
 #lines {
@@ -76,12 +108,19 @@
 }
 
 .ProjectsRoot {
-  padding: 5% 0;
+  padding-top: calc(60.43px + 50px);
   height: 100vh;
+  text-align: center;
 }
 
 .ProjectsRoot h1 {
   margin-bottom: 2rem;
+}
+
+@media (min-width: 700px) {
+  .ProjectsRoot {
+    padding-top: calc(75.37px + 100px);
+  }
 }
 
 .ProjectsRoot .ProjectCard {
@@ -112,15 +151,19 @@
 
 .AboutRoot {
   height: 100vh;
-  padding-top: 10%;
   background-color: #dce7e0;
   color: #181c20;
 }
 
+@media (min-width: 500px) {
+  .AboutRoot {
+    padding-top: calc(75.37px + 100px);
+  }
+}
+
 .AboutRoot #about-paper {
   background-color: #B7CBCA;
-  padding: 1.5rem 2rem;
-  height: 100%;
+  padding: 1rem 1.5rem;
 }
 
 .AboutRoot #about-paper hr {
@@ -128,12 +171,64 @@
   border-color: #252628;
 }
 
-.AboutRoot #about-paper #portrait {
-  width: 30%;
+.AboutRoot #about-paper #text-container {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+@media (min-width: 500px) {
+  .AboutRoot #about-paper #text-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 700px) {
+  .AboutRoot #about-paper #text-container {
+    margin-top: calc(348px / 2 / 2);
+  }
+}
+
+.AboutRoot #about-paper #portrait-container {
+  max-width: 348px;
+  width: 65%;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+@media (min-width: 500px) {
+  .AboutRoot #about-paper #portrait-container {
+    width: 30%;
+    display: inline-block;
+    margin: 1rem;
+  }
+}
+
+.AboutRoot #about-paper #portrait-container #portrait {
+  width: 100%;
   border: 3px solid black;
-  float: left;
   opacity: 90%;
-  margin: 0 2rem;
+}
+
+.AboutRoot .MyStack {
+  position: absolute;
+  bottom: -100vh;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: #414c51;
+}
+
+.AboutRoot .MyStack img {
+  width: 42px;
+  height: 42px;
+}
+
+@media (min-width: 530px) {
+  .AboutRoot .MyStack img {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .SidebarRoot {
@@ -153,5 +248,22 @@
 .SidebarRoot div a {
   border-bottom: white 2px solid;
   padding: 5px 0;
+  text-decoration: none;
+  color: white;
+}
+
+.SidebarRoot div div :visited,
+.SidebarRoot div a :visited {
+  color: white;
+}
+
+.SidebarRoot div div :hover,
+.SidebarRoot div a :hover {
+  color: #598288;
+}
+
+.SidebarRoot div div :active,
+.SidebarRoot div a :active {
+  color: #598288;
 }
 /*# sourceMappingURL=index.css.map */

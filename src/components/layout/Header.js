@@ -12,6 +12,7 @@ import Get from "@material-ui/icons/GetApp";
 import Logo from "../../assets/pics/logo.png";
 import Menu from "@material-ui/icons/Menu";
 import OpenMenu from '@material-ui/icons/MenuOpen'
+
 //* Components
 import { socialAni, sidebarAni } from "../animeGallery";
 import SideBar from '../SideBar'

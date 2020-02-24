@@ -5,7 +5,7 @@ import {
   Card,
   Container,
   Button,
-  Paper,
+  Paper
 } from "@material-ui/core";
 export default function Projects() {
   const projects = [
@@ -27,28 +27,31 @@ export default function Projects() {
   ];
   return (
     <Container
-      maxWidth="lg"
-      align="center"
+      maxWidth="xl"
       component="article"
       className="ProjectsRoot"
-      id="projects"
     >
-      <Font variant="h1">My Projects</Font>
+      <Font variant="h3" component='h1'>My Projects</Font>
       <Grid container spacing={5} justify="space-around">
         {projects.map(project => (
-          <Grid key={project.name} item xs={12} md={4}>
+          <Grid key={project.name} item xs={12} sm={6} md={4}>
             <Card elevation={10} className="ProjectCard">
               <Paper elevation={0}>
-                <Font variant="h3">{project.name}</Font>
+                <Font variant="h4" component='h2'>{project.name}</Font>
+                <hr/>
                 <Font variant="body1" align="left">
                   {project.Description}
                 </Font>
                 <div className="BottomCard">
-                  <Font>
-                    Project Status
-                    <br />
-                    <Font style={{color:project.status === 'Complete'?'green':'red'}}>{project.status}</Font>
+                  <Font>Project Status:</Font>
+                  <Font
+                    style={{
+                      color: project.status === "Complete" ? "green" : "red"
+                    }}
+                  >
+                    {project.status}
                   </Font>
+                  <br/>
                   <Button
                     variant="contained"
                     href={project.code}

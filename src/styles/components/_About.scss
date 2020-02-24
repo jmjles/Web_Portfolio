@@ -1,23 +1,68 @@
-@import '../Variables';
+@import "../Variables";
 .AboutRoot {
   height: 100vh;
-  padding-top: 10%;
   background-color: $paperColor;
-  color:$heavyBlue;
+  color: $heavyBlue;
+
+  @media (min-width: 500px) {
+    padding-top: calc(75.37px + 100px);
+  }
+
   #about-paper {
     hr {
       margin-bottom: 2rem;
       border-color: $primaryColor;
     }
+
     background-color: $defaultBGC;
-    padding: 1.5rem 2rem;
-    height: 100%;
-    #portrait {
-      width: 30%;
-      border: 3px solid black;
-      float: left;
-      opacity: 90%;
-      margin: 0 2rem;
+    padding: 1rem 1.5rem;
+
+    #text-container {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      @media (min-width:500px) {
+        width: 60%;
+      }
+      @media (min-width:700px) {
+          margin-top: calc(348px / 2 / 2);
+      }
+    }
+
+    #portrait-container {
+      max-width: 348px;
+      width: 65%;
+      display: block;
+      margin: 0 auto 1rem ;
+
+      @media (min-width: 500px) {
+        width: 30%;
+        display: inline-block;
+        margin: 1rem;
+      }
+
+      #portrait {
+        width: 100%;
+        border: 3px solid black;
+        opacity: 90%;
+      }
+    }
+  }
+  .MyStack {
+    position: absolute;
+    bottom: -100vh;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: $navColor;
+
+    img {
+      width: 42px;
+      height: 42px;
+      @media (min-width: 530px) {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 }

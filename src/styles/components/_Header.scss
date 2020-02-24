@@ -1,4 +1,4 @@
-@import '../Variables';
+@import "../Variables";
 
 .HeaderRoot {
   background-color: $navColor;
@@ -6,31 +6,56 @@
   width: 100%;
   z-index: 99;
   nav {
-    #logo-container {
-      width: 15%;
-      display: inline-block;
-      text-align: center;
+    .DesktopOnly {
+      display: none;
     }
+
+    #logo-container {
+      img {
+        width: 42px;
+      }
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
     #nav-items {
       width: 85%;
       display: inline-block;
       padding-top: 15.5px;
       vertical-align: top;
+
+      div {
+        justify-content: flex-end;
+      }
     }
+
+    svg {
+      stroke: white;
+      fill: white;
+    }
+
     div {
       padding: 0.2rem 0;
     }
-    @media (max-width: 700px) {
-      #logo-container {
+
+    @media (min-width: 700px) {
+      .DesktopOnly {
+        display: block;
+      }
+      svg {
         display: none;
+      }
+      #logo-container {
+        width: 15%;
+        img {
+          width: 64px;
+        }
       }
       #nav-items {
-        width: 100%;
-      }
-    }
-    @media (max-width:650px) {
-      .DesktopOnly {
-        display: none;
+        width: 85%;
+        div{
+          justify-content: space-between;
+        }
       }
     }
   }

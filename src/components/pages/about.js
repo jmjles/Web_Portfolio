@@ -1,6 +1,15 @@
 import React from "react";
 import Portrait from "../../assets/pics/portrait.jpg";
-import { Container, Typography as Font, Paper } from "@material-ui/core";
+import { Container, Typography as Font, Paper, Grid } from "@material-ui/core";
+import CSS3 from "../../assets/pics/css3.png";
+import HTML5 from "../../assets/pics/html5.png";
+import JS from "../../assets/pics/js.png";
+import NODE from "../../assets/pics/node.png";
+import MONGODB from "../../assets/pics/mongodb.png";
+import REACT from "../../assets/pics/react.png";
+import REDUX from "../../assets/pics/redux.png";
+import SASS from "../../assets/pics/sass.png";
+
 function About() {
   return (
     <Container
@@ -11,28 +20,56 @@ function About() {
     >
       <Container maxWidth="md">
         <Paper id="about-paper">
-          <Font variant="h1" align="center">
-            A Little Bit About Me
+          <Font variant="h3" component="h1" align="center">
+            About Me
           </Font>
           <hr />
-          <img id="portrait" src={Portrait} alt="A portrait of Jesus M." style={{display:'inline'}} />
-          <div style={{display:'inline'}}>
+          <div id="portrait-container">
+            <img id="portrait" src={Portrait} alt="A portrait of Jesus M." />
+          </div>
+          <div id="text-container">
             <Font variant="body1">
-              When I was a kid, I always loved building models and taking apart
-              electronics. I started learning about all the hardware of
-              computers when I was in middle school.
+              My elders have always told me to find what I like to do as work.
+              Then you will never feel that you are working. That's how I feel
+              when I'm learning code or developing an App. <br />
+              "I <b>LOVE</b> the process." - Gary Vaynerchuk.
               <br />
-              One day, I signed up for two classes; one was focused on Adobe
-              Suites and the other on Java. I was <b>in love</b> with the idea
-              that could create virtually anything with a few lines of code.
-              <br />I came across Udacity as I was getting frustrated at the
-              thought that the college I was attending didn't have any
-              programming classes. I've decided to drop college and proceed my
-              dreams of becoming a Full-Stack Developer!
+              <br />
             </Font>
           </div>
         </Paper>
       </Container>
+      <Paper className="MyStack" square>
+        <Font variant="h5" align="center">
+          My Stack
+        </Font>
+        <Grid container justify='space-evenly' alignItems='center'>
+          <Grid item>
+            <img src={HTML5} alt="Html5 Logo" />
+          </Grid>
+          <Grid item>
+            <img src={CSS3} alt="Html5 Logo" />
+          </Grid>
+          <Grid item>
+            <img src={JS} alt="Html5 Logo" />
+          </Grid>
+          <Grid item>
+            <img src={MONGODB} alt="Mongodb Logo" />
+          </Grid>
+          <Grid item>
+            <img src={NODE} alt="Node.js Logo" />
+          </Grid>
+          <Grid item>
+            <img src={REACT} alt="React Logo" />
+          </Grid>
+          <Grid item>
+            <img src={REDUX} alt="Redux Logo" />
+          </Grid>
+          <Grid item>
+            <img src={SASS} alt="Sass Logo" />
+          </Grid>
+        </Grid>
+      </Paper>
     </Container>
   );
 }

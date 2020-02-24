@@ -1,16 +1,18 @@
 @import '../Variables';
 .HomeRoot {
   height: 100vh;
-  padding-top: 10%;
+  padding-top: calc(60.43px + 50px);
   h6{
     font-weight: bold;
   }
   div {
     div {
-      padding: 1.5rem 2rem;
+      padding: 1rem 1.5rem;
     }
   }
-
+@media (min-width:700px) {
+  padding-top: calc(75.37px + 100px);
+} 
 }
   #lines {
     position: absolute;

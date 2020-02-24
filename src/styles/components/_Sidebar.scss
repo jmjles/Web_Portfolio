@@ -15,6 +15,17 @@
     a {
       border-bottom: white 2px solid;
       padding: 5px 0;
+      text-decoration: none;
+      color:white;
+      :visited{
+        color:white
+      }
+      :hover {
+         color:$secondaryColor
+      }
+      :active {
+        color:$secondaryColor
+      }
     }
   }
 }
