@@ -23,6 +23,13 @@ export default function Projects() {
       status: "Complete",
       link: "https://clicker-game-jmjles.herokuapp.com/",
       code: "https://github.com/jmjles/clicker-game"
+    },
+    {
+      name: "Rick And Morty App",
+      Description: "Shows all locations and characters in rick and morty.",
+      status: "Under Construction",
+      link: "https://rick-and-morty-jmjles.herokuapp.com/",
+      code: "https://github.com/jmjles/rick-and-morty"
     }
   ];
   return (
