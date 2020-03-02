@@ -145,7 +145,7 @@ function Header() {
           </Grid>
         </Container>
       </Paper>
-      <SideBar />
+      <SideBar setToggle={setToggle}/>
     </>
   );
 }

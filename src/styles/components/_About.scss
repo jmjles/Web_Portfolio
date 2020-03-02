@@ -1,9 +1,9 @@
 @import "../Variables";
 .AboutRoot {
-  height: 100vh;
+  height: calc(100vh + 120px);
   background-color: $paperColor;
   color: $heavyBlue;
-
+  position: relative;
   @media (min-width: 500px) {
     padding-top: calc(75.37px + 100px);
   }
@@ -44,13 +44,12 @@
       #portrait {
         width: 100%;
         border: 3px solid black;
-        opacity: 90%;
       }
     }
   }
   .MyStack {
     position: absolute;
-    bottom: -100vh;
+    bottom: 0;
     left: 0;
     width: 100%;
     color: white;
