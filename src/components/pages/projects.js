@@ -14,21 +14,21 @@ export default function Projects() {
       Description:
         "Get The latest news, weather and map of a location with a simple search.",
       status: "Complete",
-      link: "https://location-lookup-jmjles.herokuapp.com/",
+      link: "https://location-lookup.jesusmj.com/",
       code: "https://github.com/jmjles/location-lookup"
     },
     {
       name: "Clicker Game",
       Description: "Click on the character to lvl up!",
       status: "Complete",
-      link: "https://clicker-game-jmjles.herokuapp.com/",
+      link: "https://clicker-game.jesusmj.com/",
       code: "https://github.com/jmjles/clicker-game"
     },
     {
       name: "Rick And Morty App",
       Description: "Shows all locations and characters in rick and morty.",
       status: "Under Construction",
-      link: "https://rick-and-morty-jmjles.herokuapp.com/",
+      link: "https://rick-and-morty.jesusmj.com/",
       code: "https://github.com/jmjles/rick-and-morty"
     }
   ];
