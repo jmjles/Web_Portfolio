@@ -31,7 +31,7 @@ function About() {
             <Font variant="body1">
               My elders have always told me to find what I like to do as work.
               Then you will never feel that you are working. That's how I feel
-              when I'm learning code or developing an App. <br />
+              when I'm learning code or developing an app. <br />
               "I <b>LOVE</b> the process." - Gary Vaynerchuk.
               <br />
               <br />
@@ -43,8 +43,8 @@ function About() {
         <Font variant="h4" align="center">
           My Stack
         </Font>
-        <br/>
-        <Grid container justify='space-evenly' alignItems='center'>
+        <br />
+        <Grid container justify="space-evenly" alignItems="center">
           <Grid item>
             <img src={HTML5} alt="Html5 Logo" />
           </Grid>
