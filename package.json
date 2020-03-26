@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
+    "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.5.1",
-    "@material-ui/styles": "^4.6.0",
+    "@material-ui/styles": "^4.9.6",
     "animejs": "^3.0.1",
-    "aws-sdk": "^2.528.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.5",
+    "aws-sdk": "^2.646.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^3.3.1",
+    "react-scripts": "^3.4.1",
     "react-waypoint": "^9.0.2"
   },
   "scripts": {
