@@ -70,7 +70,6 @@ export default function Projects() {
                   <Button
                     variant="contained"
                     href={project.link}
-                    target="blank"
                     color="secondary"
                   >
                     <Font variant="button">Try Me</Font>
