@@ -5,7 +5,7 @@ import {
   Card,
   Container,
   Button,
-  Paper
+  Paper,
 } from "@material-ui/core";
 export default function Projects() {
   const projects = [
@@ -15,70 +15,89 @@ export default function Projects() {
         "Get The latest news, weather and map of a location with a simple search.",
       status: "Complete",
       link: "https://location-lookup.jesusmj.com/",
-      code: "https://github.com/jmjles/location-lookup"
+      code: "https://github.com/jmjles/location-lookup",
     },
     {
       name: "Clicker Game",
       Description: "Click on the character to lvl up!",
       status: "Complete",
       link: "https://clicker-game.jesusmj.com/",
-      code: "https://github.com/jmjles/clicker-game"
+      code: "https://github.com/jmjles/clicker-game",
     },
     {
       name: "Rick And Morty App",
       Description: "Shows all locations and characters in rick and morty.",
       status: "Under Construction",
       link: "https://rick-and-morty.jesusmj.com/",
-      code: "https://github.com/jmjles/rick-and-morty"
-    }
+      code: "https://github.com/jmjles/rick-and-morty",
+    },
+    {
+      name: "Albion Online Tool",
+      Description: "React Native App utilizing api's to display ingame data.",
+      status: "Under Construction",
+      link:
+        "https://play.google.com/store/apps/details?id=com.jmjles.albiononlinetool",
+      code: "https://github.com/jmjles/albion-online-tool",
+    },
+    {
+      name: "MLS Roofing",
+      Description: "Roofing company website.",
+      status: "Under Construction",
+      link: "https://mlsroofing.com",
+      code: undefined,
+    },
   ];
   return (
-    <Container
-      maxWidth="xl"
-      component="article"
-      className="ProjectsRoot"
-    >
-      <Font variant="h3" component='h1'>My Projects</Font>
+    <Container maxWidth="xl" component="article" className="ProjectsRoot">
+      <Font variant="h3" component="h1">
+        My Projects
+      </Font>
       <Grid container spacing={5} justify="space-around">
-        {projects.map(project => (
-          <Grid key={project.name} item xs={12} sm={6} md={4}>
-            <Card elevation={10} className="ProjectCard">
-              <Paper elevation={0}>
-                <Font variant="h4" component='h2'>{project.name}</Font>
-                <hr/>
-                <Font variant="body1" align="left">
-                  {project.Description}
-                </Font>
-                <div className="BottomCard">
-                  <Font>Project Status:</Font>
-                  <Font
-                    style={{
-                      color: project.status === "Complete" ? "green" : "red"
-                    }}
-                  >
-                    {project.status}
+        {projects
+          .map((project) => (
+            <Grid key={project.name} item xs={12} sm={6} md={4}>
+              <Card elevation={10} className="ProjectCard">
+                <Paper elevation={0}>
+                  <Font variant="h4" component="h2">
+                    {project.name}
                   </Font>
-                  <br/>
-                  <Button
-                    variant="contained"
-                    href={project.code}
-                    target="blank"
-                    color="primary"
-                  >
-                    <Font variant="button">Code</Font>
-                  </Button>
-                  <Button
-                    variant="contained"
-                    href={project.link}
-                    color="secondary"
-                  >
-                    <Font variant="button">Try Me</Font>
-                  </Button>
-                </div>
-              </Paper>
-            </Card>
-          </Grid>
-        ))}
+                  <hr />
+                  <Font variant="body1" align="left">
+                    {project.Description}
+                  </Font>
+                  <div className="BottomCard">
+                    <Font>Project Status:</Font>
+                    <Font
+                      style={{
+                        color: project.status === "Complete" ? "green" : "red",
+                      }}
+                    >
+                      {project.status}
+                    </Font>
+                    <br />
+                    <Button
+                      variant="contained"
+                      href={project.code}
+                      onClick={
+                        !project.code ? () => alert("Private Repo") : null
+                      }
+                      target="blank"
+                      color="primary"
+                    >
+                      <Font variant="button">Code</Font>
+                    </Button>
+                    <Button
+                      variant="contained"
+                      href={project.link}
+                      color="secondary"
+                    >
+                      <Font variant="button">Try Me</Font>
+                    </Button>
+                  </div>
+                </Paper>
+              </Card>
+            </Grid>
+          ))}
       </Grid>
     </Container>
   );
