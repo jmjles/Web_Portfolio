@@ -21,38 +21,53 @@ export default function Projects() {
 
   const LocationLookup = new Project(
     "Location Lookup",
+    "",
+    "",
     "Gets The latest news, weather and map of a location with a simple search.",
     "Complete",
     "https://location-lookup.jesusmj.com/",
-    "https://github.com/jmjles/location-lookup"
+    "https://github.com/jmjles/location-lookup",
+    []
   );
   const ClickerGame = new Project(
     "Clicker Game",
+    "",
+    "",
     "Click on the character to lvl up!",
     "Complete",
     "https://clicker-game.jesusmj.com/",
-    "https://github.com/jmjles/clicker-game"
+    "https://github.com/jmjles/clicker-game",
+    []
   );
   const RickAndMorty = new Project(
     "Rick And Morty App",
+    "",
+    "",
     "Shows all locations and characters in rick and morty.",
     "Under Construction",
     "https://rick-and-morty.jesusmj.com/",
-    "https://github.com/jmjles/rick-and-morty"
+    "https://github.com/jmjles/rick-and-morty",
+    []
   );
   const AlbionOnlineTool = new Project(
     "Albion Online Tool",
+    "",
+    "",
     "React Native App utilizing api's to display ingame data.",
     "Under Construction",
     "https://play.google.com/store/apps/details?id=com.jmjles.albiononlinetool",
-    "https://github.com/jmjles/albion-online-tool"
+    "https://github.com/jmjles/albion-online-tool",
+    []
   );
   const MLSRoofing = new Project(
     "MLS Roofing",
+    "",
+    "",
     "Roofing company website.",
     "Under Construction",
     "https://mlsroofing.com",
-    undefined
+    undefined,
+    []
   );
   const projects = [
     LocationLookup,
