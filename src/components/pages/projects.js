@@ -7,8 +7,21 @@ import {
   Button,
   Paper,
 } from "@material-ui/core";
+const {
+  html,
+  css,
+  js,
+  react,
+  redux,
+  locationLookup,
+  sass,
+  albionOnlineTool,
+  clickerGame,
+  rickandmorty,
+  mls,
+} = require("../../assets/index");
 export default function Projects() {
-  function Project(name, img, alt, desc, status, link, code, stack){
+  function Project(name, img, alt, desc, status, link, code, stack) {
     this.name = name;
     this.img = img;
     this.alt = alt;
@@ -17,57 +30,57 @@ export default function Projects() {
     this.link = link;
     this.code = code;
     this.stack = stack;
-  };
+  }
 
   const LocationLookup = new Project(
     "Location Lookup",
-    "",
-    "",
+    locationLookup.src,
+    locationLookup.alt,
     "Gets The latest news, weather and map of a location with a simple search.",
     "Complete",
     "https://location-lookup.jesusmj.com/",
     "https://github.com/jmjles/location-lookup",
-    []
+    [html, css, js, react]
   );
   const ClickerGame = new Project(
     "Clicker Game",
-    "",
-    "",
+    clickerGame.src,
+    clickerGame.alt,
     "Click on the character to lvl up!",
     "Complete",
     "https://clicker-game.jesusmj.com/",
     "https://github.com/jmjles/clicker-game",
-    []
+    [html, css, js, react]
   );
   const RickAndMorty = new Project(
     "Rick And Morty App",
-    "",
-    "",
+    rickandmorty.src,
+    rickandmorty.alt,
     "Shows all locations and characters in rick and morty.",
     "Under Construction",
     "https://rick-and-morty.jesusmj.com/",
     "https://github.com/jmjles/rick-and-morty",
-    []
+    [html, css, js, react]
   );
   const AlbionOnlineTool = new Project(
     "Albion Online Tool",
-    "",
-    "",
+    albionOnlineTool.src,
+    albionOnlineTool.alt,
     "React Native App utilizing api's to display ingame data.",
     "Under Construction",
     "https://play.google.com/store/apps/details?id=com.jmjles.albiononlinetool",
     "https://github.com/jmjles/albion-online-tool",
-    []
+    [html, css, js]
   );
   const MLSRoofing = new Project(
     "MLS Roofing",
-    "",
-    "",
+    mls.src,
+    mls.alt,
     "Roofing company website.",
     "Under Construction",
     "https://mlsroofing.com",
     undefined,
-    []
+    [html, css, js, react, sass]
   );
   const projects = [
     LocationLookup,
@@ -91,6 +104,11 @@ export default function Projects() {
                   {project.name}
                 </Font>
                 <hr />
+                <img
+                  className="ProjectImage"
+                  src={project.img}
+                  alt={project.alt}
+                />
                 <Font variant="body1" align="left">
                   {project.Description}
                 </Font>
@@ -103,7 +121,12 @@ export default function Projects() {
                   >
                     {project.status}
                   </Font>
-                  <br />
+                  <Font>Stack Implemented</Font>
+                  <div className="StackSection">
+                    {project.stack.map((tech) => (
+                      <img src={tech.src} alt={tech.alt} />
+                    ))}
+                  </div>
                   <Button
                     variant="contained"
                     href={project.code}

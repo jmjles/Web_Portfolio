@@ -124,7 +124,7 @@
 }
 
 .ProjectsRoot .ProjectCard {
-  height: 350px;
+  min-height: 598px;
   position: relative;
 }
 
@@ -136,17 +136,27 @@
   margin-bottom: 1rem;
 }
 
-.ProjectsRoot .ProjectCard div .BottomCard {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+.ProjectsRoot .ProjectCard div .ProjectImage {
+  max-width: 100%;
+  height: 300px;
 }
 
-.ProjectsRoot .ProjectCard div .BottomCard a {
-  margin-left: 1rem;
+.ProjectsRoot .ProjectCard div .StackSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.ProjectsRoot .ProjectCard div .StackSection img {
+  width: 64px;
+  height: 64px;
+}
+
+.ProjectsRoot .ProjectCard div button, .ProjectsRoot .ProjectCard div a {
+  margin-right: 10px;
 }
 
 .AboutRoot {
