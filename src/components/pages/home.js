@@ -32,14 +32,17 @@ function Home() {
       >
         <Card elevation={5}>
           <Paper>
-            <Font variant="h2" component='h1' align='left'>Welcome</Font>
-            <Font variant='subtitle1' align='right'>
+            <Font variant="h2" component="h1" align="left">
+              Welcome
+            </Font>
+            <Font variant="subtitle1" align="right">
               to my tiny corner in the world wide web.
             </Font>
-            <hr/>
+            <hr />
             <Font variant="body1" align="left">
               My name is Jesus Morales, and I'm a Full Stack Web Developer.<br/>
-              Availabilty for relocation is always up for descussion. I'm Currently based on Los Angeles, Ca.<br/>
+              Availability for relocation is always up for discussion. I
+              currently reside in Los Angeles, Ca.
             </Font>
             <br />
             <Button
