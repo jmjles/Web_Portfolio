@@ -29,12 +29,10 @@ function About() {
           </div>
           <div id="text-container">
             <Font variant="body1">
-              My elders have always told me to find what I like to do as work.
-              Then you will never feel that you are working. That's how I feel
-              when I'm learning code or developing an app. <br />
-              "I <b>LOVE</b> the process." - Gary Vaynerchuk.
-              <br />
-              <br />
+              The name is Jesus Morales, and I'm a JavaScript enthusiast. I
+              enjoy working with computers in general, but development has a
+              special place in my heart. I started coding back in high school,
+              and I couldn't stop ever since.
             </Font>
           </div>
         </Paper>

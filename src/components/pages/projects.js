@@ -42,6 +42,7 @@ export default function Projects() {
     "https://github.com/jmjles/location-lookup",
     [html, css, js, react]
   );
+
   const ClickerGame = new Project(
     "Clicker Game",
     clickerGame.src,
@@ -52,6 +53,7 @@ export default function Projects() {
     "https://github.com/jmjles/clicker-game",
     [html, css, js, react]
   );
+
   const RickAndMorty = new Project(
     "Rick And Morty App",
     rickandmorty.src,
@@ -62,6 +64,7 @@ export default function Projects() {
     "https://github.com/jmjles/rick-and-morty",
     [html, css, js, react]
   );
+
   const AlbionOnlineTool = new Project(
     "Albion Online Tool",
     albionOnlineTool.src,
@@ -72,6 +75,7 @@ export default function Projects() {
     "https://github.com/jmjles/albion-online-tool",
     [html, css, js]
   );
+
   const MLSRoofing = new Project(
     "MLS Roofing",
     mls.src,
@@ -82,6 +86,7 @@ export default function Projects() {
     undefined,
     [html, css, js, react, sass]
   );
+  
   const projects = [
     LocationLookup,
     ClickerGame,
@@ -110,7 +115,7 @@ export default function Projects() {
                   alt={project.alt}
                 />
                 <Font variant="body1" align="left">
-                  {project.Description}
+                  {project.desc}
                 </Font>
                 <div className="BottomCard">
                   <Font>Project Status:</Font>
