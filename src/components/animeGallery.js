@@ -49,4 +49,17 @@ const sidebarAni = () => {
     duration: 200
   });
 };
-export { socialAni, homeAni, sidebarAni };
+
+const showResp = (id) =>{
+  const target = `#ul${id}`;
+  const el = document.querySelector(target)
+  const init = anime.get(el, "height", "px");
+  const height = init > '0px' ? [init, '0px'] : ['0px', "80px"];
+  anime({
+    targets: target,
+    height,
+    easing: "linear",
+    duration: 400
+  })
+}
+export { socialAni, homeAni, sidebarAni, showResp };

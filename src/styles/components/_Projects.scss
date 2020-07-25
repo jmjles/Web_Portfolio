@@ -16,6 +16,12 @@
       h3 {
         margin-bottom: 1rem;
       }
+      ul{
+        text-align: left;
+        height: 0;
+        overflow: hidden;
+        margin:0;
+      }
       .ProjectImage{
         max-width: 100%;
         height: 300px;

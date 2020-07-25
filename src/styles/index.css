@@ -136,6 +136,13 @@
   margin-bottom: 1rem;
 }
 
+.ProjectsRoot .ProjectCard div ul {
+  text-align: left;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
 .ProjectsRoot .ProjectCard div .ProjectImage {
   max-width: 100%;
   height: 300px;

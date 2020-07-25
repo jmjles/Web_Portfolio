@@ -7,6 +7,7 @@ import {
   Button,
   Paper,
 } from "@material-ui/core";
+import {showResp} from '../animeGallery'
 const {
   html,
   css,
@@ -21,11 +22,12 @@ const {
   mls,
 } = require("../../assets/index");
 export default function Projects() {
-  function Project(name, img, alt, desc, status, link, code, stack) {
+  function Project(name, img, alt, desc, resp, status, link, code, stack) {
     this.name = name;
     this.img = img;
     this.alt = alt;
     this.desc = desc;
+    this.resp = resp;
     this.status = status;
     this.link = link;
     this.code = code;
@@ -37,6 +39,11 @@ export default function Projects() {
     locationLookup.src,
     locationLookup.alt,
     "Gets The latest news, weather and map of a location with a simple search.",
+    [
+      "Updated initial vinilla JS code to React.js",
+      "Worked with Axios to communicate with third party APIs",
+      "Implemented Material-UI and Sass for styling",
+    ],
     "Complete",
     "https://location-lookup.jesusmj.com/",
     "https://github.com/jmjles/location-lookup",
@@ -48,6 +55,11 @@ export default function Projects() {
     clickerGame.src,
     clickerGame.alt,
     "Click on the character to lvl up!",
+    [
+      "Updated initial vinilla JS code to React.js",
+      "Added Anime.js for animations",
+      "Implemented Material-UI and Sass for styling",
+    ],
     "Complete",
     "https://clicker-game.jesusmj.com/",
     "https://github.com/jmjles/clicker-game",
@@ -59,6 +71,11 @@ export default function Projects() {
     rickandmorty.src,
     rickandmorty.alt,
     "Shows all locations and characters in rick and morty.",
+    [
+      "Worked with Axios to communicate with a third party API",
+      "Implemented Material-UI and Sass for styling", 
+      "Worked with React Native to construct this app"
+    ],
     "Under Construction",
     "https://rick-and-morty.jesusmj.com/",
     "https://github.com/jmjles/rick-and-morty",
@@ -69,7 +86,12 @@ export default function Projects() {
     "Albion Online Tool",
     albionOnlineTool.src,
     albionOnlineTool.alt,
-    "React Native App utilizing api's to display ingame data.",
+    "React Native App utilizing API's to display ingame data.",
+    [
+      "Worked with Axios to communicate with third party API",
+      "Created a simple design using jsx",
+      "Deployed the app to the Google Play Store"
+    ],
     "Under Construction",
     "https://play.google.com/store/apps/details?id=com.jmjles.albiononlinetool",
     "https://github.com/jmjles/albion-online-tool",
@@ -81,12 +103,17 @@ export default function Projects() {
     mls.src,
     mls.alt,
     "Roofing company website.",
+    [
+      "Worked with Next.js to construct this site",
+      "Used Sass/Css to make a responsive design",
+      "Kept SEO in mind when placing elements"
+    ],
     "Under Construction",
     "https://mlsroofing.com",
     undefined,
     [html, css, js, react, sass]
   );
-  
+
   const projects = [
     LocationLookup,
     ClickerGame,
@@ -101,8 +128,8 @@ export default function Projects() {
         My Projects
       </Font>
       <Grid container spacing={5} justify="space-around">
-        {projects.map((project) => (
-          <Grid key={project.name} item xs={12} sm={6} md={4}>
+        {projects.map((project,i) => (
+          <Grid key={isSecureContext} item xs={12} sm={6} md={4}>
             <Card elevation={10} className="ProjectCard">
               <Paper elevation={0}>
                 <Font variant="h4" component="h2">
@@ -117,6 +144,13 @@ export default function Projects() {
                 <Font variant="body1" align="left">
                   {project.desc}
                 </Font>
+                <Font variant="subtitle1" color='secondary' onClick={()=>showResp(i)}>What did I do?</Font>
+                <ul id={`ul${i}`}>
+                  {project.resp.map((resp) => (
+                    <li key={resp}>{resp}</li>
+                  ))}
+                </ul>
+
                 <div className="BottomCard">
                   <Font>Project Status:</Font>
                   <Font
