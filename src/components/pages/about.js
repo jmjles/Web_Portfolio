@@ -15,8 +15,6 @@ function About() {
     <Container
       component="article"
       className="AboutRoot"
-      id="about"
-      maxWidth="xl"
     >
       <Container maxWidth="md">
         <Paper id="about-paper">

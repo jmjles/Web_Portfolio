@@ -13,7 +13,11 @@
     position: relative;
     div {
       padding: 1rem;
-      h3 {
+      h2 {
+        margin-bottom: 1rem;
+      }
+      hr{
+        margin-top: 0;
         margin-bottom: 1rem;
       }
       ul{
@@ -21,6 +25,9 @@
         height: 0;
         overflow: hidden;
         margin:0;
+      }
+      h6{
+        cursor: pointer;
       }
       .ProjectImage{
         max-width: 100%;

@@ -132,7 +132,12 @@
   padding: 1rem;
 }
 
-.ProjectsRoot .ProjectCard div h3 {
+.ProjectsRoot .ProjectCard div h2 {
+  margin-bottom: 1rem;
+}
+
+.ProjectsRoot .ProjectCard div hr {
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
@@ -141,6 +146,10 @@
   height: 0;
   overflow: hidden;
   margin: 0;
+}
+
+.ProjectsRoot .ProjectCard div h6 {
+  cursor: pointer;
 }
 
 .ProjectsRoot .ProjectCard div .ProjectImage {
@@ -171,6 +180,8 @@
   background-color: #dce7e0;
   color: #181c20;
   position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 500px) {

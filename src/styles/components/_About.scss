@@ -4,6 +4,8 @@
   background-color: $paperColor;
   color: $heavyBlue;
   position: relative;
+  width: 100%;
+  max-width: 100%;
   @media (min-width: 500px) {
     padding-top: calc(75.37px + 100px);
   }
