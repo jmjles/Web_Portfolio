@@ -82,6 +82,15 @@
   font-weight: bold;
 }
 
+.HomeRoot p {
+  font-size: 1.2rem;
+}
+
+.HomeRoot a span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .HomeRoot div div {
   padding: 1rem 1.5rem;
 }
@@ -245,6 +254,10 @@
   width: 100%;
   color: white;
   background-color: #414c51;
+}
+
+.AboutRoot .MyStack h4 {
+  margin: 1rem 0;
 }
 
 .AboutRoot .MyStack img {
