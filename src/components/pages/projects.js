@@ -38,7 +38,7 @@ export default function Projects() {
     "Location Lookup",
     locationLookup.src,
     locationLookup.alt,
-    "Gets The latest news, weather and map of a location with a simple search.",
+    "Gets The latest news, weather, and map of a location with a simple search.",
     [
       "Updated initial vinilla JS code to React.js",
       "Worked with Axios to communicate with third party APIs",
@@ -70,7 +70,7 @@ export default function Projects() {
     "Rick And Morty App",
     rickandmorty.src,
     rickandmorty.alt,
-    "Shows all locations and characters in rick and morty.",
+    "Shows all locations and characters from Rick and Morty.",
     [
       "Worked with Axios to communicate with a third party API",
       "Implemented Material-UI and Sass for styling", 
@@ -86,7 +86,7 @@ export default function Projects() {
     "Albion Online Tool",
     albionOnlineTool.src,
     albionOnlineTool.alt,
-    "React Native App utilizing API's to display ingame data.",
+    "React Native App utilizing API's to display in-game data.",
     [
       "Worked with Axios to communicate with third party API",
       "Created a simple design using jsx",
