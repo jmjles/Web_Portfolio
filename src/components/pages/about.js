@@ -27,9 +27,9 @@ function About() {
           </div>
           <div id="text-container">
             <Font variant="body1">
-              The name is Jesus Morales, and I'm a JavaScript enthusiast. I
+              The name is Jesus Morales, and I'm a JavaScript enthusiast.<br/> I
               enjoy working with computers in general, but development has a
-              special place in my heart. I started coding back in high school,
+              special place in my heart. <br/>I started coding back in high school,
               and I couldn't stop ever since.
             </Font>
           </div>
@@ -39,7 +39,6 @@ function About() {
         <Font variant="h4" align="center">
           My Stack
         </Font>
-        <br />
         <Grid container justify="space-evenly" alignItems="center">
           <Grid item>
             <img src={HTML5} alt="Html5 Logo" />

@@ -6,9 +6,9 @@ import {
   Typography as Font,
   Button,
   Card,
-  Paper
+  Paper,
 } from "@material-ui/core";
-import {homeAni} from '../animeGallery'
+import { homeAni } from "../animeGallery";
 function Home() {
   useEffect(() => {
     let init = false;
@@ -20,7 +20,7 @@ function Home() {
         return 1000 * 2;
       }
     };
-    homeAni(delay)
+    homeAni(delay);
   }, []);
   return (
     <>
@@ -40,9 +40,10 @@ function Home() {
             </Font>
             <hr />
             <Font variant="body1" align="left">
-              My name is Jesus Morales, and I'm a Full Stack Web Developer.<br/>
-              Availability for relocation is always up for discussion. I
-              currently reside in Los Angeles, Ca.
+              My name is Jesus Morales, and I'm a Full Stack Web Developer.
+              <br />
+              Availability for relocation is always up for discussion.
+              <br />I currently reside in Los Angeles, Ca.
             </Font>
             <br />
             <Button
