@@ -5,6 +5,10 @@
   z-index: 99;
 }
 
+.HeaderRoot nav {
+  padding: 0 20px;
+}
+
 .HeaderRoot nav .DesktopOnly {
   display: none;
 }
@@ -12,6 +16,7 @@
 .HeaderRoot nav #logo-container {
   display: inline-block;
   vertical-align: bottom;
+  margin-right: auto;
 }
 
 .HeaderRoot nav #logo-container img {
@@ -19,16 +24,8 @@
 }
 
 .HeaderRoot nav #nav-items {
-  width: 85%;
-  display: inline-block;
   padding-top: 15.5px;
-  vertical-align: top;
-}
-
-.HeaderRoot nav #nav-items div {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  color: #FBF5F3;
 }
 
 .HeaderRoot nav svg {
@@ -52,14 +49,6 @@
   }
   .HeaderRoot nav #logo-container img {
     width: 64px;
-  }
-  .HeaderRoot nav #nav-items {
-    width: 85%;
-  }
-  .HeaderRoot nav #nav-items div {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
 }
 

@@ -7,24 +7,19 @@
     .DesktopOnly {
       display: none;
     }
-
+    padding: 0 20px;
     #logo-container {
       img {
         width: 42px;
       }
       display: inline-block;
       vertical-align: bottom;
+      margin-right: auto;
     }
 
-    #nav-items {
-      width: 85%;
-      display: inline-block;
+    #nav-items{
       padding-top: 15.5px;
-      vertical-align: top;
-
-      div {
-        justify-content: flex-end;
-      }
+      color: $text-white;
     }
 
     svg {
@@ -47,12 +42,6 @@
         width: 15%;
         img {
           width: 64px;
-        }
-      }
-      #nav-items {
-        width: 85%;
-        div{
-          justify-content: space-between;
         }
       }
     }

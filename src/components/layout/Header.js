@@ -21,7 +21,7 @@ import {
   Grid,
   Typography as Font,
   Button,
-  Container
+  Container,
 } from "@material-ui/core";
 function Header() {
   const [toggle,setToggle] = useState(false)
@@ -33,17 +33,16 @@ function Header() {
         component="header"
         square={true}
       >
-        <Container maxWidth="xl" component="nav">
-          <div id="logo-container">
+        <Grid component="nav" justify="space-between" container>
+          <Grid item id="logo-container">
             <img src={Logo} alt="J M Logo" id="Logo" />
-          </div>
-          <div id="nav-items">
-            <Grid container justify="space-evenly" alignItems="center">
+          </Grid>
+          <Grid item id="nav-items" sm >
+            <Grid container alignItems="center" justify="flex-end">
               <Grid item className="DesktopOnly">
                 <Button
-                  variant="contained"
                   component={Link}
-                  color="primary"
+                  color="inherit"
                   to="/"
                 >
                   <Font variant="button">Home</Font>
@@ -51,9 +50,8 @@ function Header() {
               </Grid>
               <Grid item className="DesktopOnly">
                 <Button
-                  variant="contained"
+                  color="inherit"
                   component={Link}
-                  color="primary"
                   to="/projects"
                 >
                   <Font variant="button">Projects</Font>
@@ -61,8 +59,7 @@ function Header() {
               </Grid>
               <Grid item className="DesktopOnly">
                 <Button
-                  variant="contained"
-                  color="primary"
+                  color="inherit"
                   component="a"
                   href={Resume}
                   target="_blank"
@@ -73,7 +70,6 @@ function Header() {
               </Grid>
               <Grid item className="DesktopOnly">
                 <Button
-                  variant="contained"
                   onClick={socialAni}
                   color="secondary"
                 >
@@ -98,8 +94,8 @@ function Header() {
                 )}
               </Grid>
             </Grid>
-          </div>
-        </Container>
+          </Grid>
+        </Grid>
         <Container className="Socials" maxWidth="sm">
           <Grid container justify="center" spacing={3}>
             <Grid item>
