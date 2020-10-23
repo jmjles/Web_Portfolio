@@ -1,5 +1,5 @@
 .HeaderRoot {
-  background-color: #414c51;
+  background-color: #363946;
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -74,7 +74,7 @@
 }
 
 .HomeRoot {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: calc(60.43px + 50px);
 }
 
@@ -111,7 +111,7 @@
 }
 
 #lines #path {
-  fill: #dce7e0;
+  fill: #D6EAFF;
   stroke: black;
   stroke-width: 2;
 }
@@ -185,8 +185,8 @@
 }
 
 .AboutRoot {
-  height: calc(100vh + 120px);
-  background-color: #dce7e0;
+  min-height: calc(100vh + 120px);
+  background-color: #D6EAFF;
   color: #181c20;
   position: relative;
   width: 100%;
@@ -200,13 +200,13 @@
 }
 
 .AboutRoot #about-paper {
-  background-color: #B7CBCA;
+  background-color: #C9E3F8;
   padding: 1rem 1.5rem;
 }
 
 .AboutRoot #about-paper hr {
   margin-bottom: 2rem;
-  border-color: #252628;
+  border-color: #363946;
 }
 
 .AboutRoot #about-paper #text-container {
@@ -253,7 +253,7 @@
   left: 0;
   width: 100%;
   color: white;
-  background-color: #414c51;
+  background-color: #363946;
 }
 
 .AboutRoot .MyStack h4 {
@@ -279,7 +279,7 @@
   right: 0px;
   top: 60.43px;
   z-index: 99;
-  background-color: #414c51;
+  background-color: #363946;
   color: white;
   text-align: center;
   overflow: hidden;
@@ -300,11 +300,11 @@
 
 .SidebarRoot div div :hover,
 .SidebarRoot div a :hover {
-  color: #598288;
+  color: #3E92CC;
 }
 
 .SidebarRoot div div :active,
 .SidebarRoot div a :active {
-  color: #598288;
+  color: #3E92CC;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,6 +1,5 @@
-@import "../Variables";
 .AboutRoot {
-  height: calc(100vh + 120px);
+  min-height: calc(100vh + 120px);
   background-color: $paperColor;
   color: $heavyBlue;
   position: relative;
@@ -23,11 +22,11 @@
       display: inline-block;
       width: 100%;
       vertical-align: top;
-      @media (min-width:500px) {
+      @media (min-width: 500px) {
         width: 60%;
       }
-      @media (min-width:700px) {
-          margin-top: calc(348px / 2 / 2);
+      @media (min-width: 700px) {
+        margin-top: calc(348px / 2 / 2);
       }
     }
 
@@ -35,7 +34,7 @@
       max-width: 348px;
       width: 65%;
       display: block;
-      margin: 0 auto 1rem ;
+      margin: 0 auto 1rem;
 
       @media (min-width: 500px) {
         width: 30%;
@@ -56,7 +55,7 @@
     width: 100%;
     color: white;
     background-color: $navColor;
-    h4{
+    h4 {
       margin: 1rem 0;
     }
     img {
