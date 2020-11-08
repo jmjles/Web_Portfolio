@@ -21,6 +21,7 @@ const {
   rickandmorty,
   mls,
   mongo,
+  connys,
 } = require("../../assets/index");
 export default function Projects() {
   function Project(name, img, alt, desc, resp, status, link, code, stack) {
@@ -116,8 +117,8 @@ export default function Projects() {
   );
   const Connys = new Project(
     "Connys Beauty Salon",
-    mls.src,
-    mls.alt,
+    connys.src,
+    connys.alt,
     "Beauty Salon website with an apointment managment system.",
     [
       "Worked with Next.js and Sass for the front-end",

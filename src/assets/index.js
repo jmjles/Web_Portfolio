@@ -10,7 +10,7 @@ import SASS from "./pics/sass.png";
 import Mongo from "./pics/mongodb.png";
 import React from "./pics/react.png";
 import Redux from "./pics/redux.png";
-
+import conny from "./pics/connys-screenshot.png";
 function Img(src, alt) {
   this.src = src;
   this.alt = alt;
@@ -27,3 +27,4 @@ export const sass = new Img(SASS, "Sass Logo");
 export const mongo = new Img(Mongo, "MongoDb Logo");
 export const react = new Img(React, "React.js Logo");
 export const redux = new Img(Redux, "Redux.js Logo");
+export const connys = new Img(conny, "Conny's Beauty Salon Screenshot");
