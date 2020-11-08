@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 //* Assets
@@ -11,11 +11,11 @@ import Resume from "../../assets/etc/Resume.pdf";
 import Get from "@material-ui/icons/GetApp";
 import Logo from "../../assets/pics/logo.png";
 import Menu from "@material-ui/icons/Menu";
-import OpenMenu from '@material-ui/icons/MenuOpen'
+import OpenMenu from "@material-ui/icons/MenuOpen";
 
 //* Components
 import { socialAni, sidebarAni } from "../animeGallery";
-import SideBar from '../SideBar'
+import SideBar from "../SideBar";
 import {
   Paper,
   Grid,
@@ -24,7 +24,7 @@ import {
   Container,
 } from "@material-ui/core";
 function Header() {
-  const [toggle,setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
   return (
     <>
       <Paper
@@ -37,23 +37,15 @@ function Header() {
           <Grid item id="logo-container">
             <img src={Logo} alt="J M Logo" id="Logo" />
           </Grid>
-          <Grid item id="nav-items" sm >
+          <Grid item id="nav-items" sm>
             <Grid container alignItems="center" justify="flex-end">
               <Grid item className="DesktopOnly">
-                <Button
-                  component={Link}
-                  color="inherit"
-                  to="/"
-                >
+                <Button component={Link} color="inherit" to="/">
                   <Font variant="button">Home</Font>
                 </Button>
               </Grid>
               <Grid item className="DesktopOnly">
-                <Button
-                  color="inherit"
-                  component={Link}
-                  to="/projects"
-                >
+                <Button color="inherit" component={Link} to="/projects">
                   <Font variant="button">Projects</Font>
                 </Button>
               </Grid>
@@ -69,10 +61,7 @@ function Header() {
                 </Button>
               </Grid>
               <Grid item className="DesktopOnly">
-                <Button
-                  onClick={socialAni}
-                  color="secondary"
-                >
+                <Button onClick={socialAni} color="secondary">
                   <Font variant="button">Socials</Font>
                 </Button>
               </Grid>
@@ -141,7 +130,7 @@ function Header() {
           </Grid>
         </Container>
       </Paper>
-      <SideBar setToggle={setToggle}/>
+      <SideBar setToggle={setToggle} />
     </>
   );
 }

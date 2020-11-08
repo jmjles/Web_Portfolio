@@ -100,7 +100,7 @@
 }
 
 #lines #path {
-  fill: #D6EAFF;
+  fill: #e2effd;
   stroke: black;
   stroke-width: 2;
 }
@@ -175,7 +175,7 @@
 
 .AboutRoot {
   min-height: calc(100vh + 120px);
-  background-color: #D6EAFF;
+  background-color: #e2effd;
   color: #181c20;
   position: relative;
   width: 100%;
