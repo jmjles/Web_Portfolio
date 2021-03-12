@@ -1,12 +1,12 @@
 .HeaderRoot {
-  background-color: #363946;
+  background-color: #011502;
   position: fixed;
   width: 100%;
   z-index: 99;
 }
 
 .HeaderRoot nav {
-  padding: 0 20px;
+  padding: 5px 20px;
 }
 
 .HeaderRoot nav .DesktopOnly {
@@ -24,7 +24,6 @@
 }
 
 .HeaderRoot nav #nav-items {
-  padding-top: 15.5px;
   color: #FBF5F3;
 }
 
@@ -43,9 +42,6 @@
   }
   .HeaderRoot nav svg {
     display: none;
-  }
-  .HeaderRoot nav #logo-container {
-    width: 15%;
   }
   .HeaderRoot nav #logo-container img {
     width: 64px;
@@ -67,17 +63,33 @@
   padding-top: calc(60.43px + 50px);
 }
 
+.HomeRoot h1 {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 800px) {
+  .HomeRoot h1 {
+    font-size: 4rem;
+  }
+}
+
 .HomeRoot h6 {
   font-weight: bold;
 }
 
 .HomeRoot p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .HomeRoot a span {
   font-weight: bold;
   font-size: 1rem;
+}
+
+.HomeRoot a {
+  margin-top: 1rem;
+  color: white;
 }
 
 .HomeRoot div div {
@@ -90,35 +102,63 @@
   }
 }
 
-#lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
+.HomeRoot #symbole {
+  -webkit-animation: pulse 7s infinite;
+          animation: pulse 7s infinite;
 }
 
-#lines #path {
-  fill: #e2effd;
-  stroke: black;
-  stroke-width: 2;
+@media (min-width: 500px) {
+  .HomeRoot #symbole::after {
+    content: " ";
+  }
+  .HomeRoot #symbole::before {
+    content: " ";
+  }
+}
+
+@-webkit-keyframes pulse {
+  from {
+    color: #fff;
+  }
+  20% {
+    color: #00e01a;
+  }
+  40% {
+    color: #fff;
+  }
+  to {
+    color: #fff;
+  }
+}
+
+@keyframes pulse {
+  from {
+    color: #fff;
+  }
+  20% {
+    color: #00e01a;
+  }
+  40% {
+    color: #fff;
+  }
+  to {
+    color: #fff;
+  }
 }
 
 .ProjectsRoot {
-  padding-top: calc(60.43px + 50px);
-  height: 100vh;
+  padding: 40px 20px;
   text-align: center;
+  min-height: 100vh;
+  min-height: 947px;
+  background-color: #6A898A;
+  color: white;
+  -webkit-box-shadow: 0px 20px 42px -17px rgba(2, 7, 3, 0.81) inset;
+          box-shadow: 0px 20px 42px -17px rgba(2, 7, 3, 0.81) inset;
 }
 
 .ProjectsRoot h1 {
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 700px) {
-  .ProjectsRoot {
-    padding-top: calc(75.37px + 100px);
-  }
+  margin-bottom: 40px;
 }
 
 .ProjectsRoot .ProjectCard {
@@ -169,33 +209,46 @@
   height: 64px;
 }
 
-.ProjectsRoot .ProjectCard div button, .ProjectsRoot .ProjectCard div a {
+.ProjectsRoot .ProjectCard div button,
+.ProjectsRoot .ProjectCard div a {
   margin-right: 10px;
 }
 
 .AboutRoot {
-  min-height: calc(100vh + 120px);
-  background-color: #e2effd;
+  min-height: 100vh;
+  min-height: 947px;
   color: #181c20;
   position: relative;
+  -webkit-box-shadow: 0px -21px 90px -15px rgba(2, 7, 3, 0.8);
+          box-shadow: 0px -21px 90px -15px rgba(2, 7, 3, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   max-width: 100%;
+  padding-bottom: 136px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 530px) {
   .AboutRoot {
-    padding-top: calc(75.37px + 100px);
+    padding-bottom: 158px;
   }
 }
 
 .AboutRoot #about-paper {
-  background-color: #C9E3F8;
+  margin: auto auto;
   padding: 1rem 1.5rem;
 }
 
 .AboutRoot #about-paper hr {
   margin-bottom: 2rem;
-  border-color: #363946;
+  border-color: #00E01A;
 }
 
 .AboutRoot #about-paper #text-container {
@@ -237,12 +290,13 @@
 }
 
 .AboutRoot .MyStack {
+  width: 100%;
+  color: white;
+  background-color: #011502;
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  color: white;
-  background-color: #363946;
+  padding-bottom: 1rem;
 }
 
 .AboutRoot .MyStack h4 {
@@ -268,7 +322,7 @@
   right: 0px;
   top: 60.43px;
   z-index: 99;
-  background-color: #363946;
+  background-color: #011502;
   color: white;
   text-align: center;
   overflow: hidden;
@@ -295,5 +349,13 @@
 .SidebarRoot div div :active,
 .SidebarRoot div a :active {
   color: #3E92CC;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body article {
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=index.css.map */

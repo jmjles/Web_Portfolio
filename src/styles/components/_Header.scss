@@ -7,7 +7,7 @@
     .DesktopOnly {
       display: none;
     }
-    padding: 0 20px;
+    padding: 5px 20px;
     #logo-container {
       img {
         width: 42px;
@@ -16,9 +16,8 @@
       vertical-align: bottom;
       margin-right: auto;
     }
-
+    
     #nav-items{
-      padding-top: 15.5px;
       color: $text-white;
     }
 
@@ -39,7 +38,6 @@
         display: none;
       }
       #logo-container {
-        width: 15%;
         img {
           width: 64px;
         }

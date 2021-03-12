@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import Header from "./components/layout/Header";
-
-import { Route, Switch } from "react-router-dom";
 import Home from "./components/pages/home";
 import Projects from "./components/pages/projects";
+import About from "./components/pages/about";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Switch>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Home />
+        <Projects />
+        <About />
       </div>
     );
   }

@@ -13,17 +13,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#363946",
+      main: "#00E01A",
     },
     secondary: {
-      main: "#3E92CC",
+      main: "#D0FCB3",
     },
     background: {
-      paper: "#e2effd",
-      default: "#C9E3F8",
+      paper: "#013811",
+      default: "#020703",
     },
     text: {
-      primary: "#363946",
+      primary: "#E8E9F3",
     },
   },
 });

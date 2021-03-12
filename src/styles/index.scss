@@ -4,3 +4,10 @@
 @import "./components/Projects";
 @import "./components/About";
 @import "./components/Sidebar";
+
+body {
+  overflow-x: hidden;
+  article {
+    overflow-x: hidden;
+  }
+}

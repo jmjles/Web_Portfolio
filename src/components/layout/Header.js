@@ -33,58 +33,61 @@ function Header() {
         component="header"
         square={true}
       >
-        <Grid component="nav" justify="space-between" container>
-          <Grid item id="logo-container">
-            <img src={Logo} alt="J M Logo" id="Logo" />
-          </Grid>
-          <Grid item id="nav-items" sm>
-            <Grid container alignItems="center" justify="flex-end">
-              <Grid item className="DesktopOnly">
-                <Button component={Link} color="inherit" to="/">
-                  <Font variant="button">Home</Font>
-                </Button>
-              </Grid>
-              <Grid item className="DesktopOnly">
-                <Button color="inherit" component={Link} to="/projects">
-                  <Font variant="button">Projects</Font>
-                </Button>
-              </Grid>
-              <Grid item className="DesktopOnly">
-                <Button
-                  color="inherit"
-                  component="a"
-                  href={Resume}
-                  target="_blank"
-                >
-                  <Font variant="button">Resume</Font>
-                  <Get />
-                </Button>
-              </Grid>
-              <Grid item className="DesktopOnly">
-                <Button onClick={socialAni} color="secondary">
-                  <Font variant="button">Socials</Font>
-                </Button>
-              </Grid>
-              <Grid item>
-                {!toggle ? (
-                  <Menu
-                    onClick={() => {
-                      sidebarAni();
-                      setToggle(true);
-                    }}
-                  />
-                ) : (
-                  <OpenMenu
-                    onClick={() => {
-                      sidebarAni();
-                      setToggle(false);
-                    }}
-                  />
-                )}
+        <Container maxWidth="lg">
+          <Grid component="nav" justify="space-between" container alignItems="center">
+            <Grid item id="logo-container">
+              <img src={Logo} alt="J M Logo" id="Logo" />
+            </Grid>
+            <Grid item id="nav-items" sm>
+              <Grid container alignItems="center" justify="flex-end">
+                <Grid item className="DesktopOnly">
+                  <Button component="a" color="inherit" href="/">
+                    <Font variant="button">Home</Font>
+                  </Button>
+                </Grid>
+                <Grid item className="DesktopOnly">
+                  <Button color="inherit" component="a" href="/#projects">
+                    <Font variant="button">Projects</Font>
+                  </Button>
+                </Grid>
+                <Grid item className="DesktopOnly">
+                  <Button
+                    color="inherit"
+                    component="a"
+                    href={Resume}
+                    target="_blank"
+                  >
+                    <Font variant="button">Resume</Font>
+                    <Get />
+                  </Button>
+                </Grid>
+                <Grid item className="DesktopOnly">
+                  <Button onClick={socialAni} color="primary">
+                    <Font variant="button">Socials</Font>
+                  </Button>
+                </Grid>
+                <Grid item>
+                  {!toggle ? (
+                    <Menu
+                      onClick={() => {
+                        sidebarAni();
+                        setToggle(true);
+                      }}
+                    />
+                  ) : (
+                    <OpenMenu
+                      onClick={() => {
+                        sidebarAni();
+                        setToggle(false);
+                      }}
+                    />
+                  )}
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </Container>
+
         <Container className="Socials" maxWidth="sm">
           <Grid container justify="center" spacing={3}>
             <Grid item>

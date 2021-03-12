@@ -15,6 +15,7 @@ function About() {
     <Container
       component="article"
       className="AboutRoot"
+      id="about"
     >
       <Container maxWidth="md">
         <Paper id="about-paper">
@@ -27,10 +28,11 @@ function About() {
           </div>
           <div id="text-container">
             <Font variant="body1">
-              The name is Jesus Morales, and I'm a JavaScript enthusiast.<br/> I
-              enjoy working with computers in general, but development has a
-              special place in my heart. <br/>I started coding back in high school,
-              and I couldn't stop ever since.
+              Full stack web developer specializing in javascript.<br/><br/>
+              
+              Experienced with MERN (MongoDb, Express, React, and Node)  <br/><br/>
+
+              When I'm not coding, you can find me pushing some weights or playing some games. 
             </Font>
           </div>
         </Paper>

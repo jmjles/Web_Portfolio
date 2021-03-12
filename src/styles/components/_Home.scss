@@ -1,15 +1,26 @@
 .HomeRoot {
   min-height: 100vh;
   padding-top: calc(60.43px + 50px);
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    @media (min-width: 800px) {
+      font-size: 4rem;
+    }
+  }
   h6 {
     font-weight: bold;
   }
   p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
-  a span{
+  a span {
     font-weight: bold;
     font-size: 1rem;
+  }
+  a {
+    margin-top: 1rem;
+    color: white;
   }
   div {
     div {
@@ -19,18 +30,29 @@
   @media (min-width: 700px) {
     padding-top: calc(75.37px + 100px);
   }
-}
-#lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
-
-  #path {
-    fill: $paperColor;
-    stroke: black;
-    stroke-width: 2;
+  #symbole {
+    animation: pulse 7s infinite;
+    @media (min-width: 500px) {
+      &::after {
+        content: " ";
+      }
+      &::before {
+        content: " ";
+      }
+    }
+  }
+  @keyframes pulse {
+    from {
+      color: #fff;
+    }
+    20% {
+      color: #00e01a;
+    }
+    40% {
+      color: #fff;
+    }
+    to {
+      color: #fff;
+    }
   }
 }
