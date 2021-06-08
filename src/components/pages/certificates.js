@@ -40,7 +40,6 @@ const certificates = () => {
       component="article"
       className="CertificationRoot"
       id="certifications"
-      maxWidth="xl"
     >
       <Font variant="h2" component="h1">
         Certifications

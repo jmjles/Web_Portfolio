@@ -74,7 +74,6 @@ export default function Projects() {
       component="article"
       className="ProjectsRoot"
       id="projects"
-      maxWidth="xl"
     >
       <Font variant="h2" component="h1">
         Side Projects

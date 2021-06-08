@@ -11,7 +11,7 @@ import SASS from "../../assets/pics/sass.png";
 
 function About() {
   return (
-    <Container component="article" className="AboutRoot" id="about">
+    <Container component="article" className="AboutRoot" id="about" maxWidth="lg">
       <Container maxWidth="md">
         <Paper id="about-paper">
           <Font variant="h3" component="h1" align="center">

@@ -1,11 +1,6 @@
 import React from "react";
 import portrait from "../../assets/pics/portrait.jpg";
-import {
-  Container,
-  Typography as Font,
-  Button,
-  Grid,
-} from "@material-ui/core";
+import { Container, Typography as Font, Button, Grid } from "@material-ui/core";
 function Home() {
   return (
     <Container
@@ -19,9 +14,11 @@ function Home() {
         <span id="symbole">{"<"}</span>Jesus Morales
         <span id="symbole">{"/>"}</span>
       </Font>
-      <Font variant="body1">Full Stack Web Developer</Font>
+      <Font variant="body1">
+        Full Stack Web Developer
+      </Font>
       <Grid container className="Buttons" justify="center" spacing={1}>
-        <Grid item xs={12}>
+        <Grid item xs={12} >
           <Button
             variant="outlined"
             color="primary"
