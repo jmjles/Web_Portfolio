@@ -1,45 +1,60 @@
-import React, { useEffect } from "react";
-import About from "./about";
-import { Link } from "react-router-dom";
+import React from "react";
+import portrait from "../../assets/pics/portrait.jpg";
 import {
   Container,
   Typography as Font,
   Button,
-  Card,
-  Paper,
+  Grid,
 } from "@material-ui/core";
-import { homeAni } from "../animeGallery";
 function Home() {
-  useEffect(() => {
-    let init = false;
-    const delay = () => {
-      if (init) {
-        return 1000 * 0;
-      } else {
-        init = true;
-        return 1000 * 2;
-      }
-    };
-    homeAni(delay);
-  }, []);
   return (
-    <>
-      <Container
-        align="center"
-        maxWidth="md"
-        component="article"
-        className="HomeRoot"
-      >
-        <Font variant="h1">
-          <span id="symbole">{"<"}</span>Jesus Morales
-          <span id="symbole">{"/>"}</span>
-        </Font>
-        <Font variant="body1">Full Stack Web Developer</Font>
-        <Button variant="outlined" color="primary" component="a" href="/#about">
-          <Font variant="button">Learn more about me</Font>
-        </Button>
-      </Container>
-    </>
+    <Container
+      align="center"
+      maxWidth="md"
+      component="article"
+      className="HomeRoot"
+    >
+      <img src={portrait} alt="Self portrait" />
+      <Font variant="h1">
+        <span id="symbole">{"<"}</span>Jesus Morales
+        <span id="symbole">{"/>"}</span>
+      </Font>
+      <Font variant="body1">Full Stack Web Developer</Font>
+      <Grid container className="Buttons" justify="center" spacing={1}>
+        <Grid item xs={12}>
+          <Button
+            variant="outlined"
+            color="primary"
+            component="a"
+            href="/#about"
+          >
+            <Font variant="button">Learn more about me</Font>
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            variant="outlined"
+            color="primary"
+            component="a"
+            href="https://github.com/jmjles"
+            target="_blank"
+          >
+            <Font variant="button">Github</Font>
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            variant="outlined"
+            color="primary"
+            component="a"
+            href="https://www.linkedin.com/in/jesus-morales/"
+            target="_blank"
+          >
+            <Font variant="button">LinkedIn</Font>
+          </Button>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 export default Home;

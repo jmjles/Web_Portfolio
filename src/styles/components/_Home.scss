@@ -22,9 +22,14 @@
     margin-top: 1rem;
     color: white;
   }
-  div {
-    div {
-      padding: 1rem 1.5rem;
+  .Buttons{
+    margin-top: 1rem;
+    margin-bottom: 60px;
+    div:nth-of-type(2) a span{
+      min-width: 80px;
+    }
+    div:nth-of-type(3) a span{
+      min-width: 80px;
     }
   }
   @media (min-width: 700px) {
@@ -41,6 +46,31 @@
       }
     }
   }
+  img {
+    width: 200px;
+    animation: pulseBorder 7s infinite;
+    border-radius: 2px;
+  }
+  @keyframes pulseBorder {
+    from {
+      box-shadow: inherit;
+    }
+    20% {
+      box-shadow: 0px 0px 50px -2px rgba(0,224,26,0.2);
+    }
+    40% {
+      box-shadow: inherit;
+    }
+    60% {
+      box-shadow: inherit;
+    }
+    80%{ 
+box-shadow: 0px 0px 50px -2px rgba(0,224,26,0.2);
+    }
+    to {
+      box-shadow: inherit;
+    }
+  }
   @keyframes pulse {
     from {
       color: #fff;
@@ -50,6 +80,12 @@
     }
     40% {
       color: #fff;
+    }
+    60% {
+      color: #fff;
+    }
+    80%{
+      color: #00e01a;
     }
     to {
       color: #fff;

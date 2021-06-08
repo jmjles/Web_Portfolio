@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Typography as Font, Paper } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { socialAni, sidebarAni } from "./animeGallery";
+import { sidebarAni } from "./animeGallery";
 import resume from "../assets/etc/Resume.pdf";
 export default function SideBar({ setToggle }) {
   return (
@@ -9,8 +8,8 @@ export default function SideBar({ setToggle }) {
       <Grid container direction="column">
         <Grid
           item
-          component={Link}
-          to="/"
+          component="a"
+          href="/"
           onClick={() => {
             sidebarAni();
             setToggle(false);
@@ -20,8 +19,8 @@ export default function SideBar({ setToggle }) {
         </Grid>
         <Grid
           item
-          component={Link}
-          to="/projects"
+          component="a"
+          href="/#projects"
           onClick={() => {
             sidebarAni();
             setToggle(false);
@@ -43,13 +42,14 @@ export default function SideBar({ setToggle }) {
         </Grid>
         <Grid
           item
+          component="a"
+          href="/#certifications"
           onClick={() => {
-            socialAni();
             sidebarAni();
             setToggle(false);
           }}
         >
-          <Font>Socials</Font>
+          <Font>Certifications</Font>
         </Grid>
       </Grid>
     </Paper>

@@ -1,12 +1,10 @@
-.ProjectsRoot {
+@mixin GridView {
   padding: 40px 20px;
   text-align: center;
   min-height: 100vh;
   min-height: 947px;
-  background-color: #6A898A;
+  background-color: #6a898a;
   color: white;
-  box-shadow: 0px 20px 42px -17px rgba(2,7,3,0.81) inset;
-
   h1 {
     margin-bottom: 40px;
   }
@@ -49,4 +47,11 @@
       }
     }
   }
+}
+.ProjectsRoot {
+  box-shadow: 0px 50px 40px -35px rgba(0,0,0,0.81) inset;
+  @include GridView();
+}
+.CertificationRoot {
+  @include GridView();
 }

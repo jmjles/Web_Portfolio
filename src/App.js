@@ -3,6 +3,7 @@ import Header from "./components/layout/Header";
 import Home from "./components/pages/home";
 import Projects from "./components/pages/projects";
 import About from "./components/pages/about";
+import Certificates from "./components/pages/certificates";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Header />
         <Home />
         <Projects />
+        <Certificates/>
         <About />
       </div>
     );
