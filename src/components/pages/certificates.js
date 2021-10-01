@@ -64,6 +64,7 @@ const certificates = () => {
                       href={cert.info}
                       target="_blank"
                       color="primary"
+                      rel="noopener"
                     >
                       <Font variant="button">About Program</Font>
                     </Button>
@@ -72,6 +73,7 @@ const certificates = () => {
                       href={cert.link}
                       target="_blank"
                       color="secondary"
+                      rel="noopener"
                     >
                       <Font variant="button">View</Font>
                     </Button>

@@ -35,6 +35,7 @@ function Home() {
             component="a"
             href="https://github.com/jmjles"
             target="_blank"
+            rel="noopener"
           >
             <Font variant="button">Github</Font>
           </Button>
@@ -46,6 +47,7 @@ function Home() {
             component="a"
             href="https://www.linkedin.com/in/jesus-morales/"
             target="_blank"
+            rel="noopener"
           >
             <Font variant="button">LinkedIn</Font>
           </Button>

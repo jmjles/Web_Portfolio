@@ -117,6 +117,7 @@ export default function Projects() {
                       }
                       target="_blank"
                       color="primary"
+                      rel="noopener"
                     >
                       <Font variant="button">Code</Font>
                     </Button>
@@ -125,6 +126,7 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       color="secondary"
+                      rel="noopener"
                     >
                       <Font variant="button">Try Me</Font>
                     </Button>
