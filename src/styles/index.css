@@ -40,7 +40,7 @@
   .HeaderRoot nav .DesktopOnly {
     display: block;
   }
-  .HeaderRoot nav svg {
+  .HeaderRoot nav button {
     display: none;
   }
   .HeaderRoot nav #logo-container img {
