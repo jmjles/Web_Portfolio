@@ -65,6 +65,7 @@ const certificates = () => {
                       target="_blank"
                       color="primary"
                       rel="noopener"
+                      name={`about ${cert.name}`}
                     >
                       <Font variant="button">About Program</Font>
                     </Button>
@@ -74,6 +75,7 @@ const certificates = () => {
                       target="_blank"
                       color="secondary"
                       rel="noopener"
+                      name={`view ${cert.name}`}
                     >
                       <Font variant="button">View</Font>
                     </Button>

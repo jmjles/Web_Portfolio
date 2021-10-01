@@ -65,7 +65,7 @@ function Header() {
                 </Grid>
                 <Grid item id="sidebar-toggle">
                   <Button
-                    name="menu"
+                    name={toggle ? "close menu" : "open menu"}
                     color="inherit"
                     onClick={() => {
                       sidebarAni();
