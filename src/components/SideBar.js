@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography as Font, Paper } from "@material-ui/core";
+import { Grid, Typography as Font, Paper } from "@mui/material";
 import { sidebarAni } from "./animeGallery";
 import resume from "../assets/etc/Resume.pdf";
 export default function SideBar({ setToggle }) {

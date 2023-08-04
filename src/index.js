@@ -2,15 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
 import App from "./App";
-import { CssBaseline } from "@material-ui/core";
-import {
-  MuiThemeProvider,
-  createMuiTheme,
-  StylesProvider
-} from "@material-ui/core";
+import { CssBaseline,ThemeProvider } from "@mui/material";
+import { StyledEngineProvider , createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: "#00E01A",
@@ -29,14 +25,14 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
     <CssBaseline>
-      <StylesProvider injectFirst>
+      <StyledEngineProvider injectFirst>
         <Router>
           <App />
         </Router>
-      </StylesProvider>
+      </StyledEngineProvider>
     </CssBaseline>
-  </MuiThemeProvider>,
+  </ThemeProvider>,
   document.getElementById("root")
 );

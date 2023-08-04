@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography as Font, Paper, Grid } from "@material-ui/core";
+import { Container, Typography as Font, Paper, Grid } from "@mui/material";
 import CSS3 from "../../assets/pics/css3.png";
 import HTML5 from "../../assets/pics/html5.png";
 import JS from "../../assets/pics/js.png";

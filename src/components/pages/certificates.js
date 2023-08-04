@@ -5,7 +5,7 @@ import {
   Grid,
   Paper,
   Typography as Font,
-} from "@material-ui/core";
+} from "@mui/material";
 import { lambda as la, udacity as uda } from "../../assets";
 const certificates = () => {
   class Cert {

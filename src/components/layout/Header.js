@@ -3,8 +3,8 @@ import React, { useState } from "react";
 //* Assets
 import Resume from "../../assets/etc/Resume.pdf";
 import Logo from "../../assets/pics/logo.png";
-import Menu from "@material-ui/icons/Menu";
-import OpenMenu from "@material-ui/icons/MenuOpen";
+import Menu from "@mui/icons-material/Menu";
+import OpenMenu from "@mui/icons-material/MenuOpen";
 
 //* Components
 import SideBar from "../SideBar";
@@ -14,7 +14,7 @@ import {
   Typography as Font,
   Button,
   Container,
-} from "@material-ui/core";
+} from "@mui/material";
 import { sidebarAni } from "../animeGallery";
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -29,7 +29,7 @@ function Header() {
         <Container maxWidth="lg">
           <Grid
             component="nav"
-            justify="space-between"
+            justifyContent="space-between"
             container
             alignItems="center"
           >
@@ -37,7 +37,7 @@ function Header() {
               <img src={Logo} alt="J M Logo" id="Logo" />
             </Grid>
             <Grid item id="nav-items" sm>
-              <Grid container alignItems="center" justify="flex-end">
+              <Grid container alignItems="center" justifyContent="flex-end">
                 <Grid item className="DesktopOnly">
                   <Button component="a" color="inherit" href="/">
                     <Font variant="button">Home</Font>

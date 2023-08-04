@@ -6,7 +6,7 @@ import {
   Container,
   Button,
   Paper,
-} from "@material-ui/core";
+} from "@mui/material";
 const {
   html,
   css,
@@ -79,7 +79,7 @@ export default function Projects() {
         Side Projects
       </Font>
       <Container maxWidth="lg">
-        <Grid container spacing={5} justify="center">
+        <Grid container spacing={5} justifyContent="center">
           {projects.map((project, i) => (
             <Grid key={project.name} item xs={12} sm={6} md={4}>
               <Card elevation={10} className="ProjectCard">
