@@ -1,0 +1,48 @@
+@mixin min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin GridView {
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 100vh;
+  max-width: 100%;
+  .GridCard {
+    position: relative;
+    margin-bottom: 24px;
+    h2{
+        text-align: left;
+    }
+    &:hover {
+      .BottomCard {
+        opacity: 1;
+      }
+    }
+    .BottomCard {
+      opacity: 0;
+      transition: opacity 0.3s;
+      a {
+        min-width: 101.8px;
+        text-wrap: nowrap;
+      }
+      :first-of-type {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+@mixin Wave($top: false) {
+  position: absolute;
+  left: 0px;
+  width: 100vw;
+  z-index: -1;
+  @if $top {
+    transform: rotate(180deg);
+    top: 0px;
+  } @else {
+    bottom: 0px;
+  }
+}

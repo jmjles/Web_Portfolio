@@ -12,8 +12,8 @@ class App extends Component {
         <Header />
         <Home />
         <Projects />
-        <Certificates/>
         <About />
+        <Certificates />
       </div>
     );
   }

@@ -1,95 +1,95 @@
 .HomeRoot {
   min-height: 100vh;
-  padding-top: calc(60.43px + 50px);
-  text-align: center;
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 5px;
-    @media (min-width: 800px) {
-      font-size: 4rem;
+  position: relative;
+  &:hover {
+    +#NavHome {
+      color: #339cff;
     }
   }
-  h6 {
-    font-weight: bold;
+  @include min(600px){
+    max-width: unset;
   }
-  p {
-    font-size: 1.5rem;
-  }
-  a span {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  a {
-    margin-top: 1rem;
-    color: white;
-  }
-  .Buttons{
-    margin-top: 1rem;
-    margin-bottom: 60px;
-    div:nth-of-type(2) a span{
-      min-width: 80px;
-    }
-    div:nth-of-type(3) a span{
-      min-width: 80px;
+  .Small-Portrait {
+    @include min(600px) {
+      display: none;
     }
   }
-  @media (min-width: 700px) {
-    padding-top: calc(75.37px + 100px);
+  .Big-Portrait {
+    display: none;
+    @include min(600px) {
+      display: initial;
+    }
   }
-  #symbole {
-    animation: pulse 7s infinite;
-    @media (min-width: 500px) {
-      &::after {
-        content: " ";
-      }
-      &::before {
-        content: " ";
+  .Intro {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 12px;
+    max-width: 335px;
+    @include min(600px){
+      max-width: 520px;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    @include min(990px){
+      max-width: 858px;
+      align-items: unset;
+    }
+    .Portrait {
+      width: 200px;
+      @include min(990px) {
+        width: unset;
       }
     }
   }
-  img {
-    width: 200px;
-    animation: pulseBorder 7s infinite;
-    border-radius: 2px;
+  #colorFix {
+    height: 64px;
   }
-  @keyframes pulseBorder {
-    from {
-      box-shadow: inherit;
+  .Stack {
+    img {
+      height: 42px;
+      @include min(990px) {
+        height: 64px;
     }
-    20% {
-      box-shadow: 0px 0px 50px -2px rgba(0,224,26,0.2);
     }
-    40% {
-      box-shadow: inherit;
+    div{
+      padding-right: 14px;
     }
-    60% {
-      box-shadow: inherit;
-    }
-    80%{ 
-box-shadow: 0px 0px 50px -2px rgba(0,224,26,0.2);
-    }
-    to {
-      box-shadow: inherit;
+    :last-child{
+      padding-right: 0px;
     }
   }
-  @keyframes pulse {
-    from {
-      color: #fff;
+  .Socials {
+    display: none;
+    @include min(600px) {
+      display: unset;
+      max-width: 42px;
+      svg{
+        height: 42px;
+      }
+      img{
+        height: 42px;
+      }
+      :nth-child(2){
+        min-width: 80px;
+      }
     }
-    20% {
-      color: #00e01a;
+    @include min(990px){
+      max-width: 64px;
+      svg{
+        height: 64px;
+      }
+      img{
+        height: 64px;
+      }
     }
-    40% {
-      color: #fff;
-    }
-    60% {
-      color: #fff;
-    }
-    80%{
-      color: #00e01a;
-    }
-    to {
-      color: #fff;
-    }
+  }
+  .Wave {
+    @include Wave();
+  }
+}
+.CertificationRoot {
+  position: relative;
+  .Wave {
+    @include Wave();
   }
 }

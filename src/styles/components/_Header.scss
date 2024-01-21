@@ -1,55 +1,64 @@
 .HeaderRoot {
-  background-color: $navColor;
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-  nav {
-    .DesktopOnly {
+  .Nav {
+    padding-left: 12px;
+    padding-right: 12px;
+    position: fixed;
+    top: 0px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 9999;
+    svg {
+      width: 38px;
+    }
+    p {
+      font-size: 18px;
+      margin-left: 8px;
+    }
+    &.Open {
+      background-color: #fff;
+    }
+    @include min(600px) {
       display: none;
     }
-    padding: 5px 20px;
-    #logo-container {
-      img {
-        width: 42px;
+    &.Desktop {
+      display: none;
+      width: 100%;
+      @include min(600px) {
+        display: flex;
       }
-      display: inline-block;
-      vertical-align: bottom;
-      margin-right: auto;
-    }
-    
-    #nav-items{
-      color: $text-white;
-    }
-
-    svg {
-      stroke: white;
-      fill: white;
-    }
-
-    div {
-      padding: 0.2rem 0;
-    }
-
-    @media (min-width: 700px) {
-      .DesktopOnly {
-        display: block;
-      }
-      button {
-        display: none;
-      }
-      #logo-container {
-        img {
-          width: 64px;
+      > div {
+        width: 100%;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        #Logo {
+          display: none;
+          @include min(1200px) {
+            display: unset;
+          }
+          position: absolute;
+          top: 20px;
+          left: 16px;
+        }
+        .Container {
+          max-width: 1100px;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 16px 0px;
+          a {
+            transition: color 0.3s;
+            &:hover {
+              color: #339cff;
+              cursor: pointer;
+            }
+          }
         }
       }
-    }
-  }
-  .Socials {
-    overflow: hidden;
-    height: 0px;
-    img {
-      width: 48px;
-      height: 48px;
     }
   }
 }

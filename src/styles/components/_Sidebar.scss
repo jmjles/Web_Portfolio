@@ -1,31 +1,12 @@
 .SidebarRoot {
-  height: calc(100vh - 60.43px);
-  width: 0px;
-  position: fixed;
-  right: 0px;
-  top: 60.43px;
-  z-index: 99;
-  background-color: $navColor;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-  div {
-    div,
-    a {
-      margin-top: 5px;
-      border-bottom: white 2px solid;
-      padding: 5px 0;
-      text-decoration: none;
-      color:white;
-      :visited{
-        color:white
-      }
-      :hover {
-         color:$secondaryColor
-      }
-      :active {
-        color:$secondaryColor
-      }
-    }
+  span {
+    cursor: pointer;
+  }
+  .MuiDrawer-paper {
+    margin-top: 80px;
+    background-color: #fff;
+  }
+  @include min(600px) {
+    display: none;
   }
 }

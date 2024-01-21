@@ -1,58 +1,104 @@
-@mixin GridView {
-  padding: 40px 20px;
-  text-align: center;
-  min-height: 100vh;
-  min-height: 947px;
-  max-width: unset;
-  background-color: #6a898a;
-  color: white;
-  h1 {
-    margin-bottom: 40px;
+@keyframes fade {
+  0% {
+    opacity: 0;
   }
-  .ProjectCard {
-    min-height: 598px;
-    position: relative;
-    div {
-      padding: 1rem;
-      h2 {
-        margin-bottom: 1rem;
-      }
-      hr {
-        margin-top: 0;
-        margin-bottom: 1rem;
-      }
-      ul {
-        text-align: left;
-        height: 0;
-        overflow: hidden;
-        margin: 0;
-      }
-      h6 {
-        cursor: pointer;
-      }
-      .ProjectImage {
-        max-width: 100%;
-        height: 300px;
-      }
-      .StackSection {
-        display: flex;
-        justify-content: space-evenly;
-        img {
-          width: 64px;
-          height: 64px;
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.ProjectsRoot {
+  background-color: #e8f4ff;
+  .Title {
+    margin-bottom: 24px;
+    @include min(990px) {
+      margin-bottom: 120px;
+    }
+  }
+  @include GridView();
+  .GridImage {
+    height: 250px;
+    max-width: 100%;
+    margin-bottom: 12px;
+    justify-items: center;
+  }
+  .BottomCard {
+    justify-content: end;
+  }
+  .GridCard {
+    .Left {
+      @include min(990px) {
+        h2 {
+          text-align: right;
+        }
+        p {
+          text-align: right;
+        }
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        div:nth-child(1) {
+          width: 490px;
+        }
+        div:nth-child(2) {
+          flex-shrink: 2;
+          margin-right: 24px;
+        }
+        .BottomCard {
+          justify-content: start;
+          div {
+            width: unset;
+          }
         }
       }
-      button,
-      a {
-        margin-right: 10px;
+    }
+    .Right {
+      @include min(990px) {
+        h2 {
+          text-align: left;
+        }
+        p {
+          text-align: left;
+        }
+        flex-wrap: nowrap;
+        div:nth-child(1) {
+          width: 490px;
+        }
+        div:nth-child(2) {
+          flex-shrink: 2;
+          margin-left: 24px;
+        }
+        .BottomCard {
+          justify-content: end;
+          div {
+            width: unset;
+          }
+        }
       }
     }
   }
 }
-.ProjectsRoot {
-  box-shadow: 0px 50px 40px -35px rgba(0,0,0,0.81) inset;
-  @include GridView();
-}
+
 .CertificationRoot {
+  .Title {
+    margin-bottom: 24px;
+    @include min(990px) {
+      margin-bottom: 120px;
+    }
+    h1 {
+      position: relative;
+    }
+    img {
+      position: absolute;
+      transform: translate(0, -50%);
+      top: 50%;
+    }
+  }
+  div {
+    .GridImage {
+      max-width: 100%;
+      margin-bottom: 32px;
+      height: 250px;
+    }
+  }
   @include GridView();
 }

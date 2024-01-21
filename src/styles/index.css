@@ -1,494 +1,378 @@
-.HeaderRoot {
-  background-color: #011502;
+.HeaderRoot .Nav {
+  padding-left: 12px;
+  padding-right: 12px;
   position: fixed;
-  width: 100%;
-  z-index: 99;
+  top: 0px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0) 100%);
+  z-index: 9999;
 }
-
-.HeaderRoot nav {
-  padding: 5px 20px;
+.HeaderRoot .Nav svg {
+  width: 38px;
 }
-
-.HeaderRoot nav .DesktopOnly {
-  display: none;
+.HeaderRoot .Nav p {
+  font-size: 18px;
+  margin-left: 8px;
 }
-
-.HeaderRoot nav #logo-container {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-right: auto;
+.HeaderRoot .Nav.Open {
+  background-color: #fff;
 }
-
-.HeaderRoot nav #logo-container img {
-  width: 42px;
-}
-
-.HeaderRoot nav #nav-items {
-  color: #FBF5F3;
-}
-
-.HeaderRoot nav svg {
-  stroke: white;
-  fill: white;
-}
-
-.HeaderRoot nav div {
-  padding: 0.2rem 0;
-}
-
-@media (min-width: 700px) {
-  .HeaderRoot nav .DesktopOnly {
-    display: block;
-  }
-  .HeaderRoot nav button {
+@media screen and (min-width: 600px) {
+  .HeaderRoot .Nav {
     display: none;
   }
-  .HeaderRoot nav #logo-container img {
-    width: 64px;
+}
+.HeaderRoot .Nav.Desktop {
+  display: none;
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .HeaderRoot .Nav.Desktop {
+    display: flex;
   }
 }
-
-.HeaderRoot .Socials {
-  overflow: hidden;
-  height: 0px;
+.HeaderRoot .Nav.Desktop > div {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.HeaderRoot .Socials img {
-  width: 48px;
-  height: 48px;
+.HeaderRoot .Nav.Desktop > div #Logo {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+@media screen and (min-width: 1200px) {
+  .HeaderRoot .Nav.Desktop > div #Logo {
+    display: unset;
+  }
+}
+.HeaderRoot .Nav.Desktop > div .Container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 0px;
+}
+.HeaderRoot .Nav.Desktop > div .Container a {
+  transition: color 0.3s;
+}
+.HeaderRoot .Nav.Desktop > div .Container a:hover {
+  color: #339cff;
+  cursor: pointer;
 }
 
 .HomeRoot {
   min-height: 100vh;
-  padding-top: calc(60.43px + 50px);
-  text-align: center;
+  position: relative;
 }
-
-.HomeRoot h1 {
-  font-size: 3rem;
-  margin-bottom: 5px;
+.HomeRoot:hover + #NavHome {
+  color: #339cff;
 }
-
-@media (min-width: 800px) {
-  .HomeRoot h1 {
-    font-size: 4rem;
-  }
-}
-
-.HomeRoot h6 {
-  font-weight: bold;
-}
-
-.HomeRoot p {
-  font-size: 1.5rem;
-}
-
-.HomeRoot a span {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.HomeRoot a {
-  margin-top: 1rem;
-  color: white;
-}
-
-.HomeRoot .Buttons {
-  margin-top: 1rem;
-  margin-bottom: 60px;
-}
-
-.HomeRoot .Buttons div:nth-of-type(2) a span {
-  min-width: 80px;
-}
-
-.HomeRoot .Buttons div:nth-of-type(3) a span {
-  min-width: 80px;
-}
-
-@media (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .HomeRoot {
-    padding-top: calc(75.37px + 100px);
+    max-width: unset;
   }
 }
-
-.HomeRoot #symbole {
-  -webkit-animation: pulse 7s infinite;
-          animation: pulse 7s infinite;
-}
-
-@media (min-width: 500px) {
-  .HomeRoot #symbole::after {
-    content: " ";
-  }
-  .HomeRoot #symbole::before {
-    content: " ";
+@media screen and (min-width: 600px) {
+  .HomeRoot .Small-Portrait {
+    display: none;
   }
 }
-
-.HomeRoot img {
+.HomeRoot .Big-Portrait {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .HomeRoot .Big-Portrait {
+    display: initial;
+  }
+}
+.HomeRoot .Intro {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 12px;
+  max-width: 335px;
+}
+@media screen and (min-width: 600px) {
+  .HomeRoot .Intro {
+    max-width: 520px;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (min-width: 990px) {
+  .HomeRoot .Intro {
+    max-width: 858px;
+    align-items: unset;
+  }
+}
+.HomeRoot .Intro .Portrait {
   width: 200px;
-  -webkit-animation: pulseBorder 7s infinite;
-          animation: pulseBorder 7s infinite;
-  border-radius: 2px;
 }
-
-@-webkit-keyframes pulseBorder {
-  from {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
-  }
-  20% {
-    -webkit-box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-            box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-  }
-  40% {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
-  }
-  60% {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
-  }
-  80% {
-    -webkit-box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-            box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-  }
-  to {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
+@media screen and (min-width: 990px) {
+  .HomeRoot .Intro .Portrait {
+    width: unset;
   }
 }
-
-@keyframes pulseBorder {
-  from {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
-  }
-  20% {
-    -webkit-box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-            box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-  }
-  40% {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
-  }
-  60% {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
-  }
-  80% {
-    -webkit-box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-            box-shadow: 0px 0px 50px -2px rgba(0, 224, 26, 0.2);
-  }
-  to {
-    -webkit-box-shadow: inherit;
-            box-shadow: inherit;
+.HomeRoot #colorFix {
+  height: 64px;
+}
+.HomeRoot .Stack img {
+  height: 42px;
+}
+@media screen and (min-width: 990px) {
+  .HomeRoot .Stack img {
+    height: 64px;
   }
 }
-
-@-webkit-keyframes pulse {
-  from {
-    color: #fff;
+.HomeRoot .Stack div {
+  padding-right: 14px;
+}
+.HomeRoot .Stack :last-child {
+  padding-right: 0px;
+}
+.HomeRoot .Socials {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .HomeRoot .Socials {
+    display: unset;
+    max-width: 42px;
   }
-  20% {
-    color: #00e01a;
+  .HomeRoot .Socials svg {
+    height: 42px;
   }
-  40% {
-    color: #fff;
+  .HomeRoot .Socials img {
+    height: 42px;
   }
-  60% {
-    color: #fff;
-  }
-  80% {
-    color: #00e01a;
-  }
-  to {
-    color: #fff;
+  .HomeRoot .Socials :nth-child(2) {
+    min-width: 80px;
   }
 }
-
-@keyframes pulse {
-  from {
-    color: #fff;
+@media screen and (min-width: 990px) {
+  .HomeRoot .Socials {
+    max-width: 64px;
   }
-  20% {
-    color: #00e01a;
+  .HomeRoot .Socials svg {
+    height: 64px;
   }
-  40% {
-    color: #fff;
-  }
-  60% {
-    color: #fff;
-  }
-  80% {
-    color: #00e01a;
-  }
-  to {
-    color: #fff;
+  .HomeRoot .Socials img {
+    height: 64px;
   }
 }
+.HomeRoot .Wave {
+  position: absolute;
+  left: 0px;
+  width: 100vw;
+  z-index: -1;
+  bottom: 0px;
+}
 
+.CertificationRoot {
+  position: relative;
+}
+.CertificationRoot .Wave {
+  position: absolute;
+  left: 0px;
+  width: 100vw;
+  z-index: -1;
+  bottom: 0px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
 .ProjectsRoot {
-  -webkit-box-shadow: 0px 50px 40px -35px rgba(0, 0, 0, 0.81) inset;
-          box-shadow: 0px 50px 40px -35px rgba(0, 0, 0, 0.81) inset;
+  background-color: #e8f4ff;
   padding: 40px 20px;
   text-align: center;
   min-height: 100vh;
-  min-height: 947px;
-  max-width: unset;
-  background-color: #6a898a;
-  color: white;
-}
-
-.ProjectsRoot h1 {
-  margin-bottom: 40px;
-}
-
-.ProjectsRoot .ProjectCard {
-  min-height: 598px;
-  position: relative;
-}
-
-.ProjectsRoot .ProjectCard div {
-  padding: 1rem;
-}
-
-.ProjectsRoot .ProjectCard div h2 {
-  margin-bottom: 1rem;
-}
-
-.ProjectsRoot .ProjectCard div hr {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.ProjectsRoot .ProjectCard div ul {
-  text-align: left;
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-}
-
-.ProjectsRoot .ProjectCard div h6 {
-  cursor: pointer;
-}
-
-.ProjectsRoot .ProjectCard div .ProjectImage {
   max-width: 100%;
-  height: 300px;
 }
-
-.ProjectsRoot .ProjectCard div .StackSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.ProjectsRoot .Title {
+  margin-bottom: 24px;
 }
-
-.ProjectsRoot .ProjectCard div .StackSection img {
-  width: 64px;
-  height: 64px;
+@media screen and (min-width: 990px) {
+  .ProjectsRoot .Title {
+    margin-bottom: 120px;
+  }
 }
-
-.ProjectsRoot .ProjectCard div button,
-.ProjectsRoot .ProjectCard div a {
-  margin-right: 10px;
+.ProjectsRoot .GridCard {
+  position: relative;
+  margin-bottom: 24px;
+}
+.ProjectsRoot .GridCard h2 {
+  text-align: left;
+}
+.ProjectsRoot .GridCard:hover .BottomCard {
+  opacity: 1;
+}
+.ProjectsRoot .GridCard .BottomCard {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ProjectsRoot .GridCard .BottomCard a {
+  min-width: 101.8px;
+  text-wrap: nowrap;
+}
+.ProjectsRoot .GridCard .BottomCard :first-of-type {
+  margin-right: 6px;
+}
+.ProjectsRoot .GridImage {
+  height: 250px;
+  max-width: 100%;
+  margin-bottom: 12px;
+  justify-items: center;
+}
+.ProjectsRoot .BottomCard {
+  justify-content: end;
+}
+@media screen and (min-width: 990px) {
+  .ProjectsRoot .GridCard .Left {
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+  }
+  .ProjectsRoot .GridCard .Left h2 {
+    text-align: right;
+  }
+  .ProjectsRoot .GridCard .Left p {
+    text-align: right;
+  }
+  .ProjectsRoot .GridCard .Left div:nth-child(1) {
+    width: 490px;
+  }
+  .ProjectsRoot .GridCard .Left div:nth-child(2) {
+    flex-shrink: 2;
+    margin-right: 24px;
+  }
+  .ProjectsRoot .GridCard .Left .BottomCard {
+    justify-content: start;
+  }
+  .ProjectsRoot .GridCard .Left .BottomCard div {
+    width: unset;
+  }
+}
+@media screen and (min-width: 990px) {
+  .ProjectsRoot .GridCard .Right {
+    flex-wrap: nowrap;
+  }
+  .ProjectsRoot .GridCard .Right h2 {
+    text-align: left;
+  }
+  .ProjectsRoot .GridCard .Right p {
+    text-align: left;
+  }
+  .ProjectsRoot .GridCard .Right div:nth-child(1) {
+    width: 490px;
+  }
+  .ProjectsRoot .GridCard .Right div:nth-child(2) {
+    flex-shrink: 2;
+    margin-left: 24px;
+  }
+  .ProjectsRoot .GridCard .Right .BottomCard {
+    justify-content: end;
+  }
+  .ProjectsRoot .GridCard .Right .BottomCard div {
+    width: unset;
+  }
 }
 
 .CertificationRoot {
   padding: 40px 20px;
   text-align: center;
   min-height: 100vh;
-  min-height: 947px;
-  max-width: unset;
-  background-color: #6a898a;
-  color: white;
+  max-width: 100%;
 }
-
-.CertificationRoot h1 {
-  margin-bottom: 40px;
+.CertificationRoot .Title {
+  margin-bottom: 24px;
 }
-
-.CertificationRoot .ProjectCard {
-  min-height: 598px;
+@media screen and (min-width: 990px) {
+  .CertificationRoot .Title {
+    margin-bottom: 120px;
+  }
+}
+.CertificationRoot .Title h1 {
   position: relative;
 }
-
-.CertificationRoot .ProjectCard div {
-  padding: 1rem;
+.CertificationRoot .Title img {
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
 }
-
-.CertificationRoot .ProjectCard div h2 {
-  margin-bottom: 1rem;
-}
-
-.CertificationRoot .ProjectCard div hr {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.CertificationRoot .ProjectCard div ul {
-  text-align: left;
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-}
-
-.CertificationRoot .ProjectCard div h6 {
-  cursor: pointer;
-}
-
-.CertificationRoot .ProjectCard div .ProjectImage {
+.CertificationRoot div .GridImage {
   max-width: 100%;
-  height: 300px;
+  margin-bottom: 32px;
+  height: 250px;
 }
-
-.CertificationRoot .ProjectCard div .StackSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.CertificationRoot .GridCard {
+  position: relative;
+  margin-bottom: 24px;
 }
-
-.CertificationRoot .ProjectCard div .StackSection img {
-  width: 64px;
-  height: 64px;
+.CertificationRoot .GridCard h2 {
+  text-align: left;
 }
-
-.CertificationRoot .ProjectCard div button,
-.CertificationRoot .ProjectCard div a {
-  margin-right: 10px;
+.CertificationRoot .GridCard:hover .BottomCard {
+  opacity: 1;
+}
+.CertificationRoot .GridCard .BottomCard {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.CertificationRoot .GridCard .BottomCard a {
+  min-width: 101.8px;
+  text-wrap: nowrap;
+}
+.CertificationRoot .GridCard .BottomCard :first-of-type {
+  margin-right: 6px;
 }
 
 .AboutRoot {
-  min-height: 100vh;
-  min-height: 947px;
-  color: #181c20;
   position: relative;
-  -webkit-box-shadow: 0px -21px 90px -15px rgba(2, 7, 3, 0.8);
-          box-shadow: 0px -21px 90px -15px rgba(2, 7, 3, 0.8);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  max-width: 100%;
-  padding-bottom: 136px;
+  min-height: 100vh;
 }
-
-@media (min-width: 530px) {
-  .AboutRoot {
-    padding-bottom: 158px;
+.AboutRoot .AboutContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 120px;
+}
+@media screen and (min-width: 990px) {
+  .AboutRoot .AboutContainer {
+    flex-wrap: nowrap;
+  }
+  .AboutRoot .AboutContainer img {
+    margin-right: 12px;
   }
 }
-
-.AboutRoot #about-paper {
-  margin: auto auto;
-  padding: 1rem 1.5rem;
+.AboutRoot .Wave {
+  position: absolute;
+  left: 0px;
+  width: 100vw;
+  z-index: -1;
+  transform: rotate(180deg);
+  top: 0px;
 }
 
-.AboutRoot #about-paper hr {
-  border-color: #00E01A;
+.SidebarRoot span {
+  cursor: pointer;
 }
-
-@media (min-width: 500px) {
-  .AboutRoot #about-paper #text-container {
-    width: 60%;
+.SidebarRoot .MuiDrawer-paper {
+  margin-top: 80px;
+  background-color: #fff;
+}
+@media screen and (min-width: 600px) {
+  .SidebarRoot {
+    display: none;
   }
-}
-
-@media (min-width: 700px) {
-  .AboutRoot #about-paper #text-container {
-    margin-top: calc(348px / 2 / 2);
-  }
-}
-
-.AboutRoot #about-paper #portrait-container {
-  max-width: 348px;
-  width: 65%;
-  display: block;
-  margin: 0 auto 1rem;
-}
-
-@media (min-width: 500px) {
-  .AboutRoot #about-paper #portrait-container {
-    width: 30%;
-    display: inline-block;
-    margin: 1rem;
-  }
-}
-
-.AboutRoot #about-paper #portrait-container #portrait {
-  width: 100%;
-  border: 3px solid black;
-}
-
-.AboutRoot h4 {
-  margin: 1rem 0;
-}
-
-.AboutRoot .MyStack {
-  width: 100%;
-  color: white;
-  padding-bottom: 1rem;
-}
-
-.AboutRoot .MyStack img {
-  height: 72px;
-}
-
-.SidebarRoot {
-  height: calc(100vh - 60.43px);
-  width: 0px;
-  position: fixed;
-  right: 0px;
-  top: 60.43px;
-  z-index: 99;
-  background-color: #011502;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-}
-
-.SidebarRoot div div,
-.SidebarRoot div a {
-  margin-top: 5px;
-  border-bottom: white 2px solid;
-  padding: 5px 0;
-  text-decoration: none;
-  color: white;
-}
-
-.SidebarRoot div div :visited,
-.SidebarRoot div a :visited {
-  color: white;
-}
-
-.SidebarRoot div div :hover,
-.SidebarRoot div a :hover {
-  color: #3E92CC;
-}
-
-.SidebarRoot div div :active,
-.SidebarRoot div a :active {
-  color: #3E92CC;
 }
 
 body {
   overflow-x: hidden;
 }
-
 body article {
   overflow-x: hidden;
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

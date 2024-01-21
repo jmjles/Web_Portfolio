@@ -6,80 +6,81 @@ import {
   Paper,
   Typography as Font,
 } from "@mui/material";
-import { lambda as la, udacity as uda } from "../../assets";
+import { wave } from "../../assets";
+import { education } from "../../utils";
 const certificates = () => {
-  class Cert {
-    constructor({ name, img, desc, info, link, alt }) {
-      this.name = name;
-      this.img = img;
-      this.desc = desc;
-      this.info = info;
-      this.link = link;
-      this.alt = alt;
-    }
-  }
-  const lambda = new Cert({
-    name: "Lambda School",
-    desc: "Completed Lambda School's course in Full Stack Web Development and Technical Interview course.",
-    link: "https://www.credly.com/badges/f8cd25ed-aba2-4da6-bdd7-d0daf472fc27?source=linked_in_profile",
-    info: "https://lambdaschool.com/courses/full-stack-web-development",
-    img: la.src,
-    alt: la.alt,
-  });
-  const udacity = new Cert({
-    name: "Udacity",
-    desc: "Started my Web Development education with Udacity that taught me the fundamental core for web development and computer science.",
-    link: "https://graduation.udacity.com/confirm/QTXW5D2Q",
-    info: "https://www.udacity.com/nanodegree",
-    img: uda.src,
-    alt: uda.alt,
-  });
-  const certs = [lambda, udacity];
+  const certs = education;
   return (
-    <Container
-      component="article"
-      className="CertificationRoot"
-      id="certifications"
-    >
-      <Font variant="h2" component="h1">
-        Certifications
-      </Font>
+    <Container component="article" className="CertificationRoot" id="education">
+      <img src={wave.src} alt={wave.alt} className="Wave" />
+      <div className="Title">
+        <Font variant="h1" component="h1">
+          Education
+          <img src={education.src} alt={education.alt} />
+        </Font>
+      </div>
+
       <Container maxWidth="lg">
         <Grid container spacing={5} justify="center">
           {certs.map((cert, i) => (
             <Grid key={cert.name} item xs={12} sm={6} md={4}>
-              <Card elevation={10} className="ProjectCard">
+              <Card elevation={0} className="GridCard Cert">
                 <Paper elevation={0}>
-                  <Font variant="h4" component="h2">
-                    {cert.name}
-                  </Font>
-                  <hr />
-                  <img className="ProjectImage" src={cert.img} alt={cert.alt} />
+                  <img className="GridImage" src={cert.img} alt={cert.alt} />
+                  <Grid container justifyContent="space-between">
+                    <Grid item>
+                      <Font component="h2" fontWeight="bold" color="secondary">
+                        {cert.name}
+                      </Font>
+                    </Grid>
+                    <Grid item sx={{ marginLeft: "auto" }}>
+                      <Font color="GrayText" variant="body1">
+                        {cert.time}
+                      </Font>
+                    </Grid>
+                  </Grid>
+
                   <Font variant="body1" align="left">
                     {cert.desc}
                   </Font>
-                  <div className="BottomCard">
-                    <Button
-                      variant="contained"
-                      href={cert.info}
-                      target="_blank"
-                      color="primary"
-                      rel="noopener"
-                      name={`about ${cert.name}`}
-                    >
-                      <Font variant="button">About Program</Font>
-                    </Button>
-                    <Button
-                      variant="contained"
-                      href={cert.link}
-                      target="_blank"
-                      color="secondary"
-                      rel="noopener"
-                      name={`view ${cert.name}`}
-                    >
-                      <Font variant="button">View</Font>
-                    </Button>
-                  </div>
+                  <Grid
+                    container
+                    direction="row"
+                    justifyContent="end"
+                    wrap="nowrap"
+                    className="BottomCard"
+                  >
+                    <Grid item>
+                      <Button
+                        variant="contained"
+                        href={cert.info}
+                        fullWidth
+                        target="_blank"
+                        color="primary"
+                        rel="noopener"
+                        name={`about ${cert.name}`}
+                      >
+                        <Font variant="button">Info</Font>
+                      </Button>
+                    </Grid>
+
+                    <Grid item>
+                      <Button
+                        variant="contained"
+                        fullWidth
+                        href={cert.link}
+                        target="_blank"
+                        disabled={!cert.link}
+                        color="secondary"
+                        rel="noopener"
+                        name={`view ${cert.name}`}
+                      >
+                        <Font variant="button" noWrap>
+                          {cert.link ? "Degree" : "Current"}
+                        </Font>
+                      </Button>
+                    </Grid>
+                  </Grid>
                 </Paper>
               </Card>
             </Grid>
