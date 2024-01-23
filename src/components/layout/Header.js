@@ -27,7 +27,7 @@ function Header() {
   const toggleOpen = () => setOpen((p) => !p);
   return (
     <div className="HeaderRoot">
-      <AppBar open={[open, setOpen]} />
+      <AppBar open={[open, toggleOpen]} />
       <Nav view={view} />
       <SideBar open={[open, toggleOpen]} view={view} />
     </div>
