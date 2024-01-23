@@ -1,6 +1,6 @@
 import { Grid, Typography as Font, IconButton } from "@mui/material";
 import { socials } from "../../utils/nav";
-import { MenuRounded } from "@mui/icons-material";
+import { MenuOpenRounded, MenuRounded } from "@mui/icons-material";
 
 export default (props) => {
   const [open, toggleOpen] = props.open;
@@ -33,8 +33,15 @@ export default (props) => {
         ))}
       </Grid>
       <Grid item>
-        <IconButton onClick={toggleOpen}>
-          <MenuRounded htmlColor="black" />
+        <IconButton onClick={toggleOpen} className="MenuContainer">
+          <MenuOpenRounded
+            htmlColor="black"
+            className={open ? "MenuOpen" : "MenuOpen Closed"}
+          />
+          <MenuRounded
+            htmlColor="black"
+            className={open ? "Menu Open" : "Menu"}
+          />
         </IconButton>
       </Grid>
     </Grid>

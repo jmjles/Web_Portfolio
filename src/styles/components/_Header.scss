@@ -12,6 +12,29 @@
       rgba(255, 255, 255, 0) 100%
     );
     z-index: 9999;
+    .MenuContainer {
+      position: relative;
+      margin-right: 12px;
+      .Menu,
+      .MenuOpen {
+        position: absolute;
+      }
+      .MenuOpen {
+        opacity: 1;
+        transition: 0.3s;
+        &.Closed {
+          opacity: 0;
+          rotate: -135deg;
+        }
+      }
+      .Menu {
+        transition: 0.3s;
+        &.Open {
+          rotate: 135deg;
+          opacity: 0;
+        }
+      }
+    }
     svg {
       width: 38px;
     }
