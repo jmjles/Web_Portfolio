@@ -5,6 +5,7 @@ import Projects from "./components/pages/projects";
 import About from "./components/pages/about";
 import Certificates from "./components/pages/certificates";
 
+ReactGa.initialize()
 class App extends Component {
   render() {
     return (

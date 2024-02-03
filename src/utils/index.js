@@ -8,6 +8,9 @@ import {
   weatherWorldIcon,
 } from "../assets";
 
+export const breakpoint = (bp, min = true, unit = "px") =>
+  `@media (${min ? "min" : "max"}-width: ${bp}${unit})`;
+
 export const sidebarAni = () => {
   const el = document.querySelector(".SidebarRoot");
   const init = anime.get(el, "width", "px");
