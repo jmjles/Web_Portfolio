@@ -27,27 +27,26 @@ class Nav {
 export const navs = [
   new Nav({
     location: "home",
-    icon: <Home fontSize="large" htmlColor="black" />,
+    icon: (color) => <Home fontSize="large" htmlColor={color} />,
     name: "Home",
   }),
   new Nav({
     location: "experience",
-    icon: <Terminal fontSize="large" htmlColor="black" />,
+    icon: (color) => <Terminal fontSize="large" htmlColor={color} />,
     name: "Experience",
   }),
   new Nav({
     location: "about",
-    icon: <Person fontSize="large" htmlColor="black" />,
+    icon: (color) => <Person fontSize="large" htmlColor={color} />,
     name: "About",
   }),
   new Nav({
     location: "education",
-    icon: <School fontSize="large" htmlColor="black" />,
+    icon: (color) => <School fontSize="large" htmlColor={color} />,
     name: "Education",
   }),
 ];
 
-const colors = {};
 export const socials = [
   new Nav({
     link: "https://github.com/jmjles",

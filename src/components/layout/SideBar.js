@@ -8,7 +8,6 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { about, home, navLine, pc } from "../../assets";
 import { navs } from "../../utils/nav";
 export default function SideBar(props) {
   const [open, toggleOpen] = props.open;
@@ -32,8 +31,13 @@ export default function SideBar(props) {
               disablePadding
             >
               <ListItemButton>
-                <ListItemIcon>{n.icon}</ListItemIcon>
-                <ListItemText primary={n.name} />
+                <ListItemIcon>
+                  {n.icon(n.location === view ? "#339cff" : "black")}
+                </ListItemIcon>
+                <ListItemText
+                  primary={n.name}
+                  style={{ color: n.location === view ? "#339cff" : "" }}
+                />
               </ListItemButton>
             </ListItem>
           </List>

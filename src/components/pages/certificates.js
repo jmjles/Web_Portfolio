@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { wave } from "../../assets";
 import { education } from "../../utils";
+import { sendClickEvent } from "../../utils/ga";
 const certificates = () => {
   const certs = education;
   return (
@@ -59,6 +60,9 @@ const certificates = () => {
                         color="primary"
                         rel="noopener"
                         name={`about ${cert.name}`}
+                        onClick={() =>
+                          sendClickEvent(`visited ${cert.name} website`)
+                        }
                       >
                         <Font variant="button">Info</Font>
                       </Button>
@@ -74,6 +78,9 @@ const certificates = () => {
                         color="secondary"
                         rel="noopener"
                         name={`view ${cert.name}`}
+                        onClick={() =>
+                          sendClickEvent(`visited ${cert.name} diploma`)
+                        }
                       >
                         <Font variant="button" noWrap>
                           {cert.link ? "Degree" : "Current"}

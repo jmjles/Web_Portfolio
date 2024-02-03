@@ -8,6 +8,7 @@ import {
   Paper,
 } from "@mui/material";
 import { experiences } from "../../utils";
+import { sendClickEvent } from "../../utils/ga";
 export default function Projects() {
   const projects = experiences;
   return (
@@ -65,6 +66,11 @@ export default function Projects() {
                                 target="_blank"
                                 color="primary"
                                 rel="noopener"
+                                onClick={() =>
+                                  sendClickEvent(
+                                    `visited ${project.name} website`
+                                  )
+                                }
                               >
                                 <Font variant="button">Learn More</Font>
                               </Button>
@@ -78,7 +84,10 @@ export default function Projects() {
                                   onClick={
                                     !project.code
                                       ? () => alert("Private Repo")
-                                      : null
+                                      : () =>
+                                          sendClickEvent(
+                                            `visited ${project.name} github`
+                                          )
                                   }
                                   target="_blank"
                                   color="primary"
@@ -94,6 +103,11 @@ export default function Projects() {
                                   target="_blank"
                                   color="secondary"
                                   rel="noopener"
+                                  onClick={() =>
+                                    sendClickEvent(
+                                      `visited ${project.name} live example`
+                                    )
+                                  }
                                 >
                                   <Font variant="button">Try Me</Font>
                                 </Button>

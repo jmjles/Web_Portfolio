@@ -1,9 +1,7 @@
 import React from "react";
 import { Container, Typography as Font, Grid, IconButton } from "@mui/material";
-import { GitHub, LinkedIn } from "@mui/icons-material";
 import {
   cSharp,
-  csv,
   js,
   node,
   portrait,
@@ -12,8 +10,8 @@ import {
   wave,
   mongo,
 } from "../../assets";
-import resume from "../../assets/etc/Resume.pdf";
 import { socials } from "../../utils/nav";
+import { sendClickEvent } from "../../utils/ga";
 function Home() {
   const stack = [js, cSharp, react, vue, node, mongo];
   return (
@@ -63,6 +61,7 @@ function Home() {
                     target="_blank"
                     referrerPolicy="no-referrer"
                     aria-label={s.alt}
+                    onClick={() => sendClickEvent(s.name)}
                   >
                     {s.icon}
                   </IconButton>

@@ -1,8 +1,26 @@
-import { Grid, Typography as Font, Link } from "@mui/material";
-import React from "react";
+import { Grid, Typography as Font } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { navs } from "../../utils/nav";
+import { sendViewEvent } from "../../utils/ga";
 export default function Nav(props) {
   const view = props.view;
+  const [loc, setLoc] = useState(navs[0]);
+  const [sent, setSent] = useState(false);
+  useEffect(() => {
+    if (loc.location === view && !sent) {
+      sendViewEvent(loc.name);
+      setSent(true);
+    } else {
+      if (loc.location !== view) {
+        navs.forEach((n) => {
+          if (n.location === view) {
+            setLoc(n);
+            setSent(false);
+          }
+        });
+      }
+    }
+  }, [view]);
   return (
     <div className="Nav Desktop">
       <div style={{ position: "relative" }}>

@@ -1,8 +1,9 @@
 import { Grid, Typography as Font, IconButton } from "@mui/material";
 import { socials } from "../../utils/nav";
 import { MenuOpenRounded, MenuRounded } from "@mui/icons-material";
+import { sendClickEvent } from "../../utils/ga";
 
-export default (props) => {
+const AppBar = (props) => {
   const [open, toggleOpen] = props.open;
   return (
     <Grid
@@ -26,6 +27,7 @@ export default (props) => {
               target="_blank"
               referrerPolicy="no-referrer"
               aria-label={s.alt}
+              onClick={() => sendClickEvent(s.name)}
             >
               {s.icon}
             </IconButton>
@@ -47,3 +49,4 @@ export default (props) => {
     </Grid>
   );
 };
+export default AppBar;
