@@ -83,8 +83,8 @@ const mew = new GridEntry({
   time: "1/22 - 3/23",
   img: mewLogo.src,
   alt: mewLogo.alt,
-  code: "https://github.com/MyEtherWallet/MyEtherWallet/pulls?q=is%3Apr+author%3Ajmjles+is%3Aclosed",
-  info: "https://www.myetherwallet.com/",
+  code: "",
+  info: "https://github.com/MyEtherWallet/MyEtherWallet/pulls?q=is%3Apr+author%3Ajmjles+is%3Aclosed",
 });
 
 // const ethread = new GridEntry({

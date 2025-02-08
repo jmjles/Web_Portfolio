@@ -20,8 +20,8 @@ export default function SideBar(props) {
       anchor="right"
       hideBackdrop
     >
-      {navs.map((n) => (
-        <Box>
+      {navs.map((n,i) => (
+        <Box key={i}>
           <List>
             <ListItem
               onClick={() => {

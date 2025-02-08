@@ -17,10 +17,12 @@
   }
   @include GridView();
   .GridImage {
-    height: 250px;
-    max-width: 100%;
     margin-bottom: 12px;
-    justify-items: center;
+    max-width: 450px;
+    flex-grow: 2;
+    img{
+      width: 100%;
+    }
   }
   .BottomCard {
     justify-content: end;
@@ -36,17 +38,18 @@
         }
         flex-direction: row-reverse;
         flex-wrap: nowrap;
-        div:nth-child(1) {
-          width: 490px;
-        }
-        div:nth-child(2) {
-          flex-shrink: 2;
-          margin-right: 24px;
+        .GridImage{
+          width: 300px;
+          flex-shrink: 0;
+          margin-left: 24px;
+          img{
+            width: 100%;
+          }
         }
         .BottomCard {
           justify-content: start;
           div {
-            width: unset;
+            width: revert;
           }
         }
       }
@@ -60,12 +63,13 @@
           text-align: left;
         }
         flex-wrap: nowrap;
-        div:nth-child(1) {
-          width: 490px;
-        }
-        div:nth-child(2) {
-          flex-shrink: 2;
-          margin-left: 24px;
+        .GridImage{
+          width: 300px;
+          flex-shrink: 0;
+          margin-right: 24px;
+          img{
+            width: 100%;
+          }
         }
         .BottomCard {
           justify-content: end;

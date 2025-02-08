@@ -241,16 +241,14 @@
 }
 .ProjectsRoot .GridCard .BottomCard a {
   min-width: 101.8px;
-  text-wrap: nowrap;
-}
-.ProjectsRoot .GridCard .BottomCard :first-of-type {
-  margin-right: 6px;
 }
 .ProjectsRoot .GridImage {
-  height: 250px;
-  max-width: 100%;
   margin-bottom: 12px;
-  justify-items: center;
+  max-width: 450px;
+  flex-grow: 2;
+}
+.ProjectsRoot .GridImage img {
+  width: 100%;
 }
 .ProjectsRoot .BottomCard {
   justify-content: end;
@@ -266,18 +264,19 @@
   .ProjectsRoot .GridCard .Left p {
     text-align: right;
   }
-  .ProjectsRoot .GridCard .Left div:nth-child(1) {
-    width: 490px;
+  .ProjectsRoot .GridCard .Left .GridImage {
+    width: 300px;
+    flex-shrink: 0;
+    margin-left: 24px;
   }
-  .ProjectsRoot .GridCard .Left div:nth-child(2) {
-    flex-shrink: 2;
-    margin-right: 24px;
+  .ProjectsRoot .GridCard .Left .GridImage img {
+    width: 100%;
   }
   .ProjectsRoot .GridCard .Left .BottomCard {
     justify-content: start;
   }
   .ProjectsRoot .GridCard .Left .BottomCard div {
-    width: unset;
+    width: revert;
   }
 }
 @media screen and (min-width: 990px) {
@@ -290,12 +289,13 @@
   .ProjectsRoot .GridCard .Right p {
     text-align: left;
   }
-  .ProjectsRoot .GridCard .Right div:nth-child(1) {
-    width: 490px;
+  .ProjectsRoot .GridCard .Right .GridImage {
+    width: 300px;
+    flex-shrink: 0;
+    margin-right: 24px;
   }
-  .ProjectsRoot .GridCard .Right div:nth-child(2) {
-    flex-shrink: 2;
-    margin-left: 24px;
+  .ProjectsRoot .GridCard .Right .GridImage img {
+    width: 100%;
   }
   .ProjectsRoot .GridCard .Right .BottomCard {
     justify-content: end;
@@ -348,10 +348,6 @@
 }
 .CertificationRoot .GridCard .BottomCard a {
   min-width: 101.8px;
-  text-wrap: nowrap;
-}
-.CertificationRoot .GridCard .BottomCard :first-of-type {
-  margin-right: 6px;
 }
 
 .AboutRoot {

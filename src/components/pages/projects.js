@@ -17,7 +17,7 @@ export default function Projects() {
         My Experience
       </Font>
       <Container maxWidth="lg">
-        <Grid container justifyContent="center">
+        <Grid container justifyContent="center" spacing={12}>
           {projects.map((project, i) => {
             const right = i % 2 ? false : true;
             return (
@@ -30,15 +30,11 @@ export default function Projects() {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Grid item>
+                      <Grid item className="GridImage" alignItems="center">
                         {project.svg ? (
                           project.svg
                         ) : (
-                          <img
-                            className="GridImage"
-                            src={project.img}
-                            alt={project.alt}
-                          />
+                          <img src={project.img} alt={project.alt} />
                         )}
                       </Grid>
                       <Grid item>
@@ -57,7 +53,7 @@ export default function Projects() {
                         >
                           {project.desc}
                         </Font>
-                        <Grid container spacing={2} className="BottomCard">
+                        <Grid container spacing={8} className="BottomCard">
                           {project.info ? (
                             <Grid item>
                               <Button
@@ -72,7 +68,7 @@ export default function Projects() {
                                   )
                                 }
                               >
-                                <Font variant="button">Learn More</Font>
+                                My Contribution
                               </Button>
                             </Grid>
                           ) : (
@@ -93,7 +89,7 @@ export default function Projects() {
                                   color="primary"
                                   rel="noopener"
                                 >
-                                  <Font variant="button">Code</Font>
+                                  Code
                                 </Button>
                               </Grid>
                               <Grid item>
@@ -109,7 +105,9 @@ export default function Projects() {
                                     )
                                   }
                                 >
-                                  <Font variant="button">Try Me</Font>
+                                  <Font variant="button" alignSelf="center">
+                                    Try Me
+                                  </Font>
                                 </Button>
                               </Grid>
                             </>

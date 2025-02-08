@@ -19,8 +19,8 @@ const AppBar = (props) => {
         </Font>
       </Grid>
       <Grid item container className="Socials" wrap="nowrap">
-        {socials.map((s) => (
-          <Grid item>
+        {socials.map((s,i) => (
+          <Grid key={i} item>
             <IconButton
               key={s.link}
               href={s.link}

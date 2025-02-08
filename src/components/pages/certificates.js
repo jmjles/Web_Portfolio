@@ -50,6 +50,7 @@ const certificates = () => {
                     justifyContent="end"
                     wrap="nowrap"
                     className="BottomCard"
+                    spacing={2}
                   >
                     <Grid item>
                       <Button

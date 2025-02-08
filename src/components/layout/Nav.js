@@ -28,8 +28,8 @@ export default function Nav(props) {
           Jesus M
         </Font>
         <Grid container className="Container" justifyContent="space-around">
-          {navs.map((n) => (
-            <Grid item>
+          {navs.map((n,i) => (
+            <Grid key={i} item>
               <a
                 onClick={() => n.scrollTo()}
                 id={`Nav${n.name}`}
