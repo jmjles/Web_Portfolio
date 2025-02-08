@@ -3,6 +3,7 @@ import {
   ethreadIcon,
   lambda,
   mewLogo,
+  myPaperImg,
   udacity,
   wgu as w,
   weatherWorldIcon,
@@ -82,28 +83,39 @@ const mew = new GridEntry({
   time: "1/22 - 3/23",
   img: mewLogo.src,
   alt: mewLogo.alt,
+  code: "https://github.com/MyEtherWallet/MyEtherWallet/pulls?q=is%3Apr+author%3Ajmjles+is%3Aclosed",
   info: "https://www.myetherwallet.com/",
 });
 
-const ethread = new GridEntry({
-  name: "Ethread",
-  desc: "Ethread is a full stack social media application focusing on specializing anonymous accounts, allowing accounts to bre created within the ethereum chain. The current stack for the back-end is utilizing Node, Express and Graphql as react, react native with expo, and other technologies for the front-end.",
+// const ethread = new GridEntry({
+//   name: "Ethread",
+//   desc: "Ethread is a full stack social media application focusing on specializing anonymous accounts, allowing accounts to bre created within the ethereum chain. The current stack for the back-end is utilizing Node, Express and Graphql as react, react native with expo, and other technologies for the front-end.",
+//   time: "",
+//   img: ethreadIcon.src,
+//   alt: ethreadIcon.alt,
+//   code: "https://github.com/jmjles/ethread",
+//   link: "https://ethread.jesusmj.com/",
+// });
+
+const myPaper = new GridEntry({
+  name: "MyPaper",
+  desc: "Mypaper is a pdf generator that utilizes templates to create invoices without having to re-enter company information.",
   time: "",
-  img: ethreadIcon.src,
-  alt: ethreadIcon.alt,
-  code: "https://github.com/jmjles/ethread",
-  link: "https://ethread.jesusmj.com/",
+  img: myPaperImg.src,
+  alt: myPaperImg.alt,
+  code: "https://github.com/jmjles/MyPaper",
+  link: "https://my-paper.jesusmj.com/",
 });
 
 const weatherApp = new GridEntry({
   name: "Weather World",
-  desc: "This is a simple project using React as it's front-end library. The free api limits the intended use of the application but it simple shows my understanding of react along with other technologies such as animejs and axios for api calls.",
+  desc: "This is a simple weather app that utilizes multiple frontend libraries in order to create a more interactive experience.",
   time: "",
   img: weatherWorldIcon.src,
   alt: weatherWorldIcon.alt,
-  link: "https://weathworld.jesusmj.com/",
+  link: "https://weatherworld.jesusmj.com/",
   code: "https://github.com/jmjles/Weather-World",
 });
 
 export const education = [wgu, lambdaSchool, udacityT];
-export const experiences = [mew, ethread, weatherApp];
+export const experiences = [mew, myPaper, weatherApp];

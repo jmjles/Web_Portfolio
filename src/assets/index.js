@@ -29,6 +29,7 @@ import mew from "./pics/mew.svg";
 import ww from "./pics/ww.png";
 import eth from "./pics/ethred.png";
 import res from "./etc/Resume.pdf";
+import mp from "./pics/my-paper.png";
 
 function Img({ src, alt, title = "" }) {
   this.src = src;
@@ -41,6 +42,8 @@ export const ethreadIcon = new Img({ src: eth, alt: "Ethread Logo" });
 export const weatherWorldIcon = new Img({ src: ww, alt: "Weather World Logo" });
 
 export const mewLogo = new Img({ src: mew, alt: "MyEtherWallet" });
+
+export const myPaperImg = new Img({ src: mp, alt: "MyPaper Image" });
 export const wgu = new Img({
   src: western,
   alt: "Western Governors University logo",
