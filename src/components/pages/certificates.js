@@ -52,7 +52,7 @@ const certificates = () => {
                     className="BottomCard"
                     spacing={2}
                   >
-                    <Grid item>
+                    <Grid item display={cert.info ? "revert" : "none"}>
                       <Button
                         variant="contained"
                         href={cert.info}

@@ -34,18 +34,17 @@ function About() {
                   A creator in heart, Developer in mind
                 </Font>
                 <Font variant="body1">
-                  My arsenal of tools I've accumulated while learning and
-                  working are technologies based on JavaScript and C#. This
-                  includes React, Vue, Node, and Unity.
+                  My arsenal of tools, accumulated while learning and working
+                  are technologies based on JavaScript and C#. This includes
+                  React, Vue, Node, and Unity.
                   <br />
-                  My expertise is dynamic as I have not only developed
-                  Websites/APIs, but also mobile development with React Native,
-                  Windows applications with Electron, and a discord bot with
-                  their respected api.
+                  My expertise is dynamic, as I have developed Websites/APIs,
+                  mobile development with React Native, Windows applications
+                  with Electron, and a Discord bot with their respective API.
                   <br />
-                  Knowing these cutting edge technologies, my goal is to thrive
-                  as a developer by continuing to learn and master new tech as
-                  it comes. Collaborating with teams to produce amazing
+                  Knowing these cutting-edge technologies, I aim to thrive as a
+                  developer by continuing to learn and master new tech as it
+                  emerges. Collaborating with teams to produce amazing
                   applications will always be rewarding.
                 </Font>
               </Grid>

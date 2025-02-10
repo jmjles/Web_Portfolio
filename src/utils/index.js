@@ -50,7 +50,7 @@ function GridEntry({
 
 const lambdaSchool = new GridEntry({
   name: "Lambda School",
-  desc: "Completed Lambda School's course in Full Stack Web Development and Technical Interview course.",
+  desc: "Completed Lambda School's course in Full Stack Web Development. This course focused mainly on react/redux for front end and several backend technologies such as Node, PostgreSQL, MySQL, and MongoDB",
   link: "https://www.credly.com/badges/f8cd25ed-aba2-4da6-bdd7-d0daf472fc27?source=linked_in_profile",
   info: "https://lambdaschool.com/courses/full-stack-web-development",
   time: "8/19 - 8/20",
@@ -60,9 +60,9 @@ const lambdaSchool = new GridEntry({
 
 const udacityT = new GridEntry({
   name: "Udacity",
-  desc: "Started my Web Development education with Udacity that taught me the fundamentals web development and computer science.",
-  link: "https://graduation.udacity.com/confirm/QTXW5D2Q",
-  info: "https://www.udacity.com/nanodegree",
+  desc: "Started my Web Development education with Udacity that taught me the fundamentals of web development and computer science.",
+  link: "https://www.udacity.com/certificate/e/42276e96-bec1-11e7-b710-3b805275b310",
+  info: "",
   time: "9/17 - 7/18",
   img: udacity.src,
   alt: udacity.alt,
