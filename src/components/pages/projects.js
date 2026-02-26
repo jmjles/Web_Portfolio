@@ -7,10 +7,10 @@ import {
   Button,
   Paper,
 } from "@mui/material";
-import { experiences } from "../../utils";
+import { experiences as projects } from "../../utils";
 import { sendClickEvent } from "../../utils/ga";
+import Image from "../Image";
 export default function Projects() {
-  const projects = experiences;
   return (
     <Container component="article" className="ProjectsRoot" id="experience">
       <Font variant="h1" className="Title">
@@ -20,6 +20,7 @@ export default function Projects() {
         <Grid container justifyContent="center" spacing={12}>
           {projects.map((project, i) => {
             const right = i % 2 ? false : true;
+            const slideshow = Array.isArray(project.img);
             return (
               <Grid key={project.name} item>
                 <Card elevation={0} className="GridCard">
@@ -34,7 +35,12 @@ export default function Projects() {
                         {project.svg ? (
                           project.svg
                         ) : (
-                          <img src={project.img} alt={project.alt} />
+                          <Image
+                            images={project.img}
+                            alt={project.alt}
+                            key={i}
+                            id={i}
+                          />
                         )}
                       </Grid>
                       <Grid item>
@@ -64,7 +70,7 @@ export default function Projects() {
                                 rel="noopener"
                                 onClick={() =>
                                   sendClickEvent(
-                                    `visited ${project.name} website`
+                                    `visited ${project.name} website`,
                                   )
                                 }
                               >
@@ -82,7 +88,7 @@ export default function Projects() {
                                       ? () => alert("Private Repo")
                                       : () =>
                                           sendClickEvent(
-                                            `visited ${project.name} github`
+                                            `visited ${project.name} github`,
                                           )
                                   }
                                   target="_blank"
@@ -101,7 +107,7 @@ export default function Projects() {
                                   rel="noopener"
                                   onClick={() =>
                                     sendClickEvent(
-                                      `visited ${project.name} live example`
+                                      `visited ${project.name} live example`,
                                     )
                                   }
                                 >
