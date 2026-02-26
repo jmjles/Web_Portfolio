@@ -1,28 +1,43 @@
-import anime from "animejs/lib/anime";
 import {
+  degree,
   ethreadIcon,
   lambda,
   mewLogo,
   myPaperImg,
   udacity,
   wgu as w,
-  weatherWorldIcon,
 } from "../assets";
-
+import { animate, utils } from "animejs";
 export const breakpoint = (bp, min = true, unit = "px") =>
   `@media (${min ? "min" : "max"}-width: ${bp}${unit})`;
 
 export const sidebarAni = () => {
   const el = document.querySelector(".SidebarRoot");
-  const init = anime.get(el, "width", "px");
+  const init = utils.get(el, "width", "px");
   const width = init > 0 ? [init, 0] : [0, "100%"];
-  anime({
+  animate({
     targets: ".SidebarRoot",
     width,
     easing: "linear",
     duration: 200,
   });
 };
+
+export const fadeIn = (name) =>
+  animate(name, {
+    ease: "linear",
+    opacity: { from: 0, to: 1 },
+    delay: 2000,
+    duration: 1000,
+  });
+
+export const fadeOut = (name) =>
+  animate(name, {
+    ease: "linear",
+    opacity: { from: 1, to: 0 },
+    delay: 2000,
+    duration: 1000,
+  });
 
 function GridEntry({
   name,
@@ -50,9 +65,8 @@ function GridEntry({
 
 const lambdaSchool = new GridEntry({
   name: "Lambda School",
-  desc: "Completed Lambda School's course in Full Stack Web Development. This course focused mainly on react/redux for front end and several backend technologies such as Node, PostgreSQL, MySQL, and MongoDB",
+  desc: "",
   link: "https://www.credly.com/badges/f8cd25ed-aba2-4da6-bdd7-d0daf472fc27?source=linked_in_profile",
-  info: "https://lambdaschool.com/courses/full-stack-web-development",
   time: "8/19 - 8/20",
   img: lambda.src,
   alt: lambda.alt,
@@ -60,9 +74,8 @@ const lambdaSchool = new GridEntry({
 
 const udacityT = new GridEntry({
   name: "Udacity",
-  desc: "Started my Web Development education with Udacity that taught me the fundamentals of web development and computer science.",
+  desc: "",
   link: "https://www.udacity.com/certificate/e/42276e96-bec1-11e7-b710-3b805275b310",
-  info: "",
   time: "9/17 - 7/18",
   img: udacity.src,
   alt: udacity.alt,
@@ -70,9 +83,8 @@ const udacityT = new GridEntry({
 
 const wgu = new GridEntry({
   name: "Western Governors University",
-  desc: "In progress of obtaining my bachelor’s degree in software engineering.",
-  info: "https://www.wgu.edu/online-it-degrees/software-engineering-bachelors-program.html",
-  time: "8/21 - Current",
+  time: "8/21 - 12/25",
+  link: degree.src,
   img: w.src,
   alt: w.alt,
 });
@@ -87,15 +99,15 @@ const mew = new GridEntry({
   info: "https://github.com/MyEtherWallet/MyEtherWallet/pulls?q=is%3Apr+author%3Ajmjles+is%3Aclosed",
 });
 
-// const ethread = new GridEntry({
-//   name: "Ethread",
-//   desc: "Ethread is a full stack social media application focusing on specializing anonymous accounts, allowing accounts to bre created within the ethereum chain. The current stack for the back-end is utilizing Node, Express and Graphql as react, react native with expo, and other technologies for the front-end.",
-//   time: "",
-//   img: ethreadIcon.src,
-//   alt: ethreadIcon.alt,
-//   code: "https://github.com/jmjles/ethread",
-//   link: "https://ethread.jesusmj.com/",
-// });
+const ethread = new GridEntry({
+  name: "Ethread",
+  desc: "Ethread is a full stack social media application focusing on specializing anonymous accounts, allowing accounts to bre created within the ethereum chain. The current stack for the back-end is utilizing Node, Express and Graphql as react, react native with expo, and other technologies for the front-end.",
+  time: "",
+  img: ethreadIcon.src,
+  alt: ethreadIcon.alt,
+  code: "https://github.com/jmjles/ethread",
+  link: "https://ethread.jesusmj.com/",
+});
 
 const myPaper = new GridEntry({
   name: "MyPaper",
@@ -107,15 +119,43 @@ const myPaper = new GridEntry({
   link: "https://my-paper.jesusmj.com/",
 });
 
-const weatherApp = new GridEntry({
-  name: "Weather World",
-  desc: "This is a simple weather app that utilizes multiple frontend libraries in order to create a more interactive experience.",
+const pizzaPictures = [
+  require("../assets/pics/pizzaParlor/welcome.png"),
+  require("../assets/pics/pizzaParlor/stores.png"),
+  require("../assets/pics/pizzaParlor/login.png"),
+  require("../assets/pics/pizzaParlor/menu.png"),
+  require("../assets/pics/pizzaParlor/item-order.png"),
+  require("../assets/pics/pizzaParlor/editmenu.png"),
+  require("../assets/pics/pizzaParlor/orders.png"),
+  require("../assets/pics/pizzaParlor/sales-report.png"),
+];
+const pizzaParlor = new GridEntry({
+  name: "Pizza Parlor",
+  desc: "An online POS system intended for pizzerias. Provides a platform for customers to place orders along with order tracking and account management. Inventory tracking, report generation and order management are available for vendors.",
   time: "",
-  img: weatherWorldIcon.src,
-  alt: weatherWorldIcon.alt,
-  link: "https://weatherworld.jesusmj.com/",
-  code: "https://github.com/jmjles/Weather-World",
+  img: pizzaPictures,
+  alt: "Screenshots of the pizza parlor",
+  link: "https://pizza-parlor.jesusmj.com/",
+  code: "https://github.com/jmjles/pizza-parlor",
+});
+
+const homePictures = [
+  require("../assets/pics/homeHaven/desktop.png"),
+  require("../assets/pics/homeHaven/desktop-details.png"),
+  require("../assets/pics/homeHaven/mobileLanding.png"),
+  require("../assets/pics/homeHaven/mobile.png"),
+  require("../assets/pics/homeHaven/desktop-details.png"),
+];
+
+const homeHaven = new GridEntry({
+  name: "HomeHaven Rentals",
+  desc: "A SPA developed to enable businesses' showcase properties. A description of each property is displayed along with contact details for the property manager for each property.",
+  time: "",
+  img: homePictures,
+  alt: "Screenshots of the pizza parlor",
+  link: "https://homehavenrentals.jesusmj.com/",
+  code: "https://github.com/jmjles/HomeHaven-Rentals",
 });
 
 export const education = [wgu, lambdaSchool, udacityT];
-export const experiences = [mew, myPaper, weatherApp];
+export const experiences = [mew, pizzaParlor, homeHaven];
