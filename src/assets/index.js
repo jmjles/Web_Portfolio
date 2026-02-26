@@ -29,13 +29,21 @@ import mew from "./pics/mew.svg";
 import ww from "./pics/ww.png";
 import eth from "./pics/ethred.png";
 import res from "./etc/Resume.pdf";
+import deg from "./etc/wgu.pdf";
 import mp from "./pics/my-paper.png";
 
-function Img({ src, alt, title = "" }) {
-  this.src = src;
+class Img{
+  src = ''
+  alt = ''
+  title = ''
+
+  constructor({ src, alt, title = "" }){
+this.src = src;
   this.alt = alt;
   this.title = title;
+  }
 }
+export const degree = new Img({ src: deg });
 export const resume = new Img({ src: res });
 export const ethreadIcon = new Img({ src: eth, alt: "Ethread Logo" });
 
