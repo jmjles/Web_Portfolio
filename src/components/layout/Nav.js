@@ -1,5 +1,5 @@
 import { Grid, Typography as Font } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { navs } from "../../utils/nav";
 import { sendViewEvent } from "../../utils/ga";
 export default function Nav(props) {
@@ -24,11 +24,16 @@ export default function Nav(props) {
   return (
     <div className="Nav Desktop">
       <div style={{ position: "relative" }}>
-        <Font fontWeight="bold" id="Logo" variant="h3">
+        <Font fontWeight="bold" id="Logo" >
           Jesus M
         </Font>
-        <Grid container className="Container" justifyContent="space-around">
-          {navs.map((n,i) => (
+        <Grid
+          container
+          className="Container"
+          justifyContent="space-around"
+          width={"100%"}
+        >
+          {navs.map((n, i) => (
             <Grid key={i} item>
               <a
                 onClick={() => n.scrollTo()}

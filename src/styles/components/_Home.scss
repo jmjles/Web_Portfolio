@@ -21,10 +21,7 @@
     }
   }
   .Intro {
-    flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 12px;
-    max-width: 335px;
     @include min(600px){
       max-width: 520px;
       align-items: center;

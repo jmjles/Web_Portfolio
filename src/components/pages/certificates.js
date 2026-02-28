@@ -22,37 +22,50 @@ const certificates = () => {
       </div>
 
       <Container maxWidth="lg">
-        <Grid container spacing={5} justify="center">
+        <Grid
+          container
+          spacing={3}
+          justifyContent={"space-around"}
+          width={"100%"}
+        >
           {certs.map((cert, i) => (
-            <Grid key={cert.name} item xs={12} sm={6} md={4}>
+            <Grid
+              key={cert.name}
+              xs={12}
+              md={6}
+              lg={4}
+              flexGrow={1}
+              maxWidth={"310px"}
+            >
               <Card elevation={0} className="GridCard Cert">
                 <Paper elevation={0}>
                   <img className="GridImage" src={cert.img} alt={cert.alt} />
-                  <Grid container justifyContent="space-between">
-                    <Grid item>
+                  <Grid
+                    container
+                    justifyContent="space-between"
+                    columnSpacing={2}
+                    width={"100%"}
+                  >
+                    <Grid>
                       <Font component="h2" fontWeight="bold" color="secondary">
                         {cert.name}
                       </Font>
                     </Grid>
-                    <Grid item sx={{ marginLeft: "auto" }}>
-                      <Font color="GrayText" variant="body1">
-                        {cert.time}
-                      </Font>
+                    <Grid>
+                      <Font color="GrayText">{cert.time}</Font>
                     </Grid>
                   </Grid>
 
-                  <Font variant="body1" align="left">
-                    {cert.desc}
-                  </Font>
+                  <Font align="left">{cert.desc}</Font>
                   <Grid
                     container
-                    direction="row"
                     justifyContent="end"
                     wrap="nowrap"
                     className="BottomCard"
                     spacing={2}
+                    marginTop={"1rem"}
                   >
-                    <Grid item display={cert.info ? "revert" : "none"}>
+                    <Grid display={cert.info ? "revert" : "none"}>
                       <Button
                         variant="contained"
                         href={cert.info}
@@ -69,7 +82,7 @@ const certificates = () => {
                       </Button>
                     </Grid>
 
-                    <Grid item>
+                    <Grid>
                       <Button
                         variant="contained"
                         fullWidth

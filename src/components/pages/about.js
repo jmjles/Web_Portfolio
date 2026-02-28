@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography as Font, Grid } from "@mui/material";
+import { Container, Typography as Font, Grid, Stack } from "@mui/material";
 import { aboutPCPic, wave } from "../../assets";
 
 function About() {
@@ -8,48 +8,36 @@ function About() {
       <img src={wave.src} alt={wave.alt} className="Wave" />
       <Container component="article" maxWidth="lg">
         <Container maxWidth="lg">
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            minHeight="100vh"
-          >
+          <Stack justifyContent="center" minHeight="100vh">
             <Grid
-              item
               container
-              direction="row"
               wrap="nowrap"
               alignItems="center"
               spacing={2}
               className="AboutContainer"
             >
-              <Grid item>
+              <Grid minWidth={"auto"}>
                 <img src={aboutPCPic.src} alt={aboutPCPic.alt} />
               </Grid>
-              <Grid item>
-                <Font variant="h3" component="h2" color="secondary">
+              <Grid>
+                <Font variant="h5" component="h2" color="secondary">
                   GET TO KNOW ME
                 </Font>
                 <Font variant="h2" component="h3">
-                  A creator in heart, Developer in mind
+                  A creator at heart, developer by mind
                 </Font>
                 <Font variant="body1">
-                  My arsenal of tools, accumulated while learning and working
-                  are technologies based on JavaScript and C#. This includes
-                  React, Vue, Node, and Unity.
+                  I build modern software applications using
+                  <b> JavaScript and C#</b>, focusing technologies such as
+                  <b> React.js, Vue.js, Node.js, and Godot</b>.
                   <br />
-                  My expertise is dynamic, as I have developed Websites/APIs,
-                  mobile development with React Native, Windows applications
-                  with Electron, and a Discord bot with their respective API.
-                  <br />
-                  Knowing these cutting-edge technologies, I aim to thrive as a
-                  developer by continuing to learn and master new tech as it
-                  emerges. Collaborating with teams to produce amazing
-                  applications will always be rewarding.
+                  My professional experience consists of <b>creating API's</b>,
+                  implementing <b>production-ready features</b>, improving
+                  internal tools, and improving existing codebases.
                 </Font>
               </Grid>
             </Grid>
-          </Grid>
+          </Stack>
         </Container>
       </Container>
     </div>

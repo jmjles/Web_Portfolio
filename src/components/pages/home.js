@@ -1,5 +1,10 @@
-import React from "react";
-import { Container, Typography as Font, Grid, IconButton } from "@mui/material";
+import {
+  Container,
+  Typography as Font,
+  Grid,
+  IconButton,
+  Stack,
+} from "@mui/material";
 import {
   cSharp,
   js,
@@ -15,44 +20,33 @@ import { sendClickEvent } from "../../utils/ga";
 function Home() {
   const stack = [js, cSharp, react, vue, node, mongo];
   return (
-    <Container
-      align="center"
-      maxWidth="lg"
-      component="article"
-      className="HomeRoot"
-      id="home"
-    >
-      <Grid container alignContent="center" minHeight="100vh">
-        <Grid
-          item
-          container
-          direction="row"
+    <Container maxWidth="lg" component="article" className="HomeRoot" id="home">
+      <Grid container minHeight="100vh">
+        <Stack
           justifyContent="center"
+          alignItems={"center"}
           className="Card"
+          width={"100%"}
         >
-          <Grid
-            container
-            direction="row"
-            className="Intro"
-            justifyContent="center"
-          >
-            <Grid item className="Small-Portrait">
+          <Grid container className="Intro" justifyContent="center">
+            <Grid className="Small-Portrait">
               <img className="Portrait" src={portrait.src} alt={portrait.alt} />
             </Grid>
-            <Grid item>
+            <Grid>
               <Font variant="h1" fontWeight="bold">
                 FullStack Web Developer
               </Font>
-              <Font variant="body1">
-                Hi there, I'm Jesus Morales. 👋
-                <br /> Passionate developer in heart, based in California, USA.
-                🦅
+              <Font>
+                Hi there, I'm Jesus Morales Jr. 👋
+                <br /> Let's create something amazing together!
+                <br />
+                📍Based in California, USA.🦅
               </Font>
             </Grid>
-            <Grid item className="Big-Portrait">
+            <Grid className="Big-Portrait" minWidth={"auto"}>
               <img className="Portrait" src={portrait.src} alt={portrait.alt} />
             </Grid>
-            <Grid item className="Socials">
+            <Grid className="Socials">
               <Grid container justifyContent="left">
                 {socials.map((s) => (
                   <IconButton
@@ -69,17 +63,13 @@ function Home() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container justifyContent="center" direction="row" spacing={2}>
-            <Grid item>
-              <Font variant="h2" fontWeight="bold">
-                Tech Stack
-              </Font>
-            </Grid>
+          <Stack justifyContent="center" spacing={2}>
+            <Font variant="h2" fontWeight="bold" align="center">
+              Tech Stack
+            </Font>
             <Grid
-              item
               container
               justifyContent="center"
-              direction="row"
               wrap="nowrap"
               className="Stack"
             >
@@ -89,8 +79,8 @@ function Home() {
                 </Grid>
               ))}
             </Grid>
-          </Grid>
-        </Grid>
+          </Stack>
+        </Stack>
       </Grid>
       <img src={wave.src} alt={wave.alt} className="Wave" />
     </Container>

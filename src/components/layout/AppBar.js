@@ -8,18 +8,18 @@ const AppBar = (props) => {
   return (
     <Grid
       container
-      justifyContent="space-around"
+      justifyContent="space-between"
       alignItems="center"
       wrap="nowrap"
       className={open ? "Nav Open" : "Nav"}
     >
-      <Grid item>
-        <Font fontWeight="bold" variant="h2" component="p" noWrap>
-          Jesus M |
-        </Font>
-      </Grid>
-      <Grid item container className="Socials" wrap="nowrap">
-        {socials.map((s,i) => (
+      <Grid item container className="Socials" wrap="nowrap" alignItems={'center'}>
+        <Grid item>
+          <Font fontWeight="bold" variant="h2" component="p" noWrap>
+            Jesus M |
+          </Font>
+        </Grid>
+        {socials.map((s, i) => (
           <Grid key={i} item>
             <IconButton
               key={s.link}

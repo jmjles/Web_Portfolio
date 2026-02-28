@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Typography as Font,
   Grid,
@@ -20,7 +19,6 @@ export default function Projects() {
         <Grid container justifyContent="center" spacing={12}>
           {projects.map((project, i) => {
             const right = i % 2 ? false : true;
-            const slideshow = Array.isArray(project.img);
             return (
               <Grid key={project.name} item>
                 <Card elevation={0} className="GridCard">
@@ -30,8 +28,9 @@ export default function Projects() {
                       className={right ? "Right" : "Left"}
                       alignItems="center"
                       justifyContent="center"
+                      spacing={2}
                     >
-                      <Grid item className="GridImage" alignItems="center">
+                      <Grid className="GridImage" alignItems="center" minWidth={'auto'}>
                         {project.svg ? (
                           project.svg
                         ) : (
@@ -43,12 +42,12 @@ export default function Projects() {
                           />
                         )}
                       </Grid>
-                      <Grid item>
+                      <Grid>
                         <Font
                           variant="h2"
                           component="h2"
                           fontWeight="bold"
-                          marginBottom="6px"
+                          marginBottom=".5rem"
                         >
                           {project.name}
                         </Font>
@@ -59,9 +58,9 @@ export default function Projects() {
                         >
                           {project.desc}
                         </Font>
-                        <Grid container spacing={8} className="BottomCard">
+                        <Grid container spacing={8} className="BottomCard" marginTop={'1rem'}>
                           {project.info ? (
-                            <Grid item>
+                            <Grid>
                               <Button
                                 variant="contained"
                                 href={project.info}
@@ -79,7 +78,7 @@ export default function Projects() {
                             </Grid>
                           ) : (
                             <>
-                              <Grid item>
+                              <Grid>
                                 <Button
                                   variant="contained"
                                   href={project.code}
@@ -98,7 +97,7 @@ export default function Projects() {
                                   Code
                                 </Button>
                               </Grid>
-                              <Grid item>
+                              <Grid>
                                 <Button
                                   variant="contained"
                                   href={project.link}

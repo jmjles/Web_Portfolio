@@ -21,7 +21,9 @@
     max-width: 450px;
     flex-grow: 2;
     img {
-      aspect-ratio: "auto";
+      height: 180px;
+      aspect-ratio: auto;
+      max-width: 100%;
     }
   }
   .BottomCard {
@@ -41,7 +43,6 @@
         .GridImage {
           width: 300px;
           flex-shrink: 0;
-          margin-left: 24px;
           img {
             aspect-ratio: "auto";
           }

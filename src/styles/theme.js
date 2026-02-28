@@ -15,28 +15,26 @@ export const theme = createTheme({
     },
   },
   typography: {
+    fontSize: "16px",
     h1: {
-      fontSize: "36px",
+      fontSize: "2.5rem",
       [breakpoint(990)]: {
-        fontSize: "64px",
+        fontSize: "3rem",
       },
     },
     h2: {
-      fontSize: "32px",
+      fontSize: "2.3rem",
       [breakpoint(990)]: {
-        fontSize: "48px",
+        fontSize: "2.8rem",
       },
     },
-    h3: { fontSize: "24px" },
-    h4: { fontSize: "48px" },
+    h3: { fontSize: "2rem" },
+    h4: { fontSize: "2.5rem" },
     body1: {
-      fontSize: "16px",
-      [breakpoint(990)]: {
-        fontSize: "24px",
-      },
+      fontSize: "1.2rem",
     },
     button: {
-      fontSize: "16px",
+      fontSize: "1rem",
     },
   },
   components: {
